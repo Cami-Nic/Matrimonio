@@ -1114,7 +1114,7 @@ button {
 }
 
 .apple-button:hover {
-    background: #7894b0;
+    background: #007aff;
     color: white;
     transform: translateY(-3px);
 }
