@@ -942,22 +942,18 @@ section {
 /* ICONE */
 
 .map-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
-    display: block;
-}
-
-.google-icon {
-    width: 25px;
-    height: 25px;
+    fill: currentColor;
 }
 
 .apple-icon {
-    width: 25px;
-    height: 25px;
-    overflow: visible;
+    width: 21px;
+    height: 21px;
 }
+
+
 /* GOOGLE */
 
 .google-button {
@@ -975,25 +971,18 @@ section {
 
 /* APPLE */
 
-.map-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    width: 230px;
-    padding: 15px 25px;
-
-    border-radius: 30px;
-
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-
-    transition: all .3s ease;
-    text-align: center;
+.apple-button {
+    background: white;
+    color: #24364b;
+    border: 1px solid #7894b0;
 }
+
+.apple-button:hover {
+    background: #7894b0;
+    color: white;
+    transform: translateY(-3px);
+}
+
 
 /* =========================
    MOBILE
