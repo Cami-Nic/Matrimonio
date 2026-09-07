@@ -945,14 +945,14 @@ section {
     width: 25px;
     height: 25px;
     flex-shrink: 0;
-    fill: currentColor;
+    display: block;
 }
 
 .apple-icon {
     width: 25px;
     height: 25px;
+    fill: currentColor;
 }
-
 
 /* GOOGLE */
 
