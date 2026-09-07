@@ -100,38 +100,52 @@ revealElements.forEach(function(element) {
 /* =====================================================
    COLORE HAMBURGER AUTOMATICO
 ===================================================== */
-
 const menuLines = document.querySelectorAll(".menu-toggle span");
+const logo = document.querySelector(".logo");
 
+
+// ========================================
+// SEZIONI DEL SITO
+// ========================================
 
 const darkSections = document.querySelectorAll(
-    ".section-dark, .registry-preview"
+    ".section-dark, .registry-preview, .section-blue"
 );
-
 
 const lightSections = document.querySelectorAll(
     ".section-light"
 );
 
 
-const logo = document.querySelector(".logo");
+// ========================================
+// CAMBIO COLORE HEADER
+// ========================================
 
-function setMenuColor(color) {
+function setHeaderColor(color) {
 
+    // MENU
     menuLines.forEach(function(line) {
         line.style.background = color;
     });
 
+
+    // LOGO
     if (logo) {
+
         if (color === "white") {
             logo.classList.remove("logo-dark");
         } else {
             logo.classList.add("logo-dark");
         }
+
     }
 
 }
 
+
+// ========================================
+// INTERSECTION OBSERVER
+// ========================================
 
 const sectionObserver = new IntersectionObserver(
 
@@ -139,21 +153,38 @@ const sectionObserver = new IntersectionObserver(
 
         entries.forEach(function(entry) {
 
-            if (entry.isIntersecting) {
+            if (!entry.isIntersecting) {
+                return;
+            }
 
-                if (
-             entry.target.classList.contains("section-dark") ||
-             entry.target.classList.contains("registry-preview") ||
-             entry.target.classList.contains("section-blue")
-         ) {
 
-    setMenuColor("white");
+            const section = entry.target;
 
-} else {
 
-    setMenuColor("#24364b");
+            // --------------------------------
+            // SEZIONI COLORATE / SCURE
+            // --------------------------------
 
-}
+            if (
+                section.classList.contains("section-dark") ||
+                section.classList.contains("registry-preview") ||
+                section.classList.contains("section-blue")
+            ) {
+
+                setHeaderColor("white");
+
+            }
+
+
+            // --------------------------------
+            // SEZIONI BIANCHE
+            // --------------------------------
+
+            else if (
+                section.classList.contains("section-light")
+            ) {
+
+                setHeaderColor("black");
 
             }
 
@@ -162,11 +193,22 @@ const sectionObserver = new IntersectionObserver(
     },
 
     {
-        threshold: 0.5
+        root: null,
+
+        // La zona osservata è concentrata
+        // nella parte superiore dello schermo,
+        // dove si trova il logo/menu.
+        rootMargin: "-10% 0px -80% 0px",
+
+        threshold: 0
     }
 
 );
 
+
+// ========================================
+// AVVIO OSSERVAZIONE
+// ========================================
 
 darkSections.forEach(function(section) {
 
@@ -180,7 +222,6 @@ lightSections.forEach(function(section) {
     sectionObserver.observe(section);
 
 });
-
 
 /* =====================================================
    PARALLAX LEGGERO IMMAGINE HERO
