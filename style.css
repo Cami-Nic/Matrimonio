@@ -1,16 +1,3 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-section {
-    width: 100%;
-    box-sizing: border-box;
-}
-
 /* =====================================================
    FONT
 ===================================================== */
@@ -19,13 +6,22 @@ section {
 
 
 /* =====================================================
-   RESET
+   RESET GENERALE
 ===================================================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
 }
 
 html {
@@ -36,7 +32,22 @@ body {
     font-family: 'Lato', sans-serif;
     color: #24364b;
     background: #ffffff;
-    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 img {
@@ -65,13 +76,11 @@ button {
     left: 0;
 
     width: 100%;
-
     height: 80px;
 
     padding: 15px 20px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
@@ -89,14 +98,12 @@ button {
 
 .logo-link {
     pointer-events: auto;
-
     display: block;
 }
 
 .logo {
     width: 75px;
     height: auto;
-
     object-fit: contain;
 }
 
@@ -109,7 +116,6 @@ button {
     pointer-events: auto;
 
     border: none;
-
     background: transparent;
 
     width: 42px;
@@ -118,9 +124,7 @@ button {
     padding: 8px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 
     gap: 6px;
@@ -156,7 +160,6 @@ button {
     right: 0;
 
     width: min(340px, 88%);
-
     height: 100vh;
 
     background: #ffffff;
@@ -176,7 +179,6 @@ button {
     transform: translateX(0);
 }
 
-
 .menu-close {
     position: absolute;
 
@@ -187,18 +189,15 @@ button {
     height: 40px;
 
     border: none;
-
     background: transparent;
 
     font-size: 38px;
-
     font-weight: 300;
 
     color: #24364b;
 
     cursor: pointer;
 }
-
 
 .side-menu ul {
     list-style: none;
@@ -237,7 +236,6 @@ button {
     z-index: 1150;
 
     opacity: 0;
-
     visibility: hidden;
 
     transition:
@@ -247,43 +245,56 @@ button {
 
 .menu-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 
 /* =====================================================
-   SEZIONI
+   SEZIONI GENERALI
 ===================================================== */
 
-section {
-    position: relative;
-}
-
 .section {
+    width: 100%;
+    max-width: none;
+
     min-height: 100vh;
 
+    margin: 0;
+
     padding: 120px 25px;
+
+    box-sizing: border-box;
 }
 
 .section-light {
+    width: 100%;
     background: #ffffff;
 }
 
 .section-blue {
+    width: 100%;
     background: #7894b0;
-
     color: white;
 }
 
 
 /* =====================================================
-   CONTAINER
+   CONTENITORE INTERNO
+   Lo sfondo della sezione arriva ai bordi,
+   mentre il contenuto resta centrato.
 ===================================================== */
+
 .container {
-    max-width: ...;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
 }
+
+
 /* =====================================================
    HERO
 ===================================================== */
@@ -291,10 +302,10 @@ section {
 .hero {
     position: relative;
 
+    width: 100%;
     min-height: 100svh;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -311,7 +322,6 @@ section {
     background-image: url("images/foto1 (1).jpeg");
 
     background-size: cover;
-
     background-position: center;
 
     transform: scale(1.05);
@@ -340,14 +350,12 @@ section {
     z-index: 2;
 
     width: 90%;
-
     max-width: 800px;
 
     text-align: center;
 
     padding: 40px 10px;
 }
-
 
 .small-title,
 .eyebrow {
@@ -391,7 +399,6 @@ section {
 
 .decorative-line {
     width: 70px;
-
     height: 1px;
 
     background: white;
@@ -401,7 +408,6 @@ section {
 
 .blue-line {
     width: 60px;
-
     height: 2px;
 
     background: #7894b0;
@@ -411,7 +417,6 @@ section {
 
 .white-line {
     width: 60px;
-
     height: 2px;
 
     background: white;
@@ -428,7 +433,6 @@ section {
     display: inline-flex;
 
     flex-direction: column;
-
     align-items: center;
 
     gap: 8px;
@@ -444,7 +448,6 @@ section {
 
 .scroll-button span {
     font-size: 22px;
-
     line-height: 1;
 }
 
@@ -476,44 +479,69 @@ section {
    EVENTO
 ===================================================== */
 
+.event-section {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
 .event-grid {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
     display: grid;
 
     grid-template-columns: 1fr;
 
     gap: 50px;
+
+    align-items: center;
 }
 
 .event-image {
+    width: 100%;
+
     overflow: hidden;
 }
 
 .event-image img {
+    width: 100%;
+
     aspect-ratio: 4 / 5;
 
     object-fit: cover;
+
+    display: block;
 }
 
-
 .event-info {
-    display: flex;
+    width: 100%;
 
+    display: flex;
     flex-direction: column;
 
     gap: 35px;
 }
-
 
 .info-item {
     display: grid;
 
     grid-template-columns: 45px 1fr;
 
-    gap: 15px;
+    column-gap: 15px;
 
     border-bottom: 1px solid #e4e8ec;
 
     padding-bottom: 30px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
 }
 
 .info-number {
@@ -547,7 +575,17 @@ section {
    LA NOSTRA STORIA
 ===================================================== */
 
+.story-section {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
 .story {
+    width: 100%;
     max-width: 750px;
 
     margin-left: auto;
@@ -579,8 +617,22 @@ section {
    LISTA NOZZE
 ===================================================== */
 
+.registry-section {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
 .registry-preview {
+    width: 100%;
+    max-width: none;
+
     min-height: 85vh;
+
+    margin: 0;
 
     display: flex;
 
@@ -589,6 +641,8 @@ section {
     color: white;
 
     overflow: hidden;
+
+    box-sizing: border-box;
 }
 
 .registry-background {
@@ -622,7 +676,11 @@ section {
 
     z-index: 2;
 
+    width: 100%;
     max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
 
     text-align: center;
 }
@@ -735,9 +793,9 @@ section {
 }
 
 
-/* ========================================
-   SOLO MOBILE - SEZIONI A TUTTA LARGHEZZA
-======================================== */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 599px) {
 
@@ -746,6 +804,7 @@ section {
         margin: 0;
         padding: 0;
         width: 100%;
+        min-width: 100%;
         overflow-x: hidden;
     }
 
@@ -757,16 +816,22 @@ section {
 
     section {
         width: 100%;
+        max-width: none;
         margin: 0;
         box-sizing: border-box;
     }
 
     .section {
         width: 100%;
+        max-width: none;
+
+        min-height: 100vh;
+
         margin: 0;
+
+        padding: 120px 20px;
+
         box-sizing: border-box;
-        padding-left: 20px;
-        padding-right: 20px;
     }
 
     .event-section,
@@ -774,11 +839,15 @@ section {
     .registry-section,
     .map-section {
         width: 100%;
+        max-width: none;
+
         margin: 0;
+
         box-sizing: border-box;
     }
-
 }
+
+
 /* =====================================================
    TABLET
 ===================================================== */
@@ -795,10 +864,18 @@ section {
     }
 
     .section {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
         padding: 140px 50px;
     }
 
     .event-grid {
+        width: 100%;
+        max-width: 1100px;
+
         grid-template-columns: 1fr 1fr;
 
         align-items: center;
@@ -809,7 +886,6 @@ section {
     .event-image img {
         aspect-ratio: 3 / 4;
     }
-
 }
 
 
@@ -818,6 +894,16 @@ section {
 ===================================================== */
 
 @media (min-width: 900px) {
+
+    .section {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
 
     .header {
         height: 100px;
@@ -835,12 +921,6 @@ section {
         height: 45px;
     }
 
-    .section {
-        padding-top: 160px;
-
-        padding-bottom: 160px;
-    }
-
     .section-title {
         margin-bottom: 90px;
     }
@@ -850,6 +930,9 @@ section {
     }
 
     .event-grid {
+        width: 100%;
+        max-width: 1100px;
+
         grid-template-columns: minmax(350px, 500px) 1fr;
 
         gap: 120px;
@@ -861,8 +944,9 @@ section {
 
     .event-image img {
         height: 650px;
-    }
 
+        aspect-ratio: auto;
+    }
 }
 
 
@@ -884,8 +968,10 @@ section {
     }
 }
 
+
 /* =========================
    SEZIONE MAPPA
+   NON MODIFICATA
 ========================= */
 
 .map-section {
