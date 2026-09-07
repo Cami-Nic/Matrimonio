@@ -114,13 +114,21 @@ const lightSections = document.querySelectorAll(
 );
 
 
+const logo = document.querySelector(".logo");
+
 function setMenuColor(color) {
 
     menuLines.forEach(function(line) {
-
         line.style.background = color;
-
     });
+
+    if (logo) {
+        if (color === "white") {
+            logo.classList.remove("logo-dark");
+        } else {
+            logo.classList.add("logo-dark");
+        }
+    }
 
 }
 
