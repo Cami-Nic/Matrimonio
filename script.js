@@ -110,7 +110,7 @@ const darkSections = document.querySelectorAll(
 
 
 const lightSections = document.querySelectorAll(
-    ".section-light, .section-blue"
+    ".section-light"
 );
 
 
@@ -134,17 +134,18 @@ const sectionObserver = new IntersectionObserver(
             if (entry.isIntersecting) {
 
                 if (
-                    entry.target.classList.contains("section-dark") ||
-                    entry.target.classList.contains("registry-preview")
-                ) {
+             entry.target.classList.contains("section-dark") ||
+             entry.target.classList.contains("registry-preview") ||
+             entry.target.classList.contains("section-blue")
+         ) {
 
-                    setMenuColor("white");
+    setMenuColor("white");
 
-                } else {
+} else {
 
-                    setMenuColor("#24364b");
+    setMenuColor("#24364b");
 
-                }
+}
 
             }
 
