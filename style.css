@@ -1541,7 +1541,46 @@ button {
 
         padding: 15px 20px;
     }
+ /* -------------------------------------------------
+       SECONDA HERO - GIAPPONE
+    ------------------------------------------------- */
 
+    .story-photo {
+        height: 100vh;
+        min-height: 650px;
+
+        border-top: 35px solid white;
+    }
+
+    .story-photo-text {
+        width: 84%;
+        max-width: none;
+
+        text-align: center;
+    }
+
+    .story-photo-text h2 {
+        font-size: 52px;
+
+        margin-bottom: 25px;
+
+        transform: translateY(-40px);
+    }
+
+    .story-photo-text p {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+}
 
     /* -------------------------------------------------
        CERIMONIA / ORARIO
