@@ -889,7 +889,133 @@ button {
 
     margin-bottom: 25px;
 }
+/* =====================================================
+   FOTO STORIA
+===================================================== */
 
+.story-photo {
+    position: relative;
+
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+
+    height: 75vh;
+    min-height: 550px;
+
+    overflow: hidden;
+}
+
+
+/* IMMAGINE */
+
+.story-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* VELO SOPRA LA FOTO */
+
+.story-photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: 1;
+}
+
+
+/* TESTO */
+
+.story-photo-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    width: min(80%, 750px);
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* TITOLO */
+
+.story-photo-text h2 {
+    margin: 0 0 30px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+
+/* PARAGRAFI */
+
+.story-photo-text p {
+    margin: 0 0 25px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+}
+
+
+/* ULTIMO PARAGRAFO */
+
+.story-photo-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 599px) {
+
+    .story-photo {
+        height: 80vh;
+        min-height: 600px;
+    }
+
+    .story-photo-text {
+        width: 85%;
+    }
+
+    .story-photo-text h2 {
+        font-size: 48px;
+        margin-bottom: 25px;
+    }
+
+    .story-photo-text p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+}
 
 /* =====================================================
    LISTA NOZZE
