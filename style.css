@@ -590,8 +590,8 @@ button {
 
 .location-image img {
     display: block;
-    width: 600px;
-    height: 600px;
+    width: 520px;
+    height: 650px;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -615,9 +615,9 @@ button {
 .location-map iframe {
     display: block;
 
-    width: 100%;
+    width: 520%;
 
-    height: 360px;
+    height: 650px;
 
     border: 0;
 }
