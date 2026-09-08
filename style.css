@@ -801,7 +801,7 @@ button {
 /* -----------------------------------------------------
    TITOLO CERIMONIA / ORARIO
 ----------------------------------------------------- */
-
+.location-content h3,
 .section-heading {
     display: flex;
 
