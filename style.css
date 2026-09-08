@@ -1,4 +1,4 @@
-```css
+
 /* =====================================================
    FONT
 ===================================================== */
@@ -85,7 +85,7 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    z-index: 1000;
+    z-index: 1300;
 
     background: transparent;
 
@@ -100,12 +100,16 @@ button {
 .logo-link {
     pointer-events: auto;
     display: block;
+
+    position: relative;
+    z-index: 1301;
 }
 
 .logo {
     width: 75px;
     height: auto;
     object-fit: contain;
+
     transition: filter 0.3s ease;
 }
 
@@ -119,6 +123,8 @@ button {
 ===================================================== */
 
 .menu-toggle {
+    position: relative;
+
     pointer-events: auto;
 
     border: none;
@@ -137,7 +143,7 @@ button {
 
     cursor: pointer;
 
-    z-index: 1100;
+    z-index: 1400;
 }
 
 .menu-toggle span {
@@ -146,12 +152,34 @@ button {
     width: 100%;
     height: 2px;
 
-    background: white;
+    background: #ffffff;
 
     transition:
         transform 0.3s ease,
         opacity 0.3s ease,
         background 0.3s ease;
+}
+
+
+/*
+   Quando il menu è aperto, l'hamburger rimane
+   sempre sopra al menu laterale.
+*/
+
+.menu-toggle.active span {
+    background: #24364b;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 
@@ -280,7 +308,7 @@ button {
 .section-blue {
     width: 100%;
     background: #7894b0;
-    color: white;
+    color: #ffffff;
 }
 
 
@@ -315,7 +343,7 @@ button {
 
     overflow: hidden;
 
-    color: white;
+    color: #ffffff;
 }
 
 .hero-image {
@@ -405,7 +433,7 @@ button {
     width: 70px;
     height: 1px;
 
-    background: white;
+    background: #ffffff;
 
     margin: 30px auto;
 }
@@ -423,7 +451,7 @@ button {
     width: 60px;
     height: 2px;
 
-    background: white;
+    background: #ffffff;
 
     margin-top: 25px;
 }
@@ -491,7 +519,9 @@ button {
 .event-location {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 60px;
 
@@ -563,12 +593,16 @@ button {
 
 .location-image {
     width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 14px;
 }
 
 .location-image img {
     display: block;
 
-    width: 100%;
+    width: 600%;
 
     height: 420px;
 
@@ -591,7 +625,8 @@ button {
 
     border-radius: 20px;
 
-    box-shadow: 0 12px 35px rgba(36, 54, 75, 0.12);
+    box-shadow:
+        0 12px 35px rgba(36, 54, 75, 0.12);
 }
 
 .location-map iframe {
@@ -599,7 +634,7 @@ button {
 
     width: 100%;
 
-    height: 500px;
+    height: 520px;
 
     border: 0;
 }
@@ -657,7 +692,7 @@ button {
 
 
 /* -----------------------------------------------------
-   ICONE
+   ICONE MAPPA
 ----------------------------------------------------- */
 
 .map-icon {
@@ -677,7 +712,6 @@ button {
 
 .google-icon {
     width: 28px;
-
     height: 28px;
 }
 
@@ -686,7 +720,8 @@ button {
 
     color: #ffffff;
 
-    box-shadow: 0 8px 20px rgba(36, 54, 75, 0.15);
+    box-shadow:
+        0 8px 20px rgba(36, 54, 75, 0.15);
 }
 
 .google-button:hover {
@@ -694,7 +729,8 @@ button {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 25px rgba(36, 54, 75, 0.22);
+    box-shadow:
+        0 12px 25px rgba(36, 54, 75, 0.22);
 }
 
 
@@ -704,7 +740,6 @@ button {
 
 .apple-icon {
     width: 24px;
-
     height: 24px;
 }
 
@@ -713,7 +748,8 @@ button {
 
     color: #ffffff;
 
-    box-shadow: 0 8px 20px rgba(36, 54, 75, 0.15);
+    box-shadow:
+        0 8px 20px rgba(36, 54, 75, 0.15);
 }
 
 .apple-button:hover {
@@ -721,7 +757,8 @@ button {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 25px rgba(36, 54, 75, 0.22);
+    box-shadow:
+        0 12px 25px rgba(36, 54, 75, 0.22);
 }
 
 
@@ -809,7 +846,6 @@ button {
     max-width: 750px;
 
     margin-left: auto;
-
     margin-right: auto;
 }
 
@@ -861,7 +897,7 @@ button {
 
     align-items: center;
 
-    color: white;
+    color: #ffffff;
 
     overflow: hidden;
 
@@ -904,7 +940,6 @@ button {
     max-width: 700px;
 
     margin-left: auto;
-
     margin-right: auto;
 
     text-align: center;
@@ -942,9 +977,9 @@ button {
 
     padding: 15px 28px;
 
-    border: 1px solid white;
+    border: 1px solid #ffffff;
 
-    color: white;
+    color: #ffffff;
 
     font-size: 12px;
 
@@ -958,7 +993,7 @@ button {
 }
 
 .button-light:hover {
-    background: white;
+    background: #ffffff;
 
     color: #24364b;
 }
@@ -1026,7 +1061,6 @@ button {
 
     .header {
         padding-left: 35px;
-
         padding-right: 35px;
     }
 
@@ -1053,7 +1087,9 @@ button {
 @media (min-width: 600px) and (max-width: 899px) {
 
     .event-location {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
 
         gap: 40px;
     }
@@ -1071,14 +1107,10 @@ button {
     }
 
     .location-image img {
-        width: 100%;
-
         height: 320px;
     }
 
     .location-map iframe {
-        width: 100%;
-
         height: 400px;
     }
 
@@ -1110,7 +1142,6 @@ button {
         height: 100px;
 
         padding-left: 55px;
-
         padding-right: 55px;
     }
 
@@ -1120,7 +1151,6 @@ button {
 
     .menu-toggle {
         width: 45px;
-
         height: 45px;
     }
 
@@ -1130,6 +1160,14 @@ button {
 
     .hero-text {
         font-size: 18px;
+    }
+
+    .event-location {
+        gap: 70px;
+    }
+
+    .location-content {
+        min-height: 450px;
     }
 
     .location-image img {
@@ -1195,6 +1233,32 @@ button {
 
 
     /* -------------------------------------------------
+       HEADER MOBILE
+    ------------------------------------------------- */
+
+    .header {
+        height: 75px;
+
+        padding: 12px 18px;
+
+        z-index: 1300;
+    }
+
+    .logo {
+        width: 75px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+
+        padding: 8px;
+
+        z-index: 1400;
+    }
+
+
+    /* -------------------------------------------------
        HOME
     ------------------------------------------------- */
 
@@ -1223,6 +1287,8 @@ button {
 
     .location-content {
         min-height: auto;
+
+        justify-content: flex-start;
     }
 
     .location-content h3 {
@@ -1232,7 +1298,7 @@ button {
     .location-name {
         font-size: 23px;
 
-        margin-top: 16px;
+        margin: 16px 0 8px;
     }
 
     .location-address {
@@ -1248,6 +1314,8 @@ button {
 
     .location-image {
         width: 100%;
+
+        border-radius: 14px;
     }
 
     .location-image img {
@@ -1344,15 +1412,6 @@ button {
     .section-content {
         margin-left: 0;
     }
-
-
-    /* -------------------------------------------------
-       HEADER
-    ------------------------------------------------- */
-
-    .logo {
-        width: 75px;
-    }
 }
 
 
@@ -1374,4 +1433,3 @@ button {
         animation-duration: 0.01ms !important;
     }
 }
-```
