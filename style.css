@@ -618,10 +618,10 @@ button {
 
 .location-image {
     width: 100%;
-
+    max-width: 1200px;
     overflow: hidden;
-
     border-radius: 14px;
+    margin: 0 auto;
 }
 
 .location-image img {
