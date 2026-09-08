@@ -1158,8 +1158,11 @@ button {
 
     /* FOTO HOME SPOSTATA VERSO DESTRA */
     .hero-image {
-        background-position: 65% center;
+        background-position: 70% center;
     }
+   .hero-content {
+    transform: translateY(50px);
+   }
 }
 
     /* -------------------------------------------------
