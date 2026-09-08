@@ -706,23 +706,18 @@ button {
    APPLE MAPS
 ----------------------------------------------------- */
 
-.apple-button {
-    background: #ffffff;
-    color: #24364b;
+.map-icon {
+    width: 28px;
+    height: 28px;
 
-    border: 1px solid #7894b0;
+    flex-shrink: 0;
+    display: block;
 }
 
+.google-icon,
 .apple-icon {
     width: 28px;
     height: 28px;
-}
-
-.apple-button:hover {
-    background: #24364b;
-    color: #ffffff;
-
-    transform: translateY(-3px);
 }
 
 /* =====================================================
