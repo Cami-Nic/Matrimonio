@@ -590,7 +590,7 @@ button {
 
 .location-image img {
     display: block;
-    width: 400px;
+    width: 600px;
     height: 600px;
     object-fit: cover;
     border-radius: 12px;
