@@ -1,4 +1,4 @@
-
+```css
 /* =====================================================
    FONT
 ===================================================== */
@@ -488,14 +488,26 @@ button {
    01 — LOCATION
 ----------------------------------------------------- */
 
+.event-location {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
 .location-content {
+    min-height: 420px;
+
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
-
-    min-height: 360px;
 }
 
 .section-number {
@@ -530,6 +542,8 @@ button {
     font-family: 'Playfair Display', serif;
 
     font-size: 31px;
+
+    line-height: 1.2;
 }
 
 .location-address {
@@ -541,60 +555,28 @@ button {
 
     opacity: 0.7;
 }
-/* =========================
-   LOCATION
-========================= */
-
-.event-location {
-    display: grid;
-    grid-template-columns: 1fr 0.85fr;
-    gap: 70px;
-    align-items: center;
-    margin-bottom: 55px;
-}
-
-.location-content {
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.location-content h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 52px;
-    font-weight: 400;
-    margin: 0;
-}
-
-.location-name {
-    font-family: "Playfair Display", serif;
-    font-size: 29px;
-    margin: 18px 0 8px;
-}
-
-.location-address {
-    font-size: 16px;
-    line-height: 1.7;
-    opacity: 0.7;
-    margin: 0;
-}
 
 
-/* FOTO LOCATION */
+/* -----------------------------------------------------
+   FOTO LOCATION
+----------------------------------------------------- */
 
 .location-image {
-    display: flex;
-    justify-content: flex-end;
+    width: 100%;
 }
 
 .location-image img {
     display: block;
-    width: 520px;
-    height: 650px;
+
+    width: 100%;
+
+    height: 420px;
+
     object-fit: cover;
-    border-radius: 12px;
+
+    border-radius: 14px;
 }
+
 
 /* -----------------------------------------------------
    MAPPA
@@ -615,27 +597,31 @@ button {
 .location-map iframe {
     display: block;
 
-    width: 520%;
+    width: 100%;
 
-    height: 650px;
+    height: 500px;
 
     border: 0;
 }
+
 
 /* -----------------------------------------------------
    PULSANTI MAPPA
 ----------------------------------------------------- */
 
-
 .map-buttons {
     display: flex;
+
     flex-direction: row;
+
     justify-content: center;
+
     align-items: center;
 
     gap: 30px;
 
     margin-top: 35px;
+
     margin-bottom: 140px;
 
     flex-wrap: wrap;
@@ -643,20 +629,25 @@ button {
 
 .map-button {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
 
     width: 260px;
+
     padding: 17px 25px;
 
     border-radius: 30px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 0.12em;
+
     text-transform: uppercase;
 
     text-align: center;
@@ -671,9 +662,11 @@ button {
 
 .map-icon {
     width: 28px;
+
     height: 28px;
 
     flex-shrink: 0;
+
     display: block;
 }
 
@@ -684,11 +677,13 @@ button {
 
 .google-icon {
     width: 28px;
+
     height: 28px;
 }
 
 .google-button {
     background: #7894b0;
+
     color: #ffffff;
 
     box-shadow: 0 8px 20px rgba(36, 54, 75, 0.15);
@@ -709,11 +704,13 @@ button {
 
 .apple-icon {
     width: 24px;
+
     height: 24px;
 }
 
 .apple-button {
     background: #7894b0;
+
     color: #ffffff;
 
     box-shadow: 0 8px 20px rgba(36, 54, 75, 0.15);
@@ -726,6 +723,7 @@ button {
 
     box-shadow: 0 12px 25px rgba(36, 54, 75, 0.22);
 }
+
 
 /* =====================================================
    02 — CERIMONIA
@@ -797,6 +795,7 @@ button {
 
 .story-section {
     width: 100%;
+
     max-width: none;
 
     margin: 0;
@@ -806,9 +805,11 @@ button {
 
 .story {
     width: 100%;
+
     max-width: 750px;
 
     margin-left: auto;
+
     margin-right: auto;
 }
 
@@ -839,6 +840,7 @@ button {
 
 .registry-section {
     width: 100%;
+
     max-width: none;
 
     margin: 0;
@@ -848,6 +850,7 @@ button {
 
 .registry-preview {
     width: 100%;
+
     max-width: none;
 
     min-height: 85vh;
@@ -1040,7 +1043,6 @@ button {
 
         padding: 140px 50px;
     }
-
 }
 
 
@@ -1053,22 +1055,36 @@ button {
     .event-location {
         grid-template-columns: 1fr 1fr;
 
-        gap: 45px;
+        gap: 40px;
     }
 
-    .location-content h3,
-    .section-heading h3 {
-        font-size: 36px;
+    .location-content {
+        min-height: 320px;
+    }
+
+    .location-content h3 {
+        font-size: 38px;
+    }
+
+    .location-name {
+        font-size: 25px;
     }
 
     .location-image img {
-        height: 280px;
+        width: 100%;
+
+        height: 320px;
     }
 
     .location-map iframe {
-        height: 330px;
+        width: 100%;
+
+        height: 400px;
     }
 
+    .section-heading h3 {
+        font-size: 36px;
+    }
 }
 
 
@@ -1116,6 +1132,13 @@ button {
         font-size: 18px;
     }
 
+    .location-image img {
+        height: 450px;
+    }
+
+    .location-map iframe {
+        height: 520px;
+    }
 }
 
 
@@ -1128,53 +1151,74 @@ button {
     html,
     body {
         margin: 0;
+
         padding: 0;
+
         width: 100%;
+
         min-width: 100%;
+
         overflow-x: hidden;
     }
 
     main {
         width: 100%;
+
         margin: 0;
+
         padding: 0;
     }
 
     section {
         width: 100%;
+
         max-width: none;
+
         margin: 0;
+
         box-sizing: border-box;
     }
 
     .section {
         width: 100%;
+
         max-width: none;
+
         min-height: 100vh;
+
         margin: 0;
+
         padding: 120px 20px;
+
         box-sizing: border-box;
     }
 
-    /* FOTO HOME SPOSTATA VERSO DESTRA */
+
+    /* -------------------------------------------------
+       HOME
+    ------------------------------------------------- */
+
     .hero-image {
         background-position: 70% center;
     }
-   .hero-content {
-    transform: translateY(100px);
-   }
-}
+
+    .hero-content {
+        transform: translateY(100px);
+    }
+
 
     /* -------------------------------------------------
        LOCATION
     ------------------------------------------------- */
 
     .event-location {
+        display: grid;
+
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 30px;
 
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
 
     .location-content {
@@ -1187,11 +1231,19 @@ button {
 
     .location-name {
         font-size: 23px;
+
+        margin-top: 16px;
+    }
+
+    .location-address {
+        font-size: 16px;
+
+        line-height: 1.7;
     }
 
 
     /* -------------------------------------------------
-       FOTO
+       FOTO LOCATION
     ------------------------------------------------- */
 
     .location-image {
@@ -1199,9 +1251,15 @@ button {
     }
 
     .location-image img {
+        display: block;
+
         width: 100%;
 
-        height: 230px;
+        height: 280px;
+
+        object-fit: cover;
+
+        border-radius: 14px;
     }
 
 
@@ -1210,13 +1268,21 @@ button {
     ------------------------------------------------- */
 
     .location-map {
+        width: 100%;
+
         margin-top: 0;
 
         border-radius: 15px;
     }
 
     .location-map iframe {
-        height: 300px;
+        display: block;
+
+        width: 100%;
+
+        height: 380px;
+
+        border: 0;
     }
 
 
@@ -1287,7 +1353,6 @@ button {
     .logo {
         width: 75px;
     }
-
 }
 
 
@@ -1309,3 +1374,4 @@ button {
         animation-duration: 0.01ms !important;
     }
 }
+```
