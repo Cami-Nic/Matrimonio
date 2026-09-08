@@ -1426,3 +1426,27 @@ button {
         animation-duration: 0.01ms !important;
     }
 }
+/* =====================================================
+   VISIBILITÀ HEADER IN BASE ALLA SEZIONE
+===================================================== */
+
+.header {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.header.header-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.header.header-visible .logo-link,
+.header.header-visible .menu-toggle {
+    pointer-events: auto;
+}
