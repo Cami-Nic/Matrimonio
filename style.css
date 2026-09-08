@@ -707,13 +707,17 @@ button {
 ----------------------------------------------------- */
 
 .map-icon {
-    width: 28px;
-    height: 28px;
-
-    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
     display: block;
+    flex-shrink: 0;
 }
 
+.map-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .google-icon,
 .apple-icon {
     width: 28px;
