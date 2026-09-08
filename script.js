@@ -1,4 +1,3 @@
-
 /* =====================================================
    MENU
 ===================================================== */
@@ -25,6 +24,7 @@ function openMenu() {
 
     if (menuToggle) {
         menuToggle.classList.add("active");
+        menuToggle.setAttribute("aria-label", "Chiudi menu");
     }
 
     document.body.style.overflow = "hidden";
@@ -47,6 +47,7 @@ function closeMenu() {
 
     if (menuToggle) {
         menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-label", "Apri menu");
     }
 
     document.body.style.overflow = "";
@@ -61,7 +62,10 @@ if (menuToggle) {
 
     menuToggle.addEventListener("click", function() {
 
-        if (sideMenu && sideMenu.classList.contains("active")) {
+        if (
+            sideMenu &&
+            sideMenu.classList.contains("active")
+        ) {
 
             closeMenu();
 
@@ -82,7 +86,10 @@ if (menuToggle) {
 
 if (menuClose) {
 
-    menuClose.addEventListener("click", closeMenu);
+    menuClose.addEventListener(
+        "click",
+        closeMenu
+    );
 
 }
 
@@ -93,7 +100,10 @@ if (menuClose) {
 
 if (menuOverlay) {
 
-    menuOverlay.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener(
+        "click",
+        closeMenu
+    );
 
 }
 
@@ -102,16 +112,20 @@ if (menuOverlay) {
    CHIUDI MENU QUANDO SI CLICCA SU UN LINK
 ===================================================== */
 
-const menuLinks = document.querySelectorAll(".side-menu a");
+const menuLinks =
+    document.querySelectorAll(".side-menu a");
 
 
 menuLinks.forEach(function(link) {
 
-    link.addEventListener("click", function() {
+    link.addEventListener(
+        "click",
+        function() {
 
-        closeMenu();
+            closeMenu();
 
-    });
+        }
+    );
 
 });
 
@@ -120,30 +134,34 @@ menuLinks.forEach(function(link) {
    ANIMAZIONI ALLO SCROLL
 ===================================================== */
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-const observer = new IntersectionObserver(
+const observer =
+    new IntersectionObserver(
 
-    function(entries) {
+        function(entries) {
 
-        entries.forEach(function(entry) {
+            entries.forEach(function(entry) {
 
-            if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                entry.target.classList.add("visible");
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
-            }
+                }
 
-        });
+            });
 
-    },
+        },
 
-    {
-        threshold: 0.15
-    }
+        {
+            threshold: 0.15
+        }
 
-);
+    );
 
 
 revealElements.forEach(function(element) {
@@ -157,21 +175,28 @@ revealElements.forEach(function(element) {
    COLORE HAMBURGER E LOGO
 ===================================================== */
 
-const menuLines = document.querySelectorAll(".menu-toggle span");
-const logo = document.querySelector(".logo");
+const menuLines =
+    document.querySelectorAll(
+        ".menu-toggle span"
+    );
+
+const logo =
+    document.querySelector(".logo");
 
 
 /* =====================================================
    SEZIONI DEL SITO
 ===================================================== */
 
-const darkSections = document.querySelectorAll(
-    ".section-dark, .registry-preview, .section-blue"
-);
+const darkSections =
+    document.querySelectorAll(
+        ".section-dark, .registry-preview, .section-blue"
+    );
 
-const lightSections = document.querySelectorAll(
-    ".section-light"
-);
+const lightSections =
+    document.querySelectorAll(
+        ".section-light"
+    );
 
 
 /* =====================================================
@@ -199,11 +224,15 @@ function setHeaderColor(color) {
 
         if (color === "white") {
 
-            logo.classList.remove("logo-dark");
+            logo.classList.remove(
+                "logo-dark"
+            );
 
         } else {
 
-            logo.classList.add("logo-dark");
+            logo.classList.add(
+                "logo-dark"
+            );
 
         }
 
@@ -216,65 +245,76 @@ function setHeaderColor(color) {
    OSSERVATORE SEZIONI
 ===================================================== */
 
-const sectionObserver = new IntersectionObserver(
+const sectionObserver =
+    new IntersectionObserver(
 
-    function(entries) {
+        function(entries) {
 
-        entries.forEach(function(entry) {
+            entries.forEach(function(entry) {
 
-            if (!entry.isIntersecting) {
-                return;
-            }
-
-
-            const section = entry.target;
+                if (!entry.isIntersecting) {
+                    return;
+                }
 
 
-            /* -----------------------------------------
-               SEZIONI SCURE / COLORATE
-            ----------------------------------------- */
-
-            if (
-                section.classList.contains("section-dark") ||
-                section.classList.contains("registry-preview") ||
-                section.classList.contains("section-blue")
-            ) {
-
-                setHeaderColor("white");
-
-            }
+                const section =
+                    entry.target;
 
 
-            /* -----------------------------------------
-               SEZIONI BIANCHE
-            ----------------------------------------- */
+                /* -----------------------------------------
+                   SEZIONI SCURE / COLORATE
+                ----------------------------------------- */
 
-            else if (
-                section.classList.contains("section-light")
-            ) {
+                if (
+                    section.classList.contains(
+                        "section-dark"
+                    ) ||
+                    section.classList.contains(
+                        "registry-preview"
+                    ) ||
+                    section.classList.contains(
+                        "section-blue"
+                    )
+                ) {
 
-                setHeaderColor("black");
+                    setHeaderColor("white");
 
-            }
+                }
 
-        });
 
-    },
+                /* -----------------------------------------
+                   SEZIONI BIANCHE
+                ----------------------------------------- */
 
-    {
-        root: null,
+                else if (
+                    section.classList.contains(
+                        "section-light"
+                    )
+                ) {
 
-        /*
-           Osserviamo principalmente la parte
-           superiore dello schermo.
-        */
+                    setHeaderColor("black");
 
-        rootMargin: "-10% 0px -80% 0px",
+                }
 
-        threshold: 0
-    }
+            });
 
-);
+        },
+
+        {
+            root: null,
+
+            /*
+               Osserviamo principalmente
+               la parte superiore dello schermo.
+            */
+
+            rootMargin:
+                "-10% 0px -80% 0px",
+
+            threshold: 0
+        }
+
+    );
 
 
 /* =====================================================
@@ -299,63 +339,84 @@ lightSections.forEach(function(section) {
    PARALLAX LEGGERO IMMAGINE HERO
 ===================================================== */
 
-const heroImage = document.querySelector(".hero-image");
+const heroImage =
+    document.querySelector(".hero-image");
 
 
-window.addEventListener("scroll", function() {
+window.addEventListener(
+    "scroll",
+    function() {
 
-    if (!heroImage) {
-        return;
+        if (!heroImage) {
+            return;
+        }
+
+
+        const scrollPosition =
+            window.scrollY;
+
+
+        if (
+            scrollPosition <
+            window.innerHeight
+        ) {
+
+            heroImage.style.transform =
+                `scale(1.05) translateY(${scrollPosition * 0.12}px)`;
+
+        }
+
     }
-
-
-    const scrollPosition = window.scrollY;
-
-
-    if (scrollPosition < window.innerHeight) {
-
-        heroImage.style.transform =
-            `scale(1.05) translateY(${scrollPosition * 0.12}px)`;
-
-    }
-
-});
+);
 
 
 /* =====================================================
-   HEADER VISIBILE SOLO SU:
+   VISIBILITÀ HEADER
+   MOSTRA SOLO SU:
    
    1. HOME
    2. LISTA NOZZE
 ===================================================== */
 
-const header = document.querySelector(".header");
+const header =
+    document.querySelector(".header");
 
 
 /*
-   La Home nel tuo sito è rappresentata
-   dalla sezione .hero.
+   HOME
 */
 
-const homeSection = document.querySelector(".hero");
+const homeSection =
+    document.querySelector(".hero");
 
 
 /*
-   La Lista Nozze è rappresentata
-   dalla sezione .registry-section.
+   LISTA NOZZE
+
+   Nel tuo HTML la sezione è:
+
+   <section
+       id="lista"
+       class="section registry-preview section-dark">
+
+   Per questo utilizziamo .registry-preview.
 */
 
-const listaSection = document.querySelector(".registry-section");
+const listaSection =
+    document.querySelector(".registry-preview");
 
+
+/* =====================================================
+   AGGIORNA VISIBILITÀ HEADER
+===================================================== */
 
 function updateHeaderVisibility() {
 
-    /*
-       Se gli elementi non esistono,
-       non facciamo nulla.
-    */
-
-    if (!header || !homeSection || !listaSection) {
+    if (
+        !header ||
+        !homeSection ||
+        !listaSection
+    ) {
         return;
     }
 
@@ -367,42 +428,64 @@ function updateHeaderVisibility() {
         listaSection.getBoundingClientRect();
 
 
-    /*
+    /* -----------------------------------------
        HOME
-    */
+    ----------------------------------------- */
 
     const isOnHome =
         homeRect.top <= 100 &&
         homeRect.bottom > 100;
 
 
-    /*
+    /* -----------------------------------------
        LISTA NOZZE
-    */
+    ----------------------------------------- */
 
     const isOnLista =
         listaRect.top <= 100 &&
         listaRect.bottom > 100;
 
 
-    /*
-       HEADER VISIBILE
-    */
+    /* -----------------------------------------
+       MOSTRA HEADER
+    ----------------------------------------- */
 
-    if (isOnHome || isOnLista) {
+    if (
+        isOnHome ||
+        isOnLista
+    ) {
 
-        header.classList.remove("header-hidden");
+        header.classList.add(
+            "header-visible"
+        );
 
     }
 
 
-    /*
-       HEADER NASCOSTO
-    */
+    /* -----------------------------------------
+       NASCONDI HEADER
+    ----------------------------------------- */
 
     else {
 
-        header.classList.add("header-hidden");
+        header.classList.remove(
+            "header-visible"
+        );
+
+        /*
+           Se il menu fosse rimasto aperto
+           durante lo spostamento tra sezioni,
+           lo chiudiamo.
+        */
+
+        if (
+            sideMenu &&
+            sideMenu.classList.contains("active")
+        ) {
+
+            closeMenu();
+
+        }
 
     }
 
