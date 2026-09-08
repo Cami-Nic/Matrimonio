@@ -1015,26 +1015,46 @@ button {
         border-top: 35px solid white;
     }
 
+
+    /* CONTENITORE TESTO */
+
     .story-photo-text {
-        width: 84%;
+        width: 90%;
+        max-width: 90%;
+
+        left: 50%;
+
+        text-align: center;
     }
+
+
+    /* TITOLO GIAPPONE */
 
     .story-photo-text h2 {
         font-size: 52px;
 
         margin-bottom: 25px;
 
-        /* GIAPPONE 40px PIÙ IN ALTO ANCHE SU MOBILE */
+        /* 40px PIÙ IN ALTO */
         transform: translateY(-40px);
     }
 
+
+    /* PARAGRAFI GIAPPONE */
+
     .story-photo-text p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto 20px auto;
+
         font-size: 15px;
 
         line-height: 1.7;
 
-        margin-bottom: 20px;
+        text-align: center;
     }
+
 }
 /* =====================================================
    LISTA NOZZE
