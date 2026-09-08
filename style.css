@@ -1161,7 +1161,7 @@ button {
         background-position: 70% center;
     }
    .hero-content {
-    transform: translateY(50px);
+    transform: translateY(100px);
    }
 }
 
