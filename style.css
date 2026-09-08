@@ -1,4 +1,4 @@
-
+```css
 /* =====================================================
    FONT
 ===================================================== */
@@ -480,22 +480,27 @@ button {
 
 
 /* =====================================================
-   INFORMAZIONI SULL'EVENTO
+   01 — LOCATION
 ===================================================== */
 
+.event-location {
+    display: grid;
 
-/* -----------------------------------------------------
-   01 — LOCATION
------------------------------------------------------ */
+    grid-template-columns: 1fr 0.85fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-bottom: 55px;
+}
 
 .location-content {
+    min-height: 260px;
+
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
-    min-height: 360px;
 }
 
 .section-number {
@@ -525,63 +530,27 @@ button {
 }
 
 .location-name {
-    margin: 22px 0 10px;
+    margin: 18px 0 8px;
 
     font-family: 'Playfair Display', serif;
 
-    font-size: 31px;
-}
-
-.location-address {
-    margin: 0;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    opacity: 0.7;
-}
-/* =========================
-   LOCATION
-========================= */
-
-.event-location {
-    display: grid;
-    grid-template-columns: 1fr 0.85fr;
-    gap: 70px;
-    align-items: center;
-    margin-bottom: 55px;
-}
-
-.location-content {
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.location-content h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 52px;
-    font-weight: 400;
-    margin: 0;
-}
-
-.location-name {
-    font-family: "Playfair Display", serif;
     font-size: 29px;
-    margin: 18px 0 8px;
 }
 
 .location-address {
-    font-size: 16px;
-    line-height: 1.7;
-    opacity: 0.7;
     margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.7;
 }
 
 
-/* FOTO LOCATION */
+/* =====================================================
+   FOTO LOCATION
+===================================================== */
 
 .location-image {
     display: flex;
@@ -590,15 +559,19 @@ button {
 
 .location-image img {
     display: block;
+
     width: 600px;
     height: 600px;
+
     object-fit: cover;
+
     border-radius: 12px;
 }
 
-/* -----------------------------------------------------
+
+/* =====================================================
    MAPPA
------------------------------------------------------ */
+===================================================== */
 
 .location-map {
     width: 100%;
@@ -622,14 +595,16 @@ button {
     border: 0;
 }
 
-/* -----------------------------------------------------
-   PULSANTI MAPPA
------------------------------------------------------ */
 
+/* =====================================================
+   PULSANTI MAPPA
+===================================================== */
 
 .map-buttons {
     display: flex;
+
     flex-direction: row;
+
     justify-content: center;
     align-items: center;
 
@@ -643,20 +618,24 @@ button {
 
 .map-button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     gap: 12px;
 
     width: 260px;
+
     padding: 17px 25px;
 
     border-radius: 30px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 0.12em;
+
     text-transform: uppercase;
 
     text-align: center;
@@ -665,22 +644,23 @@ button {
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    ICONE
------------------------------------------------------ */
+===================================================== */
 
 .map-icon {
     width: 28px;
     height: 28px;
 
     flex-shrink: 0;
+
     display: block;
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    GOOGLE MAPS
------------------------------------------------------ */
+===================================================== */
 
 .google-icon {
     width: 28px;
@@ -703,9 +683,9 @@ button {
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    APPLE MAPS
------------------------------------------------------ */
+===================================================== */
 
 .apple-icon {
     width: 24px;
@@ -727,6 +707,7 @@ button {
     box-shadow: 0 12px 25px rgba(36, 54, 75, 0.22);
 }
 
+
 /* =====================================================
    02 — CERIMONIA
 ===================================================== */
@@ -741,11 +722,6 @@ button {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-
-/* -----------------------------------------------------
-   TITOLO CERIMONIA / ORARIO
------------------------------------------------------ */
-
 .section-heading {
     display: flex;
 
@@ -759,11 +735,6 @@ button {
 .section-heading .section-number {
     margin: 0;
 }
-
-
-/* -----------------------------------------------------
-   CONTENUTO
------------------------------------------------------ */
 
 .section-content {
     max-width: 700px;
@@ -901,7 +872,6 @@ button {
     max-width: 700px;
 
     margin-left: auto;
-
     margin-right: auto;
 
     text-align: center;
@@ -1023,7 +993,6 @@ button {
 
     .header {
         padding-left: 35px;
-
         padding-right: 35px;
     }
 
@@ -1040,7 +1009,6 @@ button {
 
         padding: 140px 50px;
     }
-
 }
 
 
@@ -1062,13 +1030,13 @@ button {
     }
 
     .location-image img {
+        width: 100%;
         height: 280px;
     }
 
     .location-map iframe {
         height: 330px;
     }
-
 }
 
 
@@ -1086,7 +1054,6 @@ button {
         margin: 0;
 
         padding-top: 160px;
-
         padding-bottom: 160px;
     }
 
@@ -1094,7 +1061,6 @@ button {
         height: 100px;
 
         padding-left: 55px;
-
         padding-right: 55px;
     }
 
@@ -1104,7 +1070,6 @@ button {
 
     .menu-toggle {
         width: 45px;
-
         height: 45px;
     }
 
@@ -1115,7 +1080,6 @@ button {
     .hero-text {
         font-size: 18px;
     }
-
 }
 
 
@@ -1150,20 +1114,30 @@ button {
     .section {
         width: 100%;
         max-width: none;
+
         min-height: 100vh;
+
         margin: 0;
+
         padding: 120px 20px;
+
         box-sizing: border-box;
     }
 
-    /* FOTO HOME SPOSTATA VERSO DESTRA */
+
+    /* -------------------------------------------------
+       HOME
+    ------------------------------------------------- */
+
     .hero-image {
         background-position: 70% center;
     }
-   .hero-content {
-    transform: translateY(50px);
-   }
-}
+
+    /* Abbassa solamente la posizione del testo */
+    .hero-content {
+        transform: translateY(50px);
+    }
+
 
     /* -------------------------------------------------
        LOCATION
@@ -1191,17 +1165,21 @@ button {
 
 
     /* -------------------------------------------------
-       FOTO
+       FOTO LOCATION
     ------------------------------------------------- */
 
     .location-image {
         width: 100%;
+
+        justify-content: center;
     }
 
     .location-image img {
-        width: 100%;
+        width: 92%;
 
-        height: 230px;
+        height: 300px;
+
+        object-fit: cover;
     }
 
 
@@ -1287,7 +1265,6 @@ button {
     .logo {
         width: 75px;
     }
-
 }
 
 
@@ -1309,3 +1286,4 @@ button {
         animation-duration: 0.01ms !important;
     }
 }
+```
