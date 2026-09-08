@@ -1,3 +1,4 @@
+
 /* =====================================================
    MENU
 ===================================================== */
@@ -8,38 +9,92 @@ const sideMenu = document.getElementById("sideMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 
 
+/* =====================================================
+   APERTURA MENU
+===================================================== */
+
 function openMenu() {
 
-    sideMenu.classList.add("active");
+    if (sideMenu) {
+        sideMenu.classList.add("active");
+    }
 
-    menuOverlay.classList.add("active");
+    if (menuOverlay) {
+        menuOverlay.classList.add("active");
+    }
+
+    if (menuToggle) {
+        menuToggle.classList.add("active");
+    }
 
     document.body.style.overflow = "hidden";
 }
 
 
+/* =====================================================
+   CHIUSURA MENU
+===================================================== */
+
 function closeMenu() {
 
-    sideMenu.classList.remove("active");
+    if (sideMenu) {
+        sideMenu.classList.remove("active");
+    }
 
-    menuOverlay.classList.remove("active");
+    if (menuOverlay) {
+        menuOverlay.classList.remove("active");
+    }
+
+    if (menuToggle) {
+        menuToggle.classList.remove("active");
+    }
 
     document.body.style.overflow = "";
 }
 
 
+/* =====================================================
+   CLICK HAMBURGER
+===================================================== */
+
 if (menuToggle) {
-    menuToggle.addEventListener("click", openMenu);
+
+    menuToggle.addEventListener("click", function() {
+
+        if (sideMenu && sideMenu.classList.contains("active")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    });
+
 }
 
+
+/* =====================================================
+   CLICK CHIUDI
+===================================================== */
 
 if (menuClose) {
+
     menuClose.addEventListener("click", closeMenu);
+
 }
 
 
+/* =====================================================
+   CLICK OVERLAY
+===================================================== */
+
 if (menuOverlay) {
+
     menuOverlay.addEventListener("click", closeMenu);
+
 }
 
 
@@ -48,6 +103,7 @@ if (menuOverlay) {
 ===================================================== */
 
 const menuLinks = document.querySelectorAll(".side-menu a");
+
 
 menuLinks.forEach(function(link) {
 
@@ -98,15 +154,16 @@ revealElements.forEach(function(element) {
 
 
 /* =====================================================
-   COLORE HAMBURGER AUTOMATICO
+   COLORE HAMBURGER E LOGO
 ===================================================== */
+
 const menuLines = document.querySelectorAll(".menu-toggle span");
 const logo = document.querySelector(".logo");
 
 
-// ========================================
-// SEZIONI DEL SITO
-// ========================================
+/* =====================================================
+   SEZIONI DEL SITO
+===================================================== */
 
 const darkSections = document.querySelectorAll(
     ".section-dark, .registry-preview, .section-blue"
@@ -117,25 +174,37 @@ const lightSections = document.querySelectorAll(
 );
 
 
-// ========================================
-// CAMBIO COLORE HEADER
-// ========================================
+/* =====================================================
+   CAMBIO COLORE HEADER
+===================================================== */
 
 function setHeaderColor(color) {
 
-    // MENU
+    /* -------------------------------------------------
+       MENU
+    ------------------------------------------------- */
+
     menuLines.forEach(function(line) {
+
         line.style.background = color;
+
     });
 
 
-    // LOGO
+    /* -------------------------------------------------
+       LOGO
+    ------------------------------------------------- */
+
     if (logo) {
 
         if (color === "white") {
+
             logo.classList.remove("logo-dark");
+
         } else {
+
             logo.classList.add("logo-dark");
+
         }
 
     }
@@ -143,9 +212,9 @@ function setHeaderColor(color) {
 }
 
 
-// ========================================
-// INTERSECTION OBSERVER
-// ========================================
+/* =====================================================
+   OSSERVATORE SEZIONI
+===================================================== */
 
 const sectionObserver = new IntersectionObserver(
 
@@ -161,9 +230,9 @@ const sectionObserver = new IntersectionObserver(
             const section = entry.target;
 
 
-            // --------------------------------
-            // SEZIONI COLORATE / SCURE
-            // --------------------------------
+            /* -----------------------------------------
+               SEZIONI SCURE / COLORATE
+            ----------------------------------------- */
 
             if (
                 section.classList.contains("section-dark") ||
@@ -176,9 +245,9 @@ const sectionObserver = new IntersectionObserver(
             }
 
 
-            // --------------------------------
-            // SEZIONI BIANCHE
-            // --------------------------------
+            /* -----------------------------------------
+               SEZIONI BIANCHE
+            ----------------------------------------- */
 
             else if (
                 section.classList.contains("section-light")
@@ -195,9 +264,11 @@ const sectionObserver = new IntersectionObserver(
     {
         root: null,
 
-        // La zona osservata è concentrata
-        // nella parte superiore dello schermo,
-        // dove si trova il logo/menu.
+        /*
+           Osserviamo principalmente la parte
+           superiore dello schermo.
+        */
+
         rootMargin: "-10% 0px -80% 0px",
 
         threshold: 0
@@ -206,9 +277,9 @@ const sectionObserver = new IntersectionObserver(
 );
 
 
-// ========================================
-// AVVIO OSSERVAZIONE
-// ========================================
+/* =====================================================
+   AVVIO OSSERVAZIONE
+===================================================== */
 
 darkSections.forEach(function(section) {
 
@@ -223,6 +294,7 @@ lightSections.forEach(function(section) {
 
 });
 
+
 /* =====================================================
    PARALLAX LEGGERO IMMAGINE HERO
 ===================================================== */
@@ -232,9 +304,13 @@ const heroImage = document.querySelector(".hero-image");
 
 window.addEventListener("scroll", function() {
 
-    if (!heroImage) return;
+    if (!heroImage) {
+        return;
+    }
+
 
     const scrollPosition = window.scrollY;
+
 
     if (scrollPosition < window.innerHeight) {
 
@@ -244,3 +320,107 @@ window.addEventListener("scroll", function() {
     }
 
 });
+
+
+/* =====================================================
+   HEADER VISIBILE SOLO SU:
+   
+   1. HOME
+   2. LISTA NOZZE
+===================================================== */
+
+const header = document.querySelector(".header");
+
+
+/*
+   La Home nel tuo sito è rappresentata
+   dalla sezione .hero.
+*/
+
+const homeSection = document.querySelector(".hero");
+
+
+/*
+   La Lista Nozze è rappresentata
+   dalla sezione .registry-section.
+*/
+
+const listaSection = document.querySelector(".registry-section");
+
+
+function updateHeaderVisibility() {
+
+    /*
+       Se gli elementi non esistono,
+       non facciamo nulla.
+    */
+
+    if (!header || !homeSection || !listaSection) {
+        return;
+    }
+
+
+    const homeRect =
+        homeSection.getBoundingClientRect();
+
+    const listaRect =
+        listaSection.getBoundingClientRect();
+
+
+    /*
+       HOME
+    */
+
+    const isOnHome =
+        homeRect.top <= 100 &&
+        homeRect.bottom > 100;
+
+
+    /*
+       LISTA NOZZE
+    */
+
+    const isOnLista =
+        listaRect.top <= 100 &&
+        listaRect.bottom > 100;
+
+
+    /*
+       HEADER VISIBILE
+    */
+
+    if (isOnHome || isOnLista) {
+
+        header.classList.remove("header-hidden");
+
+    }
+
+
+    /*
+       HEADER NASCOSTO
+    */
+
+    else {
+
+        header.classList.add("header-hidden");
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTROLLO HEADER DURANTE LO SCROLL
+===================================================== */
+
+window.addEventListener(
+    "scroll",
+    updateHeaderVisibility
+);
+
+
+/* =====================================================
+   CONTROLLO INIZIALE
+===================================================== */
+
+updateHeaderVisibility();
