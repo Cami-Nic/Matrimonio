@@ -602,7 +602,7 @@ button {
 .location-image img {
     display: block;
 
-    width: 600%;
+    width: 100%;
 
     height: 420px;
 
@@ -634,7 +634,7 @@ button {
 
     width: 100%;
 
-    height: 520px;
+    height: 600px;
 
     border: 0;
 }
