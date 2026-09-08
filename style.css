@@ -905,6 +905,10 @@ button {
     height: 100vh;
 
     overflow: hidden;
+
+    /* SPAZIO BIANCO TRA "UN PO' DI NOI" E LA FOTO */
+    border-top: 45px solid white;
+    box-sizing: border-box;
 }
 
 
@@ -967,6 +971,9 @@ button {
     font-weight: 400;
 
     line-height: 1.1;
+
+    /* GIAPPONE 40px PIÙ IN ALTO */
+    transform: translateY(-40px);
 }
 
 
@@ -1001,6 +1008,9 @@ button {
     .story-photo {
         height: 100vh;
         min-height: 650px;
+
+        /* SPAZIO BIANCO SU MOBILE */
+        border-top: 35px solid white;
     }
 
     .story-photo-text {
@@ -1009,16 +1019,21 @@ button {
 
     .story-photo-text h2 {
         font-size: 52px;
+
         margin-bottom: 25px;
+
+        /* GIAPPONE 40px PIÙ IN ALTO ANCHE SU MOBILE */
+        transform: translateY(-40px);
     }
 
     .story-photo-text p {
         font-size: 15px;
+
         line-height: 1.7;
+
         margin-bottom: 20px;
     }
 }
-
 /* =====================================================
    LISTA NOZZE
 ===================================================== */
