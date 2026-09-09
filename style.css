@@ -348,9 +348,8 @@ button {
 /* =====================================================
    HOME / HERO
 ===================================================== */
-
 #home {
-    background: #3E1A31;
+    background: #24364B;
     color: #ffffff;
 }
 
@@ -390,8 +389,8 @@ button {
     background:
         linear-gradient(
             to bottom,
-            rgba(62, 26, 49, 0.35),
-            rgba(62, 26, 49, 0.55)
+            rgba(36, 54, 75, 0.25),
+            rgba(36, 54, 75, 0.65)
         );
 
     z-index: 1;
@@ -445,7 +444,6 @@ button {
     line-height: 1.7;
     font-weight: 300;
 }
-
 
 /* =====================================================
    LINEE DECORATIVE
@@ -1273,8 +1271,6 @@ button {
     background-size: cover;
     background-position: center;
 
-    filter: saturate(0.8);
-
     z-index: 0;
 }
 
@@ -1282,7 +1278,12 @@ button {
     position: absolute;
     inset: 0;
 
-    background: rgba(28, 49, 70, 0.70);
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(36, 54, 75, 0.25),
+            rgba(36, 54, 75, 0.65)
+        );
 
     z-index: 1;
 }
