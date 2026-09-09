@@ -1,37 +1,20 @@
-
+```css
 /* =====================================================
    FONT
 ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 
 /* =====================================================
-   PALETTE MATRIMONIO — SAKURA / GIAPPONE
-===================================================== */
-
-/*
-   #3E1A31 = bordeaux / prugna scuro
-   #FDE0D1 = rosa pesca chiarissimo
-   #F9D9DA = rosa cipria
-   #F3C9D0 = rosa sakura
-   #E8B9C5 = rosa malva
-   #CAA2B9 = malva
-   #8F536B = rosa bordeaux
-   #A45D78 = rosa antico
-   #B47D92 = malva medio
-   #513640 = marrone / prugna testo
-*/
-
-
-/* =====================================================
-   RESET GENERALE
+   PALETTE MATRIMONIO
 ===================================================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
 }
 
 html,
@@ -48,7 +31,7 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: #24364b;
     background: #ffffff;
 }
@@ -80,7 +63,7 @@ a {
 }
 
 button {
-    font-family: inherit;
+    font-family: 'Playfair Display', serif;
 }
 
 
@@ -348,6 +331,7 @@ button {
 /* =====================================================
    HOME / HERO
 ===================================================== */
+
 #home {
     background: #24364B;
     color: #ffffff;
@@ -444,6 +428,7 @@ button {
     line-height: 1.7;
     font-weight: 300;
 }
+
 
 /* =====================================================
    LINEE DECORATIVE
@@ -563,6 +548,7 @@ button {
 #evento .eyebrow {
     color: #8F536B;
 }
+
 
 /* =====================================================
    LOCATION
@@ -761,6 +747,7 @@ button {
         0 12px 25px rgba(120, 148, 176, 0.22);
 }
 
+
 /* =====================================================
    ICONE MAPPA
 ===================================================== */
@@ -895,7 +882,7 @@ button {
 }
 
 .countdown-unit span {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
 
     font-size: 4.5rem;
     font-weight: 700;
@@ -912,7 +899,7 @@ button {
 .countdown-unit small {
     margin-top: 12px;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
 
     font-size: 0.6rem;
     font-weight: 600;
@@ -934,7 +921,7 @@ button {
     right: -2px;
     top: 8px;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
 
     font-size: 2.8rem;
     font-weight: 300;
@@ -1184,7 +1171,7 @@ button {
 
     margin: 0 auto 25px;
 
-    font-family: 'Lato', sans-serif;
+    font-family: 'Playfair Display', serif;
 
     font-size: 17px;
     font-weight: 300;
@@ -1214,6 +1201,7 @@ button {
 #noi .story-photo-text p:last-child {
     margin-bottom: 60px;
 }
+
 
 /* =====================================================
    LISTA NOZZE
@@ -1555,31 +1543,33 @@ button {
     #evento {
         padding-bottom: 25px;
     }
-#noi {
-    padding-top: 25px;
-    padding-bottom: 0;
 
-    background: #7894B0;
-    color: #ffffff;
-}
+    #noi {
+        padding-top: 25px;
+        padding-bottom: 0;
 
-#noi .story {
-    max-width: 100%;
+        background: #7894B0;
+        color: #ffffff;
+    }
 
-    padding-left: 25px;
-    padding-right: 25px;
+    #noi .story {
+        max-width: 100%;
 
-    padding-bottom: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
 
-    color: #ffffff;
-}
+        padding-bottom: 100px;
 
-#noi .story p {
-    font-size: 16px;
-    line-height: 1.85;
+        color: #ffffff;
+    }
 
-    color: #ffffff;
-}
+    #noi .story p {
+        font-size: 16px;
+        line-height: 1.85;
+
+        color: #ffffff;
+    }
+
     #noi .story-photo {
         width: 100vw;
 
@@ -1791,27 +1781,27 @@ button {
     }
 
 
+    /* -------------------------------------------------
+       PULSANTI MAPPA MOBILE
+    ------------------------------------------------- */
 
-/* -------------------------------------------------
-   PULSANTI MAPPA MOBILE
-------------------------------------------------- */
+    .map-button {
+        background: #7894B0 !important;
+        color: #FFFFFF !important;
+        border-color: #7894B0 !important;
+    }
 
-.map-button {
-    background: #7894B0 !important;
-    color: #FFFFFF !important;
-    border-color: #7894B0 !important;
-}
+    .map-button:hover,
+    .map-button:active,
+    .map-button:focus,
+    .map-button:focus-visible {
+        background: #7894B0 !important;
+        color: #FFFFFF !important;
+        border-color: #7894B0 !important;
+        transform: none;
+        box-shadow: none;
+    }
 
-.map-button:hover,
-.map-button:active,
-.map-button:focus,
-.map-button:focus-visible {
-    background: #7894B0 !important;
-    color: #FFFFFF !important;
-    border-color: #7894B0 !important;
-    transform: none;
-    box-shadow: none;
-}
 
     /* -------------------------------------------------
        CERIMONIA / ORARIO MOBILE
@@ -1904,31 +1894,32 @@ button {
        UN PO' DI NOI MOBILE
     ------------------------------------------------- */
 
-   #noi {
-    padding-top: 25px;
-    padding-bottom: 0;
+    #noi {
+        padding-top: 25px;
+        padding-bottom: 0;
 
-    background: #7894B0;
-    color: #ffffff;
-}
+        background: #7894B0;
+        color: #ffffff;
+    }
 
-#noi .story {
-    max-width: 100%;
+    #noi .story {
+        max-width: 100%;
 
-    padding-left: 25px;
-    padding-right: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
 
-    padding-bottom: 100px;
+        padding-bottom: 100px;
 
-    color: #ffffff;
-}
+        color: #ffffff;
+    }
 
-#noi .story p {
-    font-size: 16px;
-    line-height: 1.85;
+    #noi .story p {
+        font-size: 16px;
+        line-height: 1.85;
 
-    color: #ffffff;
-}
+        color: #ffffff;
+    }
+
 
     /* -------------------------------------------------
        FOTO GIAPPONE MOBILE
@@ -2040,6 +2031,11 @@ button {
     }
 }
 
+
+/* =====================================================
+   TITOLO EVENTO CON ICONA
+===================================================== */
+
 .event-title-with-icon {
     display: inline-flex;
     align-items: baseline;
@@ -2052,3 +2048,4 @@ button {
     object-fit: contain;
     flex-shrink: 0;
 }
+```
