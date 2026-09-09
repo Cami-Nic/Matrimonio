@@ -898,16 +898,11 @@ button {
 
 .story-photo {
     position: relative;
-
     width: 100vw;
     margin-left: calc(50% - 50vw);
-
     height: 100vh;
-
     overflow: hidden;
 
-    /* SPAZIO BIANCO TRA "UN PO' DI NOI" E LA FOTO */
-    border-top: 45px solid white;
     box-sizing: border-box;
 }
 
