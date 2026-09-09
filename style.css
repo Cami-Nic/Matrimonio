@@ -2041,13 +2041,9 @@ button {
 
 .footer-small {
     margin-top: 10px;
-
     font-size: 12px;
-
     letter-spacing: 0.15em;
-
-    text-transform: uppercase;
-
+    text-transform: none;
     opacity: 0.6;
 }
 
