@@ -1659,111 +1659,239 @@ button {
     }
 }
 
-/* =========================
-   WEDDING COUNTDOWN
-========================== */
+
+/* =====================================================
+   COUNTDOWN MATRIMONIO
+===================================================== */
 
 .wedding-countdown {
+    width: 100%;
     margin-top: 40px;
     margin-bottom: 60px;
-    width: 100%;
     text-align: center;
 }
 
 
+/* =====================================================
+   DATA
+===================================================== */
+
 .countdown-date {
     margin: 0 0 18px;
-    font-size: 0.68rem;
+
+    font-size: 0.75rem;
+    font-weight: 500;
     letter-spacing: 4px;
-    font-weight: 400;
 }
+
+
+/* =====================================================
+   LINEA DECORATIVA
+===================================================== */
 
 .countdown-line {
-    width: 42px;
+    width: 55px;
     height: 1px;
-    margin: 0 auto 24px;
+
+    margin: 0 auto 28px;
+
     background: currentColor;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 
-/* NUMERI IN ORIZZONTALE */
+/* =====================================================
+   CONTENITORE NUMERI
+===================================================== */
 
 .countdown-numbers {
     display: flex;
+    flex-direction: row;
+
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 0;
+
+    width: 100%;
 }
 
+
+/* =====================================================
+   SINGOLO BLOCCO
+===================================================== */
+
 .countdown-unit {
-   position: relative;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 105px;
+
+    min-width: 120px;
 }
+
+
+/* =====================================================
+   NUMERI
+===================================================== */
 
 .countdown-unit span {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: 2px;
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 4.5rem;
+    font-weight: 700;
+
+    line-height: 0.9;
+
+    letter-spacing: 1px;
 }
+
+
+/* =====================================================
+   TESTO GIORNI / ORE / MINUTI / SECONDI
+===================================================== */
 
 .countdown-unit small {
-    margin-top: 9px;
-    font-size: 0.48rem;
-    letter-spacing: 2px;
-    font-weight: 400;
-    opacity: 0.75;
+    margin-top: 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.6rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    opacity: 0.9;
 }
-/* Separatore tra i blocchi */ 
-.countdown-unit:not(:last-child)::after { 
-   content: "|"; 
-   position: absolute; 
-   right: 0; 
-   top: 5px; 
-   font-family: "Cormorant Garamond", serif; 
-   font-size: 2.2rem; 
-   font-weight: 300; 
-   opacity: 0.5; }
 
-/* =========================
-   MOBILE
-========================== */
 
-@media (max-width: 480px) {
+/* =====================================================
+   SEPARATORI
+===================================================== */
+
+.countdown-unit:not(:last-child)::after {
+    content: "|";
+
+    position: absolute;
+
+    right: -2px;
+    top: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.8rem;
+    font-weight: 300;
+
+    opacity: 0.5;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
 
     .wedding-countdown {
-        margin-top: 30px;
+        margin-top: 35px;
+        margin-bottom: 55px;
     }
 
-    .countdown-date {
-        font-size: 0.58rem;
-        letter-spacing: 3px;
+    .countdown-unit {
+        min-width: 95px;
     }
-
-     .countdown-unit {
-        min-width: 78px;
-    }
-
-    .countdown-unit:not(:last-child)::after {
-        right: 0;
-        top: 2px;
-        font-size: 1.7rem;
-    }
-}
 
     .countdown-unit span {
-        font-size: 1.45rem;
-        letter-spacing: 1px;
+        font-size: 3.8rem;
     }
 
     .countdown-unit small {
-        font-size: 0.4rem;
-        letter-spacing: 1.2px;
+        font-size: 0.52rem;
+        letter-spacing: 2.5px;
     }
 
+    .countdown-unit:not(:last-child)::after {
+        right: -1px;
+        top: 6px;
+        font-size: 2.3rem;
+    }
+}
+
+
+/* =====================================================
+   SMARTPHONE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .wedding-countdown {
+        margin-top: 32px;
+        margin-bottom: 50px;
+    }
+
+    .countdown-date {
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+
+        margin-bottom: 16px;
+    }
+
+    .countdown-line {
+        width: 45px;
+
+        margin-bottom: 23px;
+    }
+
+    .countdown-unit {
+        min-width: 78px;
+    }
+
+    .countdown-unit span {
+        font-size: 3rem;
+        font-weight: 700;
+
+        letter-spacing: 0;
+    }
+
+    .countdown-unit small {
+        margin-top: 9px;
+
+        font-size: 0.43rem;
+        letter-spacing: 2px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        right: -1px;
+        top: 3px;
+
+        font-size: 1.9rem;
+    }
+}
+
+
+/* =====================================================
+   SMARTPHONE PICCOLI
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .wedding-countdown {
+        margin-bottom: 45px;
+    }
+
+    .countdown-unit {
+        min-width: 68px;
+    }
+
+    .countdown-unit span {
+        font-size: 2.5rem;
+    }
+
+    .countdown-unit small {
+        font-size: 0.38rem;
+        letter-spacing: 1.5px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        font-size: 1.6rem;
+    }
 }
