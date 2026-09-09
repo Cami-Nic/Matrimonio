@@ -1011,12 +1011,19 @@ button {
         letter-spacing: 2.5px;
     }
 
+ 
     .countdown-unit:not(:last-child)::after {
+        content: ":";
         top: 5px;
         right: -10px;
-
+        font-family: 'Rubik', sans-serif;
         font-size: 1.9rem;
+        font-weight: 300;
+        line-height: 1;
+        color: #ffffff;
+        opacity: 0.55;
     }
+}
 
     #evento {
         padding-bottom: 25px;
@@ -1489,7 +1496,7 @@ button {
     content: ":";
     position: absolute;
     top: 8px;
-    right: -15px;
+    right: -20px;
     font-family: 'Rubik', sans-serif;
     font-size: 2rem;
     font-weight: 300;
