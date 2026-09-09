@@ -860,8 +860,9 @@ button {
     background: linear-gradient(
         to bottom,
         #ffffff 0%,
-        #eef2f3 70%,
-        #dfe6e9 100%
+        #fffafb 35%,
+        #fff1f4 70%,
+        #f7e3e7 100%
     );
 }
 
