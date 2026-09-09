@@ -1800,22 +1800,20 @@ button {
        PULSANTI MAPPA MOBILE
     ------------------------------------------------- */
 
-    .map-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 15px;
-
-        margin-top: 30px;
-        margin-bottom: 100px;
+      .map-button {
+        background-color: #3E1A31
+;
+        color: #FFFFFF;
     }
 
-    .map-button {
-        width: 100%;
-
-        padding: 15px 20px;
+    .map-button:active,
+    .map-button:focus {
+        background-color: #3E1A31
+;
+        color: #FFFFFF;
     }
+
+}
 
 
     /* -------------------------------------------------
