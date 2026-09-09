@@ -869,12 +869,12 @@ button {
        rosa ciliegio molto delicato
     */
 
-   background: linear-gradient(
+  background: linear-gradient(
     to bottom,
     #ffffff 0%,
-    #fff8f9 20%,
-    #ffe9ee 50%,
-    #f5cbd5 100%
+    #fffafb 25%,
+    #fff1f4 55%,
+    #f8e0e6 100%
 );
 }
 
