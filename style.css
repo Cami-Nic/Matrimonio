@@ -2101,7 +2101,6 @@ button {
     }
 }
 
-
 /* =====================================================
    TITOLO EVENTO CON ICONA
 ===================================================== */
@@ -2110,8 +2109,20 @@ button {
     display: inline-flex;
 
     align-items: baseline;
-
     gap: 6px;
+
+    margin: 0;
+
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+
+    line-height: 1;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #24364B;
 }
 
 .event-title-with-icon img {
@@ -2122,7 +2133,6 @@ button {
 
     flex-shrink: 0;
 }
-
 /* =========================================================
    COUNTDOWN MOBILE — GIORNI PERFETTAMENTE CENTRATI
 ========================================================= */
