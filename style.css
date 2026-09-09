@@ -2041,7 +2041,7 @@ button {
 
 .event-title-with-icon {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     gap: 6px;
 }
 
