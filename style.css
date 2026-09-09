@@ -1,32 +1,44 @@
 
-/* =====================================================
-   FONT
-===================================================== */
+/* =========================================================
+   MATRIMONIO — SAKURA / GIAPPONE
+   CSS DEFINITIVO
+   Compatibile con l'HTML attuale
+   ========================================================= */
+
+
+/* =========================================================
+   1. FONT
+   ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 
-/* =====================================================
-   PALETTE MATRIMONIO — SAKURA / GIAPPONE
-===================================================== */
+/* =========================================================
+   2. PALETTE
+   ========================================================= */
 
-/*
-   #3E1A31 = bordeaux / prugna scuro
-   #FDE0D1 = rosa pesca chiarissimo
-   #F9D9DA = rosa cipria
-   #F3C9D0 = rosa sakura
-   #E8B9C5 = rosa malva
-   #CAA2B9 = malva
-   #8F536B = rosa bordeaux
-   #A45D78 = rosa antico
-   #B47D92 = malva medio
-   #513640 = marrone / prugna testo
-*/
+:root {
+    --bordeaux: #3E1A31;
+    --bordeaux-light: #513640;
+
+    --peach: #FDE0D1;
+    --blush: #F9D9DA;
+    --sakura: #F3C9D0;
+    --mauve: #E8B9C5;
+    --rose: #CAA2B9;
+
+    --rose-dark: #8F536B;
+    --rose-medium: #A45D78;
+    --rose-soft: #B47D92;
+
+    --white: #FFFFFF;
+    --black: #1A1A1A;
+}
 
 
-/* =====================================================
-   RESET GENERALE
-===================================================== */
+/* =========================================================
+   3. RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -34,44 +46,23 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    width: 100%;
-    min-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--bordeaux);
     font-family: 'Lato', sans-serif;
-    color: #24364b;
-    background: #ffffff;
-}
-
-main {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-}
-
-section {
-    position: relative;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }
 
 a {
@@ -80,13 +71,69 @@ a {
 }
 
 button {
-    font-family: inherit;
+    font: inherit;
+}
+
+::selection {
+    background: var(--sakura);
+    color: var(--bordeaux);
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* =========================================================
+   4. ELEMENTI GENERALI
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 25px;
+}
+
+.section-dark {
+    background: var(--bordeaux);
+    color: var(--white);
+}
+
+.section-title {
+    margin-bottom: 70px;
+}
+
+.section-title .eyebrow {
+    display: block;
+    margin-bottom: 15px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 76px);
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.blue-line {
+    width: 65px;
+    height: 1px;
+    margin-top: 25px;
+    background: currentColor;
+}
+
+
+/* =========================================================
+   5. HEADER
+   ========================================================= */
 
 .header {
     position: fixed;
@@ -94,291 +141,215 @@ button {
     left: 0;
 
     width: 100%;
-    height: 80px;
-
-    padding: 15px 20px;
+    height: 100px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    z-index: 1300;
+    padding: 0 45px;
+
+    z-index: 1200;
 
     background: transparent;
 
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
 
     transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        background 0.4s ease;
 }
 
 .header.header-visible {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo-link {
-    display: block;
+.header-logo {
     position: relative;
-    z-index: 1301;
-    pointer-events: auto;
-}
+    z-index: 1201;
 
-.logo {
-    width: 75px;
-    height: auto;
-    object-fit: contain;
+    color: var(--white);
 
-    transition: filter 0.3s ease;
-}
-
-.logo.logo-dark {
-    filter: brightness(0);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 
-/* =====================================================
-   HAMBURGER
-===================================================== */
+/* Hamburger */
 
 .menu-toggle {
     position: relative;
-
-    width: 42px;
-    height: 42px;
-
-    padding: 8px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-
-    border: none;
-    background: transparent;
-
-    cursor: pointer;
-    pointer-events: auto;
-
     z-index: 1400;
-}
 
-.menu-toggle span {
-    display: block;
-
-    width: 100%;
-    height: 2px;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease,
-        background 0.3s ease;
-}
-
-.menu-toggle.active span {
-    background: #24364b;
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* =====================================================
-   MENU LATERALE
-===================================================== */
-
-.side-menu {
-    position: fixed;
-
-    top: 0;
-    right: 0;
-
-    width: min(340px, 88%);
-    height: 100vh;
-
-    padding: 100px 35px 40px;
-
-    background: #ffffff;
-
-    z-index: 1200;
-
-    transform: translateX(100%);
-
-    transition: transform 0.4s ease;
-
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
-}
-
-.side-menu.active {
-    transform: translateX(0);
-}
-
-.menu-close {
-    position: absolute;
-
-    top: 25px;
-    right: 25px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-    background: transparent;
-
-    font-size: 38px;
-    font-weight: 300;
-
-    color: #24364b;
-
-    cursor: pointer;
-}
-
-.side-menu ul {
-    list-style: none;
-}
-
-.side-menu li {
-    margin-bottom: 30px;
-}
-
-.side-menu a {
-    font-family: 'Playfair Display', serif;
-
-    font-size: 25px;
-
-    color: #24364b;
-
-    transition: color 0.3s ease;
-}
-
-.side-menu a:hover {
-    color: #7894b0;
-}
-
-
-/* =====================================================
-   OVERLAY MENU
-===================================================== */
-
-.menu-overlay {
-    position: fixed;
-    inset: 0;
-
-    background: rgba(16, 31, 48, 0.45);
-
-    z-index: 1150;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-}
-
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-/* =====================================================
-   SEZIONI GENERALI
-===================================================== */
-
-.section {
-    width: 100%;
-    max-width: none;
-
-    min-height: 100vh;
-
-    margin: 0;
-    padding: 120px 25px;
-
-    box-sizing: border-box;
-}
-
-.section-light {
-    width: 100%;
-    background: #ffffff;
-}
-
-.section-blue {
-    width: 100%;
-    background: #7894b0;
-    color: #ffffff;
-}
-
-
-/* =====================================================
-   CONTENITORE INTERNO
-===================================================== */
-
-.container {
-    width: 100%;
-    max-width: 1100px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    box-sizing: border-box;
-}
-
-
-/* =====================================================
-   HOME / HERO
-===================================================== */
-
-#home {
-    background: #3E1A31;
-    color: #ffffff;
-}
-
-.hero {
-    position: relative;
-
-    width: 100%;
-    min-height: 100svh;
+    width: 45px;
+    height: 45px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    border: 0;
+    background: transparent;
 
-    color: #ffffff;
+    cursor: pointer;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+    position: absolute;
+
+    width: 25px;
+    height: 1px;
+
+    background: currentColor;
+
+    content: '';
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-toggle::before {
+    transform: translateY(-7px);
+}
+
+.menu-toggle::after {
+    transform: translateY(7px);
+}
+
+.menu-toggle span {
+    transform: translateY(0);
+}
+
+.menu-toggle.active::before {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active::after {
+    transform: rotate(-45deg);
+}
+
+.menu-toggle.active span {
+    opacity: 0;
+}
+
+
+/* =========================================================
+   6. MENU LATERALE
+   ========================================================= */
+
+#menuOverlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(62, 26, 49, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 1250;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+#menuOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#sideMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: min(420px, 88vw);
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px;
+
+    background: var(--peach);
+
+    z-index: 1300;
+
+    transform: translateX(100%);
+
+    transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
+}
+
+#sideMenu.active {
+    transform: translateX(0);
+}
+
+#sideMenu ul {
+    width: 100%;
+    list-style: none;
+}
+
+#sideMenu li {
+    margin-bottom: 25px;
+}
+
+#sideMenu a {
+    display: inline-block;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+
+    color: var(--bordeaux);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+#sideMenu a:hover {
+    color: var(--rose-dark);
+    transform: translateX(8px);
+}
+
+
+/* =========================================================
+   7. HERO / HOME
+   ========================================================= */
+
+#home {
+    position: relative;
+
+    min-height: 100vh;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 25px;
+
+    background: var(--bordeaux);
+
+    color: var(--white);
+
+    overflow: hidden;
 }
 
 .hero-image {
     position: absolute;
-    inset: -5%;
-
-    background-image: url("images/foto1 (1).jpeg");
+    inset: 0;
 
     background-size: cover;
     background-position: center;
-
-    transform: scale(1.05);
 
     z-index: 0;
 }
@@ -389,9 +360,10 @@ button {
 
     background:
         linear-gradient(
-            to bottom,
-            rgba(62, 26, 49, 0.35),
-            rgba(62, 26, 49, 0.55)
+            180deg,
+            rgba(62, 26, 49, 0.25) 0%,
+            rgba(62, 26, 49, 0.48) 45%,
+            rgba(62, 26, 49, 0.88) 100%
         );
 
     z-index: 1;
@@ -399,57 +371,21 @@ button {
 
 .hero-content {
     position: relative;
-
     z-index: 2;
 
-    width: 90%;
-    max-width: 800px;
-
-    padding: 40px 10px;
+    width: 100%;
+    max-width: 900px;
 
     text-align: center;
 }
 
-.small-title,
-.eyebrow {
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 0.25em;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(3rem, 12vw, 7rem);
-
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 9vw, 105px);
+    font-weight: 400;
     line-height: 0.95;
-
-    font-weight: 500;
-
-    letter-spacing: 0.01em;
+    letter-spacing: -1px;
 }
-
-#home .hero-content h1 {
-    color: #ffffff;
-}
-
-.hero-text {
-    max-width: 500px;
-
-    margin: 25px auto 35px;
-
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-
-/* =====================================================
-   LINEE DECORATIVE
-===================================================== */
 
 .decorative-line {
     width: 70px;
@@ -457,377 +393,257 @@ button {
 
     margin: 30px auto;
 
-    background: #ffffff;
-}
-
-.blue-line {
-    width: 60px;
-    height: 2px;
-
-    margin-top: 25px;
-
-    background: #7894b0;
-}
-
-.white-line {
-    width: 60px;
-    height: 2px;
-
-    margin-top: 25px;
-
-    background: #ffffff;
-}
-
-#home .decorative-line {
-    background: #F3C9D0;
+    background: rgba(255, 255, 255, 0.75);
 }
 
 
-/* =====================================================
-   SCROLL BUTTON
-===================================================== */
+/* Countdown */
+
+.wedding-countdown {
+    margin-top: 35px;
+}
+
+.countdown-date {
+    margin-bottom: 18px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.countdown-line {
+    width: 100%;
+    max-width: 500px;
+    height: 1px;
+
+    margin: 0 auto 25px;
+
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.countdown-numbers {
+    display: flex;
+    justify-content: center;
+
+    gap: clamp(20px, 5vw, 55px);
+}
+
+.countdown-item {
+    min-width: 55px;
+
+    text-align: center;
+}
+
+.countdown-item span:first-child {
+    display: block;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.countdown-item span:last-child {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    opacity: 0.8;
+}
+
+
+/* Scroll */
 
 .scroll-button {
     display: inline-flex;
-
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    gap: 8px;
+    margin-top: 55px;
+    padding: 12px 18px;
 
-    font-size: 12px;
+    color: var(--white);
 
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
     text-transform: uppercase;
 
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
     transition:
-        transform 0.3s ease,
         background 0.3s ease,
         color 0.3s ease;
 }
 
-.scroll-button span {
-    font-size: 22px;
-    line-height: 1;
-}
-
 .scroll-button:hover {
-    transform: translateY(5px);
-}
-
-#home .scroll-button {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.7);
-}
-
-#home .scroll-button:hover {
-    background: #F3C9D0;
-    color: #3E1A31;
-    border-color: #F3C9D0;
+    background: var(--white);
+    color: var(--bordeaux);
 }
 
 
-/* =====================================================
-   TITOLI SEZIONI
-===================================================== */
-
-.section-title {
-    margin-bottom: 70px;
-}
-
-.section-title h2 {
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(2.8rem, 10vw, 5.5rem);
-
-    line-height: 0.95;
-
-    font-weight: 500;
-}
-
-
-/* =====================================================
-   EVENTO
-===================================================== */
+/* =========================================================
+   8. EVENTO
+   ========================================================= */
 
 #evento {
-    background: #FDE0D1;
-    color: #3E1A31;
+    background: var(--peach);
+    color: var(--bordeaux);
 
+    padding-top: 120px;
     padding-bottom: 40px;
 }
 
-#evento .section-title h2 {
-    color: #3E1A31;
+#evento .section-title {
+    color: var(--bordeaux);
 }
 
 #evento .eyebrow {
-    color: #8F536B;
-}
-
-#evento .blue-line {
-    background: #B47D92;
-}
-
-#evento .section-number {
-    color: #A45D78;
+    color: var(--rose-dark);
 }
 
 #evento h3 {
-    color: #3E1A31;
-}
-
-#evento p {
-    color: #513640;
-}
-
-#evento .event-section-block {
-    border-color: rgba(164, 93, 120, 0.25);
-}
-
-
-/* =====================================================
-   LOCATION
-===================================================== */
-
-.event-location {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 2fr);
-
-    gap: 60px;
-
-    align-items: center;
-
-    margin-bottom: 60px;
-}
-
-.location-content {
-    min-height: 420px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.section-number {
-    display: block;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-
-    opacity: 0.65;
-}
-
-.location-content h3 {
-    margin: 0;
-
     font-family: 'Playfair Display', serif;
-
-    font-size: 52px;
     font-weight: 400;
-
     line-height: 1.1;
 }
 
-.location-name {
-    margin: 22px 0 10px;
 
-    font-family: 'Playfair Display', serif;
+/* Location */
 
-    font-size: 31px;
+.event-location {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
 
-    line-height: 1.2;
+    align-items: start;
 }
 
-#evento .location-name {
-    color: #8F536B;
+.location-content {
+    padding-top: 10px;
 }
 
-.location-address {
-    margin: 0;
+.location-content .section-number {
+    display: block;
 
-    font-size: 17px;
+    margin-bottom: 25px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--rose-dark);
+}
+
+.location-content h3 {
+    margin-bottom: 20px;
+
+    font-size: clamp(32px, 4vw, 48px);
+}
+
+.location-content p {
+    font-size: 16px;
     line-height: 1.8;
-
-    opacity: 0.7;
 }
-
-#evento .location-address {
-    color: #513640;
-}
-
-
-/* =====================================================
-   FOTO LOCATION
-===================================================== */
 
 .location-image {
     width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
+    height: 450px;
 
     overflow: hidden;
-
-    border-radius: 14px;
 }
 
 .location-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
-/* =====================================================
-   MAPPA
-===================================================== */
+/* Map */
 
 .location-map {
     width: 100%;
-
-    margin-top: 10px;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 12px 35px rgba(36, 54, 75, 0.12);
+    margin-top: 60px;
 }
 
 .location-map iframe {
     display: block;
 
     width: 100%;
-    height: 600px;
+    height: 520px;
 
     border: 0;
 }
 
 
-/* =====================================================
-   PULSANTI MAPPA
-===================================================== */
+/* Map buttons */
 
 .map-buttons {
     display: flex;
-
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 30px;
-
-    margin-top: 35px;
-    margin-bottom: 140px;
-
     flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 20px;
 }
 
 .map-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    width: 260px;
+    min-height: 46px;
+    padding: 10px 18px;
 
-    padding: 17px 25px;
-
-    border: 1px solid #A45D78;
-    border-radius: 30px;
+    border: 1px solid var(--rose-dark);
 
     background: transparent;
+    color: var(--rose-dark);
 
-    color: #3E1A31;
-
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-
-    letter-spacing: 0.12em;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    text-align: center;
+
+    cursor: pointer;
 
     transition:
         background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        color 0.3s ease;
 }
 
-#evento .map-button {
-    border-color: #A45D78;
-    background: transparent;
-    color: #3E1A31;
+.map-button svg {
+    width: 16px;
+    height: 16px;
+
+    fill: currentColor;
 }
 
-#evento .map-button:hover {
-    background: #A45D78;
-    color: #ffffff;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(164, 93, 120, 0.22);
+.map-button:hover {
+    background: var(--rose-dark);
+    color: var(--white);
 }
 
 
-/* =====================================================
-   ICONE MAPPA
-===================================================== */
-
-.map-icon {
-    width: 28px;
-    height: 28px;
-
-    flex-shrink: 0;
-
-    display: block;
-}
-
-.google-icon {
-    width: 28px;
-    height: 28px;
-}
-
-.apple-icon {
-    width: 24px;
-    height: 24px;
-}
-
-
-/* =====================================================
-   CERIMONIA / ORARIO
-===================================================== */
+/* Cerimonia / Orario */
 
 .event-section-block {
-    width: 100%;
-
-    padding-top: 80px;
-    padding-bottom: 100px;
-
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.event-section-block + .event-section-block {
-    padding-top: 100px;
+    margin-top: 90px;
 }
 
 .section-heading {
     display: flex;
-
     align-items: baseline;
 
     gap: 35px;
@@ -836,199 +652,64 @@ button {
 }
 
 .section-heading .section-number {
-    margin: 0;
+    flex-shrink: 0;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--rose-dark);
+}
+
+.section-heading h3 {
+    font-size: clamp(32px, 4vw, 48px);
 }
 
 .section-content {
-    max-width: 700px;
-
-    margin-left: 70px;
+    max-width: 750px;
+    margin-left: auto;
 }
 
 .section-content p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.8;
-
-    opacity: 0.75;
+    font-size: 17px;
+    line-height: 1.9;
 }
 
 
-/* =====================================================
-   COUNTDOWN MATRIMONIO
-===================================================== */
-
-.wedding-countdown {
-    width: 100%;
-
-    margin-top: 40px;
-    margin-bottom: 60px;
-
-    text-align: center;
-}
-
-.countdown-date {
-    margin: 0 0 10px;
-
-    font-size: 2em;
-    font-weight: 600;
-
-    letter-spacing: 4px;
-}
-
-#home .countdown-date {
-    color: #ffffff;
-}
-
-.countdown-line {
-    width: 55px;
-    height: 1px;
-
-    margin: 0 auto 28px;
-
-    background: currentColor;
-
-    opacity: 0.7;
-}
-
-#home .countdown-line {
-    background: rgba(243, 201, 208, 0.7);
-}
-
-.countdown-numbers {
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-}
-
-.countdown-unit {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    min-width: 120px;
-}
-
-.countdown-unit span {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 4.5rem;
-    font-weight: 700;
-
-    line-height: 0.9;
-
-    letter-spacing: 1px;
-}
-
-#home .countdown-numbers span {
-    color: #ffffff;
-}
-
-.countdown-unit small {
-    margin-top: 12px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 0.6rem;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-    opacity: 0.9;
-}
-
-#home .countdown-numbers small {
-    color: #F3C9D0;
-}
-
-.countdown-unit:not(:last-child)::after {
-    content: "|";
-
-    position: absolute;
-
-    right: -2px;
-    top: 8px;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 2.8rem;
-    font-weight: 300;
-
-    opacity: 0.5;
-}
-
-
-/* =====================================================
-   UN PO' DI NOI
-===================================================== */
+/* =========================================================
+   9. UN PO' DI NOI
+   ========================================================= */
 
 #noi {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
+    position: relative;
 
     padding-top: 40px;
     padding-bottom: 0;
 
-    box-sizing: border-box;
-
     background:
         linear-gradient(
-            to bottom,
-            #FDE0D1 0%,
-            #F9D9DA 20%,
-            #F3C9D0 42%,
-            #E8B9C5 65%,
-            #D9AEC0 82%,
-            #CAA2B9 100%
+            180deg,
+            var(--peach) 0%,
+            var(--blush) 35%,
+            var(--sakura) 68%,
+            var(--rose) 100%
         );
 
-    color: #3E1A31;
+    color: var(--bordeaux);
+
+    overflow: hidden;
 }
 
-#noi .section-title h2 {
-    color: #3E1A31;
+#noi .section-title {
+    margin-bottom: 60px;
 }
 
 #noi .eyebrow {
-    color: #8F536B;
-}
-
-#noi .blue-line {
-    background: #A45D78;
+    color: var(--rose-dark);
 }
 
 
-/* =====================================================
-   STORIA
-===================================================== */
-
-.story-section {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-
-    box-sizing: border-box;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff 0%,
-            #fffafb 25%,
-            #fff1f4 55%,
-            #f8e0e6 100%
-        );
-}
+/* Story */
 
 .story {
     width: 100%;
@@ -1036,120 +717,58 @@ button {
 
     margin: 0 auto;
 
-    padding-bottom: 120px;
+    padding: 0 25px 130px;
 }
 
-#noi .story {
-    max-width: 750px;
+.story p {
+    color: var(--bordeaux);
 
-    padding-top: 20px;
-    padding-bottom: 130px;
-}
-
-.story-large {
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(2rem, 7vw, 3.5rem);
-
-    line-height: 1.2;
-
-    margin-bottom: 40px;
-}
-
-.story p:not(.story-large) {
-    font-size: 16px;
-
-    line-height: 1.9;
-
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
     font-weight: 300;
 
-    margin-bottom: 25px;
-}
-
-#noi .story p {
-    margin: 0 0 25px;
-
-    color: #3E1A31;
-
-    font-size: 17px;
     line-height: 1.9;
 }
 
 
-/* =====================================================
-   FOTO GIAPPONE
-===================================================== */
+/* =========================================================
+   10. FOTO GIAPPONE
+   ========================================================= */
 
 .story-photo {
     position: relative;
 
     width: 100vw;
+    min-height: 900px;
 
     margin-left: calc(50% - 50vw);
-    margin-bottom: 0;
-
-    height: 120vh;
-    min-height: 900px;
 
     overflow: hidden;
-
-    box-sizing: border-box;
 }
 
-#noi .story-photo {
-    width: 100vw;
-
-    margin-left: calc(50% - 50vw);
-    margin-top: 0;
-    margin-bottom: 0;
-
-    height: 120vh;
-    min-height: 900px;
-}
-
-.story-photo img,
-#noi .story-photo img {
+.story-photo img {
     position: absolute;
-
     inset: 0;
-
-    display: block;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-    object-position: center center;
+    object-position: center;
 }
-
-
-/* =====================================================
-   OVERLAY FOTO GIAPPONE
-===================================================== */
 
 .story-photo-overlay {
     position: absolute;
-
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.25);
-
-    z-index: 1;
-}
-
-#noi .story-photo-overlay {
     background:
         linear-gradient(
-            to bottom,
-            rgba(62, 26, 49, 0.18),
-            rgba(62, 26, 49, 0.38)
+            180deg,
+            rgba(62, 26, 49, 0.25) 0%,
+            rgba(62, 26, 49, 0.48) 45%,
+            rgba(62, 26, 49, 0.82) 100%
         );
 }
-
-
-/* =====================================================
-   TESTO SOPRA FOTO GIAPPONE
-===================================================== */
 
 .story-photo-text {
     position: absolute;
@@ -1157,122 +776,58 @@ button {
     top: 50%;
     left: 50%;
 
+    width: min(750px, calc(100% - 50px));
+
     transform: translate(-50%, -50%);
 
-    z-index: 2;
-
-    width: 94%;
-    max-width: 1200px;
+    color: var(--white);
 
     text-align: center;
-
-    color: #ffffff;
-}
-
-#noi .story-photo-text {
-    width: 94%;
-    max-width: 1200px;
-
-    color: #ffffff;
 }
 
 .story-photo-text h2 {
-    margin: 0 0 30px;
+    margin-bottom: 30px;
 
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(52px, 7vw, 90px);
-
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 8vw, 90px);
     font-weight: 400;
-
-    line-height: 1.1;
-
-    color: #ffffff;
-
-    transform: translateY(-40px);
-}
-
-#noi .story-photo-text h2 {
-    margin: 0 0 35px;
-
-    font-size: clamp(50px, 7vw, 90px);
-
-    transform: none;
+    line-height: 0.9;
 }
 
 .story-photo-text p {
-    width: 100%;
-    max-width: 1100px;
+    margin-bottom: 18px;
 
-    margin: 0 auto 25px;
-
-    font-family: 'Lato', sans-serif;
-
-    font-size: 17px;
-    font-weight: 300;
-
+    font-size: 16px;
     line-height: 1.8;
 
-    text-align: center;
-
-    color: #ffffff;
-}
-
-#noi .story-photo-text p {
-    max-width: 1100px;
-
-    margin: 0 auto 28px;
-
-    font-size: 17px;
-    line-height: 1.8;
-
-    color: #ffffff;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
 }
 
 .story-photo-text p:last-child {
-    margin-bottom: 60px;
-}
-
-#noi .story-photo-text p:last-child {
-    margin-bottom: 60px;
+    margin-bottom: 0;
 }
 
 
-/* =====================================================
-   LISTA NOZZE
-===================================================== */
-
-.registry-section {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-
-    box-sizing: border-box;
-}
+/* =========================================================
+   11. LISTA NOZZE
+   ========================================================= */
 
 #lista {
-    margin-top: 0;
-}
-
-.registry-preview {
     position: relative;
-
-    width: 100%;
-    max-width: none;
 
     min-height: 85vh;
 
-    margin: 0;
-
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    color: #ffffff;
+    padding: 0 25px;
+
+    background: var(--bordeaux);
+
+    color: var(--white);
 
     overflow: hidden;
-
-    box-sizing: border-box;
 }
 
 .registry-background {
@@ -1280,7 +835,6 @@ button {
     inset: 0;
 
     background-image: url("images/foto1 (1).jpeg");
-
     background-size: cover;
     background-position: center;
 
@@ -1293,65 +847,82 @@ button {
     position: absolute;
     inset: 0;
 
-    background: rgba(28, 49, 70, 0.70);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(62, 26, 49, 0.86),
+            rgba(62, 26, 49, 0.62)
+        );
 
     z-index: 1;
 }
 
 .registry-content {
     position: relative;
-
     z-index: 2;
 
     width: 100%;
     max-width: 700px;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 
     text-align: center;
 }
 
-.registry-content h2 {
-    font-family: 'Playfair Display', serif;
+.registry-content .eyebrow {
+    display: block;
 
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    margin-bottom: 15px;
 
-    font-weight: 500;
-
-    line-height: 1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-.registry-content > p:not(.eyebrow) {
-    max-width: 600px;
+.registry-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 8vw, 90px);
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.white-line {
+    width: 60px;
+    height: 1px;
 
     margin: 30px auto;
 
-    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.75);
+}
 
-    font-weight: 300;
+.registry-content p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 
-/* =====================================================
-   BUTTON
-===================================================== */
+/* Bottone lista */
 
 .button-light {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    margin-top: 15px;
+    margin-top: 35px;
+    padding: 14px 25px;
 
-    padding: 15px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
 
-    border: 1px solid #ffffff;
+    color: var(--white);
 
-    color: #ffffff;
-
-    font-size: 12px;
-
-    letter-spacing: 0.15em;
-
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
 
     transition:
@@ -1360,680 +931,439 @@ button {
 }
 
 .button-light:hover {
-    background: #ffffff;
-    color: #24364b;
+    background: var(--white);
+    color: var(--bordeaux);
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
 
 .footer {
-    background: #ffffff;
+    padding: 60px 25px 35px;
 
-    color: #24364b;
+    background: var(--white);
+
+    color: var(--bordeaux);
 
     text-align: center;
-
-    padding: 50px 20px;
 }
 
-.footer p:first-child {
-    font-family: 'Playfair Display', serif;
-
-    font-size: 25px;
+.footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
 }
 
 .footer-small {
-    margin-top: 10px;
+    margin-top: 15px;
 
-    font-size: 12px;
-
-    letter-spacing: 0.15em;
-
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 
     opacity: 0.6;
 }
 
 
-/* =====================================================
-   ANIMAZIONI SCROLL
-===================================================== */
+/* =========================================================
+   13. ANIMAZIONI REVEAL
+   ========================================================= */
 
 .reveal {
     opacity: 0;
-
-    transform: translateY(40px);
+    transform: translateY(30px);
 
     transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .reveal.visible {
     opacity: 1;
-
     transform: translateY(0);
 }
 
 
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (min-width: 600px) {
-
-    .header {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
-    .logo {
-        width: 90px;
-    }
-
-    .section {
-        padding: 140px 50px;
-    }
-}
-
-
-/* =====================================================
-   TABLET — EVENTO
-===================================================== */
+/* =========================================================
+   14. TABLET
+   ========================================================= */
 
 @media (min-width: 600px) and (max-width: 899px) {
 
+    .header {
+        height: 90px;
+        padding: 0 35px;
+    }
+
+    .section {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #evento {
+        padding-bottom: 40px;
+    }
+
     .event-location {
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 35px;
     }
 
-    .location-content {
-        min-height: 320px;
-    }
-
-    .location-content h3 {
-        font-size: 38px;
-    }
-
-    .location-name {
-        font-size: 25px;
-    }
-
-    .location-image img {
+    .location-image {
         height: 320px;
-        object-fit: cover;
     }
 
     .location-map iframe {
         height: 400px;
     }
 
-    .section-heading h3 {
-        font-size: 36px;
+    .story {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .story-photo {
+        min-height: 750px;
+    }
+
+    #lista {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
 
 
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 900px) {
-
-    .section {
-        padding-top: 160px;
-        padding-bottom: 160px;
-    }
-
-    .header {
-        height: 100px;
-
-        padding-left: 55px;
-        padding-right: 55px;
-    }
-
-    .logo {
-        width: 105px;
-    }
-
-    .menu-toggle {
-        width: 45px;
-        height: 45px;
-    }
-
-    .section-title {
-        margin-bottom: 90px;
-    }
-
-    .hero-text {
-        font-size: 18px;
-    }
-
-    .event-location {
-        gap: 70px;
-    }
-
-    .location-content {
-        min-height: 450px;
-    }
-
-    .location-image img {
-        height: 450px;
-        object-fit: cover;
-    }
-
-    .location-map iframe {
-        height: 520px;
-    }
-
-    .story-photo-text {
-        width: 94%;
-        max-width: 1200px;
-    }
-
-    .story-photo-text p {
-        max-width: 1100px;
-    }
-}
-
-
-/* =====================================================
-   COUNTDOWN — TABLET
-===================================================== */
+/* =========================================================
+   15. MOBILE / TABLET PICCOLO
+   ========================================================= */
 
 @media (max-width: 768px) {
 
-    .wedding-countdown {
-        margin-top: 35px;
-        margin-bottom: 55px;
-    }
-
-    .countdown-unit {
-        min-width: 95px;
-    }
-
-    .countdown-unit span {
-        font-size: 3.8rem;
-    }
-
-    .countdown-unit small {
-        font-size: 0.52rem;
-        letter-spacing: 2.5px;
-    }
-
-    .countdown-unit:not(:last-child)::after {
-        right: -1px;
-        top: 6px;
-
-        font-size: 2.3rem;
-    }
-
-    #evento {
-        padding-bottom: 25px;
-    }
-
-    #noi {
-        padding-top: 25px;
-        padding-bottom: 0;
-    }
-
-    #noi .story {
-        max-width: 100%;
-
-        padding-left: 25px;
-        padding-right: 25px;
-
-        padding-bottom: 100px;
-    }
-
-    #noi .story p {
-        font-size: 16px;
-        line-height: 1.85;
-    }
-
-    #noi .story-photo {
-        width: 100vw;
-
-        margin-left: calc(50% - 50vw);
-
-        height: 100vh;
-        min-height: 750px;
-
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #noi .story-photo img {
-        object-position: center center;
-    }
-
-    #noi .story-photo-overlay {
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(62, 26, 49, 0.18),
-                rgba(62, 26, 49, 0.42)
-            );
-    }
-
-    #noi .story-photo-text {
-        width: 88%;
-        max-width: none;
-
-        top: 50%;
-    }
-
-    #noi .story-photo-text h2 {
-        margin-bottom: 25px;
-
-        font-size: clamp(44px, 13vw, 65px);
-    }
-
-    #noi .story-photo-text p {
-        font-size: 15px;
-        line-height: 1.7;
-
-        margin-bottom: 22px;
-    }
-
-    #noi .story-photo-text p:last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 599px) {
-
-    html,
-    body {
-        width: 100%;
-        min-width: 100%;
-
-        margin: 0;
-        padding: 0;
-
-        overflow-x: hidden;
-    }
-
-    main {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    section {
-        width: 100%;
-        max-width: none;
-
-        margin: 0;
-
-        box-sizing: border-box;
-    }
-
-    .section {
-        width: 100%;
-        max-width: none;
-
-        min-height: 100vh;
-
-        margin: 0;
-
-        padding: 120px 20px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* -------------------------------------------------
-       HEADER MOBILE
-    ------------------------------------------------- */
-
     .header {
         height: 75px;
-
-        padding: 12px 18px;
-
-        z-index: 1300;
+        padding: 0 20px;
     }
 
-    .logo {
-        width: 75px;
+    .header-logo {
+        font-size: 26px;
     }
 
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-
-        padding: 8px;
-
-        z-index: 1400;
+    #sideMenu {
+        padding: 40px 30px;
     }
 
-
-    /* -------------------------------------------------
-       HOME MOBILE
-    ------------------------------------------------- */
-
-    .hero-image {
-        background-position: 70% center;
-    }
-
-    .hero-content {
-        transform: translateY(100px);
-    }
-
-
-    /* -------------------------------------------------
-       LOCATION MOBILE
-    ------------------------------------------------- */
-
-    .event-location {
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-
-        margin-bottom: 45px;
-    }
-
-    .location-content {
-        min-height: auto;
-
-        justify-content: flex-start;
-    }
-
-    .location-content h3 {
+    #sideMenu a {
         font-size: 34px;
     }
 
-    .location-name {
-        font-size: 23px;
-
-        margin: 16px 0 8px;
+    #home {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .location-address {
-        font-size: 16px;
-        line-height: 1.7;
+    .hero-content {
+        transform: translateY(60px);
+    }
+
+    .countdown-numbers {
+        gap: 18px;
+    }
+
+    .countdown-item {
+        min-width: 45px;
+    }
+
+    #evento {
+        padding-top: 120px;
+        padding-bottom: 25px;
+    }
+
+    .section-title {
+        margin-bottom: 55px;
+    }
+
+    .event-location {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .location-content {
+        padding-top: 0;
     }
 
     .location-image {
-        width: 100%;
-
-        border-radius: 14px;
-    }
-
-    .location-image img {
-        display: block;
-
-        width: 100%;
         height: 280px;
-
-        object-fit: cover;
-
-        border-radius: 14px;
     }
-
-
-    /* -------------------------------------------------
-       MAPPA MOBILE
-    ------------------------------------------------- */
 
     .location-map {
-        width: 100%;
-
-        margin-top: 0;
-
-        border-radius: 15px;
+        margin-top: 40px;
     }
 
     .location-map iframe {
-        display: block;
-
-        width: 100%;
         height: 380px;
-
-        border: 0;
     }
-
-
-    /* -------------------------------------------------
-       PULSANTI MAPPA MOBILE
-    ------------------------------------------------- */
 
     .map-buttons {
         flex-direction: column;
-
         align-items: stretch;
-
-        gap: 15px;
-
-        margin-top: 30px;
-        margin-bottom: 100px;
     }
 
     .map-button {
         width: 100%;
-
-        padding: 15px 20px;
     }
-
-
-    /* -------------------------------------------------
-       CERIMONIA / ORARIO MOBILE
-    ------------------------------------------------- */
 
     .event-section-block {
-        padding-top: 65px;
-        padding-bottom: 75px;
-    }
-
-    .event-section-block + .event-section-block {
-        padding-top: 75px;
+        margin-top: 70px;
     }
 
     .section-heading {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 10px;
-
+        gap: 18px;
         margin-bottom: 30px;
-    }
-
-    .section-heading .section-number {
-        margin-bottom: 0;
-    }
-
-    .section-heading h3 {
-        font-size: 34px;
     }
 
     .section-content {
         margin-left: 0;
     }
 
-
-    /* -------------------------------------------------
-       COUNTDOWN MOBILE
-    ------------------------------------------------- */
-
-    .wedding-countdown {
-        margin-top: 32px;
-        margin-bottom: 50px;
-    }
-
-    .countdown-date {
-        font-size: 0.62rem;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 16px;
-    }
-
-    .countdown-line {
-        width: 45px;
-
-        margin-bottom: 23px;
-    }
-
-    .countdown-unit {
-        min-width: 78px;
-    }
-
-    .countdown-unit span {
-        font-size: 3rem;
-
-        font-weight: 700;
-
-        letter-spacing: 0;
-    }
-
-    .countdown-unit small {
-        margin-top: 9px;
-
-        font-size: 0.43rem;
-
-        letter-spacing: 2px;
-    }
-
-    .countdown-unit:not(:last-child)::after {
-        right: -1px;
-        top: 3px;
-
-        font-size: 1.9rem;
-    }
-
-
-    /* -------------------------------------------------
-       UN PO' DI NOI MOBILE
-    ------------------------------------------------- */
-
     #noi {
         padding-top: 25px;
-        padding-bottom: 0;
     }
 
-    #noi .story {
-        max-width: 100%;
-
-        padding-left: 25px;
-        padding-right: 25px;
-
-        padding-bottom: 100px;
+    .story {
+        padding-bottom: 90px;
     }
 
-    #noi .story p {
+    .story p {
         font-size: 16px;
         line-height: 1.85;
     }
 
-
-    /* -------------------------------------------------
-       FOTO GIAPPONE MOBILE
-    ------------------------------------------------- */
-
-    #noi .story-photo {
-        width: 100vw;
-
-        margin-left: calc(50% - 50vw);
-
-        height: 100vh;
-        min-height: 750px;
-
-        margin-top: 0;
-        margin-bottom: 0;
-
-        border: 0;
+    .story-photo {
+        min-height: 100vh;
     }
 
-    #noi .story-photo img {
-        object-position: center center;
+    .story-photo-text {
+        width: calc(100% - 40px);
     }
 
-
-    /* -------------------------------------------------
-       TESTO FOTO GIAPPONE MOBILE
-    ------------------------------------------------- */
-
-    #noi .story-photo-text {
-        width: 88%;
-        max-width: none;
-
-        top: 50%;
-    }
-
-    #noi .story-photo-text h2 {
+    .story-photo-text h2 {
         margin-bottom: 25px;
-
-        font-size: clamp(44px, 13vw, 65px);
     }
 
-    #noi .story-photo-text p {
+    .story-photo-text p {
         font-size: 15px;
-
         line-height: 1.7;
-
-        margin-bottom: 22px;
     }
-
-    #noi .story-photo-text p:last-child {
-        margin-bottom: 0;
-    }
-
-
-    /* -------------------------------------------------
-       LISTA NOZZE MOBILE
-    ------------------------------------------------- */
 
     #lista {
-        margin-top: 0;
+        min-height: 80vh;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 
-/* =====================================================
-   COUNTDOWN — SMARTPHONE PICCOLI
-===================================================== */
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 599px) {
 
-    .wedding-countdown {
-        margin-bottom: 45px;
+    .section {
+        padding: 120px 20px;
     }
 
-    .countdown-unit {
-        min-width: 68px;
+    .section-title {
+        margin-bottom: 50px;
     }
 
-    .countdown-unit span {
-        font-size: 2.5rem;
+    .section-title h2 {
+        font-size: 52px;
     }
 
-    .countdown-unit small {
-        font-size: 0.38rem;
+    #home {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .hero-content {
+        transform: translateY(75px);
+    }
+
+    .hero-content h1 {
+        font-size: 58px;
+    }
+
+    .decorative-line {
+        margin: 25px auto;
+    }
+
+    .countdown-date {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .countdown-numbers {
+        gap: 10px;
+    }
+
+    .countdown-item {
+        min-width: 42px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 30px;
+    }
+
+    .countdown-item span:last-child {
+        font-size: 8px;
         letter-spacing: 1.5px;
     }
 
-    .countdown-unit:not(:last-child)::after {
-        font-size: 1.6rem;
+    .scroll-button {
+        margin-top: 40px;
+    }
+
+    #evento {
+        padding-top: 120px;
+        padding-bottom: 25px;
+    }
+
+    .location-content h3,
+    .section-heading h3 {
+        font-size: 36px;
+    }
+
+    .location-content p,
+    .section-content p {
+        font-size: 16px;
+    }
+
+    .location-image {
+        height: 280px;
+    }
+
+    .location-map iframe {
+        height: 350px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #noi .section-title {
+        margin-bottom: 45px;
+    }
+
+    .story {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 75px;
+    }
+
+    .story p {
+        font-size: 15.5px;
+    }
+
+    .story-photo {
+        min-height: 100svh;
+    }
+
+    .story-photo-text {
+        width: calc(100% - 35px);
+    }
+
+    .story-photo-text h2 {
+        font-size: 62px;
+    }
+
+    .story-photo-text p {
+        font-size: 14px;
+    }
+
+    #lista {
+        min-height: 75vh;
+    }
+
+    .registry-content h2 {
+        font-size: 60px;
+    }
+
+    .registry-content p {
+        font-size: 15px;
+    }
+
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 
-/* =====================================================
-   ACCESSIBILITÀ
-===================================================== */
+/* =========================================================
+   17. TELEFONI MOLTO PICCOLI
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-logo {
+        font-size: 23px;
+    }
+
+    #sideMenu {
+        width: 90vw;
+        padding: 35px 25px;
+    }
+
+    #sideMenu a {
+        font-size: 31px;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .countdown-numbers {
+        gap: 6px;
+    }
+
+    .countdown-item {
+        min-width: 38px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 26px;
+    }
+
+    .countdown-item span:last-child {
+        font-size: 7px;
+    }
+
+    .section-title h2 {
+        font-size: 46px;
+    }
+
+    .story-photo-text h2 {
+        font-size: 55px;
+    }
+
+    .story-photo-text p {
+        font-size: 13px;
+    }
+
+    .registry-content h2 {
+        font-size: 52px;
+    }
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITÀ / RIDUZIONE ANIMAZIONI
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -2044,7 +1374,13 @@ button {
     *,
     *::before,
     *::after {
-        transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
 }
