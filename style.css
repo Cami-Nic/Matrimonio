@@ -938,6 +938,79 @@ button {
 
     opacity: 0.55;
 }
+
+/* =====================================================
+   COUNTDOWN SU TELEFONO
+===================================================== */
+
+@media (max-width: 599px) {
+
+    .countdown-numbers {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .countdown-unit {
+        width: 85px;
+        min-width: 85px;
+    }
+
+    .countdown-unit span {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 0;
+    }
+
+    .countdown-unit small {
+        margin-top: 10px;
+
+        font-size: 0.43rem;
+        letter-spacing: 2px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        top: 3px;
+        right: -8px;
+
+        font-size: 1.6rem;
+    }
+}
+
+
+/* =====================================================
+   TELEFONI MOLTO PICCOLI
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .countdown-numbers {
+        gap: 5px;
+    }
+
+    .countdown-unit {
+        width: 75px;
+        min-width: 75px;
+    }
+
+    .countdown-unit span {
+        font-size: 2.5rem;
+    }
+
+    .countdown-unit small {
+        margin-top: 9px;
+
+        font-size: 0.38rem;
+        letter-spacing: 1.5px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        top: 2px;
+        right: -6px;
+
+        font-size: 1.45rem;
+    }
+}
+
 /* =====================================================
    UN PO' DI NOI
 ===================================================== */
