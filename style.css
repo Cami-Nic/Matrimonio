@@ -2283,18 +2283,18 @@ button {
 }
 @media (max-width: 599px) {
 
-    .countdown-unit:first-child small {
-        font-size: 9px;
-        letter-spacing: 0.20em;
-        margin-top: 14px;
+ .countdown-unit:first-child small {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        margin-top: 15px;
     }
 
     .countdown-unit:nth-child(2) small,
     .countdown-unit:nth-child(3) small,
     .countdown-unit:nth-child(4) small {
-        font-size: 8px;
-        letter-spacing: 0.12em;
-        margin-top: 10px;
+        font-size: 10px;
+        letter-spacing: 0.10em;
+        margin-top: 11px;
     }
 }
 
