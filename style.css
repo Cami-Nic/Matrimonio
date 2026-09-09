@@ -1,8 +1,27 @@
+
 /* =====================================================
    FONT
 ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* =====================================================
+   PALETTE MATRIMONIO — SAKURA / GIAPPONE
+===================================================== */
+
+/*
+   #3E1A31 = bordeaux / prugna scuro
+   #FDE0D1 = rosa pesca chiarissimo
+   #F9D9DA = rosa cipria
+   #F3C9D0 = rosa sakura
+   #E8B9C5 = rosa malva
+   #CAA2B9 = malva
+   #8F536B = rosa bordeaux
+   #A45D78 = rosa antico
+   #B47D92 = malva medio
+   #513640 = marrone / prugna testo
+*/
 
 
 /* =====================================================
@@ -17,10 +36,10 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-width: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
 }
 
@@ -71,7 +90,6 @@ button {
 
 .header {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -97,11 +115,6 @@ button {
         visibility 0.3s ease;
 }
 
-
-/* -----------------------------------------------------
-   HEADER VISIBILE
------------------------------------------------------ */
-
 .header.header-visible {
     opacity: 1;
     visibility: visible;
@@ -114,19 +127,15 @@ button {
 ===================================================== */
 
 .logo-link {
-    pointer-events: auto;
-
     display: block;
-
     position: relative;
-
     z-index: 1301;
+    pointer-events: auto;
 }
 
 .logo {
     width: 75px;
     height: auto;
-
     object-fit: contain;
 
     transition: filter 0.3s ease;
@@ -144,11 +153,6 @@ button {
 .menu-toggle {
     position: relative;
 
-    pointer-events: auto;
-
-    border: none;
-    background: transparent;
-
     width: 42px;
     height: 42px;
 
@@ -157,10 +161,13 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     gap: 6px;
 
+    border: none;
+    background: transparent;
+
     cursor: pointer;
+    pointer-events: auto;
 
     z-index: 1400;
 }
@@ -178,11 +185,6 @@ button {
         opacity 0.3s ease,
         background 0.3s ease;
 }
-
-
-/* -----------------------------------------------------
-   HAMBURGER → X
------------------------------------------------------ */
 
 .menu-toggle.active span {
     background: #24364b;
@@ -214,11 +216,11 @@ button {
     width: min(340px, 88%);
     height: 100vh;
 
+    padding: 100px 35px 40px;
+
     background: #ffffff;
 
     z-index: 1200;
-
-    padding: 100px 35px 40px;
 
     transform: translateX(100%);
 
@@ -275,12 +277,11 @@ button {
 
 
 /* =====================================================
-   OVERLAY
+   OVERLAY MENU
 ===================================================== */
 
 .menu-overlay {
     position: fixed;
-
     inset: 0;
 
     background: rgba(16, 31, 48, 0.45);
@@ -312,7 +313,6 @@ button {
     min-height: 100vh;
 
     margin: 0;
-
     padding: 120px 25px;
 
     box-sizing: border-box;
@@ -346,8 +346,13 @@ button {
 
 
 /* =====================================================
-   HERO
+   HOME / HERO
 ===================================================== */
+
+#home {
+    background: #3E1A31;
+    color: #ffffff;
+}
 
 .hero {
     position: relative;
@@ -366,7 +371,6 @@ button {
 
 .hero-image {
     position: absolute;
-
     inset: -5%;
 
     background-image: url("images/foto1 (1).jpeg");
@@ -381,14 +385,13 @@ button {
 
 .hero-overlay {
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.30),
-            rgba(0, 0, 0, 0.48)
+            rgba(62, 26, 49, 0.35),
+            rgba(62, 26, 49, 0.55)
         );
 
     z-index: 1;
@@ -402,15 +405,14 @@ button {
     width: 90%;
     max-width: 800px;
 
-    text-align: center;
-
     padding: 40px 10px;
+
+    text-align: center;
 }
 
 .small-title,
 .eyebrow {
     font-size: 12px;
-
     font-weight: 700;
 
     letter-spacing: 0.25em;
@@ -430,15 +432,17 @@ button {
     letter-spacing: 0.01em;
 }
 
+#home .hero-content h1 {
+    color: #ffffff;
+}
+
 .hero-text {
     max-width: 500px;
 
     margin: 25px auto 35px;
 
     font-size: 16px;
-
     line-height: 1.7;
-
     font-weight: 300;
 }
 
@@ -451,27 +455,31 @@ button {
     width: 70px;
     height: 1px;
 
-    background: #ffffff;
-
     margin: 30px auto;
+
+    background: #ffffff;
 }
 
 .blue-line {
     width: 60px;
     height: 2px;
 
-    background: #7894b0;
-
     margin-top: 25px;
+
+    background: #7894b0;
 }
 
 .white-line {
     width: 60px;
     height: 2px;
 
-    background: #ffffff;
-
     margin-top: 25px;
+
+    background: #ffffff;
+}
+
+#home .decorative-line {
+    background: #F3C9D0;
 }
 
 
@@ -490,10 +498,12 @@ button {
     font-size: 12px;
 
     letter-spacing: 0.15em;
-
     text-transform: uppercase;
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .scroll-button span {
@@ -503,6 +513,17 @@ button {
 
 .scroll-button:hover {
     transform: translateY(5px);
+}
+
+#home .scroll-button {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+#home .scroll-button:hover {
+    background: #F3C9D0;
+    color: #3E1A31;
+    border-color: #F3C9D0;
 }
 
 
@@ -526,13 +547,48 @@ button {
 
 
 /* =====================================================
-   INFORMAZIONI SULL'EVENTO
+   EVENTO
 ===================================================== */
 
+#evento {
+    background: #FDE0D1;
+    color: #3E1A31;
 
-/* -----------------------------------------------------
-   01 — LOCATION
------------------------------------------------------ */
+    padding-bottom: 40px;
+}
+
+#evento .section-title h2 {
+    color: #3E1A31;
+}
+
+#evento .eyebrow {
+    color: #8F536B;
+}
+
+#evento .blue-line {
+    background: #B47D92;
+}
+
+#evento .section-number {
+    color: #A45D78;
+}
+
+#evento h3 {
+    color: #3E1A31;
+}
+
+#evento p {
+    color: #513640;
+}
+
+#evento .event-section-block {
+    border-color: rgba(164, 93, 120, 0.25);
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
 
 .event-location {
     display: grid;
@@ -552,9 +608,7 @@ button {
     min-height: 420px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 }
 
@@ -562,7 +616,6 @@ button {
     display: block;
 
     font-size: 16px;
-
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -578,7 +631,6 @@ button {
     font-family: 'Playfair Display', serif;
 
     font-size: 52px;
-
     font-weight: 400;
 
     line-height: 1.1;
@@ -594,44 +646,50 @@ button {
     line-height: 1.2;
 }
 
+#evento .location-name {
+    color: #8F536B;
+}
+
 .location-address {
     margin: 0;
 
     font-size: 17px;
-
     line-height: 1.8;
 
     opacity: 0.7;
 }
 
+#evento .location-address {
+    color: #513640;
+}
 
-/* -----------------------------------------------------
+
+/* =====================================================
    FOTO LOCATION
------------------------------------------------------ */
+===================================================== */
 
 .location-image {
     width: 100%;
     max-width: 1200px;
 
+    margin: 0 auto;
+
     overflow: hidden;
 
     border-radius: 14px;
-
-    margin: 0 auto;
 }
 
 .location-image img {
     width: 100%;
-
     height: auto;
 
     object-fit: contain;
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    MAPPA
------------------------------------------------------ */
+===================================================== */
 
 .location-map {
     width: 100%;
@@ -650,16 +708,15 @@ button {
     display: block;
 
     width: 100%;
-
     height: 600px;
 
     border: 0;
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    PULSANTI MAPPA
------------------------------------------------------ */
+===================================================== */
 
 .map-buttons {
     display: flex;
@@ -667,13 +724,11 @@ button {
     flex-direction: row;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 30px;
 
     margin-top: 35px;
-
     margin-bottom: 140px;
 
     flex-wrap: wrap;
@@ -683,7 +738,6 @@ button {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 12px;
@@ -692,29 +746,50 @@ button {
 
     padding: 17px 25px;
 
+    border: 1px solid #A45D78;
     border-radius: 30px;
 
-    font-size: 12px;
+    background: transparent;
 
+    color: #3E1A31;
+
+    font-size: 12px;
     font-weight: 700;
 
     letter-spacing: 0.12em;
-
     text-transform: uppercase;
-
     text-align: center;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#evento .map-button {
+    border-color: #A45D78;
+    background: transparent;
+    color: #3E1A31;
+}
+
+#evento .map-button:hover {
+    background: #A45D78;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(164, 93, 120, 0.22);
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    ICONE MAPPA
------------------------------------------------------ */
+===================================================== */
 
 .map-icon {
     width: 28px;
-
     height: 28px;
 
     flex-shrink: 0;
@@ -722,83 +797,34 @@ button {
     display: block;
 }
 
-
-/* -----------------------------------------------------
-   GOOGLE MAPS
------------------------------------------------------ */
-
 .google-icon {
     width: 28px;
     height: 28px;
 }
-
-.google-button {
-    background: #7894b0;
-
-    color: #ffffff;
-
-    box-shadow:
-        0 8px 20px rgba(36, 54, 75, 0.15);
-}
-
-.google-button:hover {
-    background: #24364b;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(36, 54, 75, 0.22);
-}
-
-
-/* -----------------------------------------------------
-   APPLE MAPS
------------------------------------------------------ */
 
 .apple-icon {
     width: 24px;
     height: 24px;
 }
 
-.apple-button {
-    background: #7894b0;
-
-    color: #ffffff;
-
-    box-shadow:
-        0 8px 20px rgba(36, 54, 75, 0.15);
-}
-
-.apple-button:hover {
-    background: #24364b;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(36, 54, 75, 0.22);
-}
-
 
 /* =====================================================
-   02 — CERIMONIA
+   CERIMONIA / ORARIO
 ===================================================== */
 
 .event-section-block {
     width: 100%;
 
     padding-top: 80px;
-
     padding-bottom: 100px;
 
     border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.event-section-block + .event-section-block {
+    padding-top: 100px;
+}
 
-/* -----------------------------------------------------
-   TITOLO CERIMONIA / ORARIO
------------------------------------------------------ */
-
-.location-content h3,
 .section-heading {
     display: flex;
 
@@ -813,11 +839,6 @@ button {
     margin: 0;
 }
 
-
-/* -----------------------------------------------------
-   CONTENUTO
------------------------------------------------------ */
-
 .section-content {
     max-width: 700px;
 
@@ -828,7 +849,6 @@ button {
     margin: 0;
 
     font-size: 16px;
-
     line-height: 1.8;
 
     opacity: 0.75;
@@ -836,16 +856,160 @@ button {
 
 
 /* =====================================================
-   03 — ORARIO
+   COUNTDOWN MATRIMONIO
 ===================================================== */
 
-.event-section-block + .event-section-block {
-    padding-top: 100px;
+.wedding-countdown {
+    width: 100%;
+
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+.countdown-date {
+    margin: 0 0 10px;
+
+    font-size: 2em;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+#home .countdown-date {
+    color: #ffffff;
+}
+
+.countdown-line {
+    width: 55px;
+    height: 1px;
+
+    margin: 0 auto 28px;
+
+    background: currentColor;
+
+    opacity: 0.7;
+}
+
+#home .countdown-line {
+    background: rgba(243, 201, 208, 0.7);
+}
+
+.countdown-numbers {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.countdown-unit {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 120px;
+}
+
+.countdown-unit span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 4.5rem;
+    font-weight: 700;
+
+    line-height: 0.9;
+
+    letter-spacing: 1px;
+}
+
+#home .countdown-numbers span {
+    color: #ffffff;
+}
+
+.countdown-unit small {
+    margin-top: 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.6rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    opacity: 0.9;
+}
+
+#home .countdown-numbers small {
+    color: #F3C9D0;
+}
+
+.countdown-unit:not(:last-child)::after {
+    content: "|";
+
+    position: absolute;
+
+    right: -2px;
+    top: 8px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2.8rem;
+    font-weight: 300;
+
+    opacity: 0.5;
 }
 
 
 /* =====================================================
-   LA NOSTRA STORIA
+   UN PO' DI NOI
+===================================================== */
+
+#noi {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #FDE0D1 0%,
+            #F9D9DA 20%,
+            #F3C9D0 42%,
+            #E8B9C5 65%,
+            #D9AEC0 82%,
+            #CAA2B9 100%
+        );
+
+    color: #3E1A31;
+}
+
+#noi .section-title h2 {
+    color: #3E1A31;
+}
+
+#noi .eyebrow {
+    color: #8F536B;
+}
+
+#noi .blue-line {
+    background: #A45D78;
+}
+
+
+/* =====================================================
+   STORIA
 ===================================================== */
 
 .story-section {
@@ -856,43 +1020,31 @@ button {
 
     box-sizing: border-box;
 
-    /*
-       SFUMATURA ROSA DELICATA
-
-       Inizio:
-       bianco
-
-       Centro:
-       rosa molto tenue
-
-       Fine:
-       rosa ciliegio molto delicato
-    */
-
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #fffafb 25%,
-    #fff1f4 55%,
-    #f8e0e6 100%
-);
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff 0%,
+            #fffafb 25%,
+            #fff1f4 55%,
+            #f8e0e6 100%
+        );
 }
 
-
-/* -----------------------------------------------------
-   CONTENITORE STORIA
------------------------------------------------------ */
-
 .story {
+    width: 100%;
     max-width: 750px;
+
     margin: 0 auto;
+
     padding-bottom: 120px;
 }
 
+#noi .story {
+    max-width: 750px;
 
-/* -----------------------------------------------------
-   TESTO GRANDE
------------------------------------------------------ */
+    padding-top: 20px;
+    padding-bottom: 130px;
+}
 
 .story-large {
     font-family: 'Playfair Display', serif;
@@ -904,11 +1056,6 @@ button {
     margin-bottom: 40px;
 }
 
-
-/* -----------------------------------------------------
-   PARAGRAFI STORIA
------------------------------------------------------ */
-
 .story p:not(.story-large) {
     font-size: 16px;
 
@@ -919,41 +1066,65 @@ button {
     margin-bottom: 25px;
 }
 
+#noi .story p {
+    margin: 0 0 25px;
 
-/* =====================================================
-   FOTO STORIA / GIAPPONE
-===================================================== */
+    color: #3E1A31;
 
-.story-photo {
-    position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    height: 120vh;
-    min-height: 900px;
-    overflow: hidden;
-    box-sizing: border-box;
-    margin-bottom: 0;
+    font-size: 17px;
+    line-height: 1.9;
 }
+
+
 /* =====================================================
    FOTO GIAPPONE
 ===================================================== */
 
-.story-photo img {
+.story-photo {
+    position: relative;
+
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 0;
+
+    height: 120vh;
+    min-height: 900px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+#noi .story-photo {
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    height: 120vh;
+    min-height: 900px;
+}
+
+.story-photo img,
+#noi .story-photo img {
+    position: absolute;
+
+    inset: 0;
+
     display: block;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    object-position: center center;
+}
 
-    object-position: center;
-}
-.registry-preview {
-    margin-top: 0;
-}
 
 /* =====================================================
-   VELO SCURO SOPRA LA FOTO
+   OVERLAY FOTO GIAPPONE
 ===================================================== */
 
 .story-photo-overlay {
@@ -966,9 +1137,18 @@ button {
     z-index: 1;
 }
 
+#noi .story-photo-overlay {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(62, 26, 49, 0.18),
+            rgba(62, 26, 49, 0.38)
+        );
+}
+
 
 /* =====================================================
-   CONTENUTO CENTRALE GIAPPONE
+   TESTO SOPRA FOTO GIAPPONE
 ===================================================== */
 
 .story-photo-text {
@@ -981,14 +1161,7 @@ button {
 
     z-index: 2;
 
-    /*
-       Più largo rispetto alla versione precedente,
-       così il testo può svilupparsi
-       su circa tre righe.
-    */
-
     width: 94%;
-
     max-width: 1200px;
 
     text-align: center;
@@ -996,10 +1169,12 @@ button {
     color: #ffffff;
 }
 
+#noi .story-photo-text {
+    width: 94%;
+    max-width: 1200px;
 
-/* =====================================================
-   TITOLO GIAPPONE
-===================================================== */
+    color: #ffffff;
+}
 
 .story-photo-text h2 {
     margin: 0 0 30px;
@@ -1012,17 +1187,21 @@ button {
 
     line-height: 1.1;
 
+    color: #ffffff;
+
     transform: translateY(-40px);
 }
 
+#noi .story-photo-text h2 {
+    margin: 0 0 35px;
 
-/* =====================================================
-   TESTO GIAPPONE
-===================================================== */
+    font-size: clamp(50px, 7vw, 90px);
+
+    transform: none;
+}
 
 .story-photo-text p {
     width: 100%;
-
     max-width: 1100px;
 
     margin: 0 auto 25px;
@@ -1030,20 +1209,31 @@ button {
     font-family: 'Lato', sans-serif;
 
     font-size: 17px;
-
     font-weight: 300;
 
     line-height: 1.8;
 
     text-align: center;
+
+    color: #ffffff;
 }
 
+#noi .story-photo-text p {
+    max-width: 1100px;
 
-/* =====================================================
-   ULTIMO PARAGRAFO
-===================================================== */
+    margin: 0 auto 28px;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: #ffffff;
+}
 
 .story-photo-text p:last-child {
+    margin-bottom: 60px;
+}
+
+#noi .story-photo-text p:last-child {
     margin-bottom: 60px;
 }
 
@@ -1054,7 +1244,6 @@ button {
 
 .registry-section {
     width: 100%;
-
     max-width: none;
 
     margin: 0;
@@ -1062,9 +1251,14 @@ button {
     box-sizing: border-box;
 }
 
-.registry-preview {
-    width: 100%;
+#lista {
+    margin-top: 0;
+}
 
+.registry-preview {
+    position: relative;
+
+    width: 100%;
     max-width: none;
 
     min-height: 85vh;
@@ -1072,7 +1266,6 @@ button {
     margin: 0;
 
     display: flex;
-
     align-items: center;
 
     color: #ffffff;
@@ -1084,13 +1277,11 @@ button {
 
 .registry-background {
     position: absolute;
-
     inset: 0;
 
     background-image: url("images/foto1 (1).jpeg");
 
     background-size: cover;
-
     background-position: center;
 
     filter: saturate(0.8);
@@ -1100,7 +1291,6 @@ button {
 
 .registry-overlay {
     position: absolute;
-
     inset: 0;
 
     background: rgba(28, 49, 70, 0.70);
@@ -1114,7 +1304,6 @@ button {
     z-index: 2;
 
     width: 100%;
-
     max-width: 700px;
 
     margin-left: auto;
@@ -1172,7 +1361,6 @@ button {
 
 .button-light:hover {
     background: #ffffff;
-
     color: #24364b;
 }
 
@@ -1247,12 +1435,6 @@ button {
     }
 
     .section {
-        width: 100%;
-
-        max-width: none;
-
-        margin: 0;
-
         padding: 140px 50px;
     }
 }
@@ -1265,10 +1447,7 @@ button {
 @media (min-width: 600px) and (max-width: 899px) {
 
     .event-location {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
+        grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
 
@@ -1286,6 +1465,7 @@ button {
 
     .location-image img {
         height: 320px;
+        object-fit: cover;
     }
 
     .location-map iframe {
@@ -1305,14 +1485,7 @@ button {
 @media (min-width: 900px) {
 
     .section {
-        width: 100%;
-
-        max-width: none;
-
-        margin: 0;
-
         padding-top: 160px;
-
         padding-bottom: 160px;
     }
 
@@ -1350,16 +1523,12 @@ button {
 
     .location-image img {
         height: 450px;
+        object-fit: cover;
     }
 
     .location-map iframe {
         height: 520px;
     }
-
-
-    /* -------------------------------------------------
-       GIAPPONE DESKTOP
-    ------------------------------------------------- */
 
     .story-photo-text {
         width: 94%;
@@ -1373,6 +1542,111 @@ button {
 
 
 /* =====================================================
+   COUNTDOWN — TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .wedding-countdown {
+        margin-top: 35px;
+        margin-bottom: 55px;
+    }
+
+    .countdown-unit {
+        min-width: 95px;
+    }
+
+    .countdown-unit span {
+        font-size: 3.8rem;
+    }
+
+    .countdown-unit small {
+        font-size: 0.52rem;
+        letter-spacing: 2.5px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        right: -1px;
+        top: 6px;
+
+        font-size: 2.3rem;
+    }
+
+    #evento {
+        padding-bottom: 25px;
+    }
+
+    #noi {
+        padding-top: 25px;
+        padding-bottom: 0;
+    }
+
+    #noi .story {
+        max-width: 100%;
+
+        padding-left: 25px;
+        padding-right: 25px;
+
+        padding-bottom: 100px;
+    }
+
+    #noi .story p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    #noi .story-photo {
+        width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+
+        height: 100vh;
+        min-height: 750px;
+
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #noi .story-photo img {
+        object-position: center center;
+    }
+
+    #noi .story-photo-overlay {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(62, 26, 49, 0.18),
+                rgba(62, 26, 49, 0.42)
+            );
+    }
+
+    #noi .story-photo-text {
+        width: 88%;
+        max-width: none;
+
+        top: 50%;
+    }
+
+    #noi .story-photo-text h2 {
+        margin-bottom: 25px;
+
+        font-size: clamp(44px, 13vw, 65px);
+    }
+
+    #noi .story-photo-text p {
+        font-size: 15px;
+        line-height: 1.7;
+
+        margin-bottom: 22px;
+    }
+
+    #noi .story-photo-text p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* =====================================================
    MOBILE
 ===================================================== */
 
@@ -1380,28 +1654,23 @@ button {
 
     html,
     body {
-        margin: 0;
-
-        padding: 0;
-
         width: 100%;
-
         min-width: 100%;
+
+        margin: 0;
+        padding: 0;
 
         overflow-x: hidden;
     }
 
     main {
         width: 100%;
-
         margin: 0;
-
         padding: 0;
     }
 
     section {
         width: 100%;
-
         max-width: none;
 
         margin: 0;
@@ -1411,7 +1680,6 @@ button {
 
     .section {
         width: 100%;
-
         max-width: none;
 
         min-height: 100vh;
@@ -1451,7 +1719,7 @@ button {
 
 
     /* -------------------------------------------------
-       HOME
+       HOME MOBILE
     ------------------------------------------------- */
 
     .hero-image {
@@ -1464,7 +1732,7 @@ button {
 
 
     /* -------------------------------------------------
-       LOCATION
+       LOCATION MOBILE
     ------------------------------------------------- */
 
     .event-location {
@@ -1495,14 +1763,8 @@ button {
 
     .location-address {
         font-size: 16px;
-
         line-height: 1.7;
     }
-
-
-    /* -------------------------------------------------
-       FOTO LOCATION
-    ------------------------------------------------- */
 
     .location-image {
         width: 100%;
@@ -1514,7 +1776,6 @@ button {
         display: block;
 
         width: 100%;
-
         height: 280px;
 
         object-fit: cover;
@@ -1524,7 +1785,7 @@ button {
 
 
     /* -------------------------------------------------
-       MAPPA
+       MAPPA MOBILE
     ------------------------------------------------- */
 
     .location-map {
@@ -1539,7 +1800,6 @@ button {
         display: block;
 
         width: 100%;
-
         height: 380px;
 
         border: 0;
@@ -1547,7 +1807,7 @@ button {
 
 
     /* -------------------------------------------------
-       PULSANTI MAPPA
+       PULSANTI MAPPA MOBILE
     ------------------------------------------------- */
 
     .map-buttons {
@@ -1558,7 +1818,6 @@ button {
         gap: 15px;
 
         margin-top: 30px;
-
         margin-bottom: 100px;
     }
 
@@ -1570,84 +1829,11 @@ button {
 
 
     /* -------------------------------------------------
-       SECONDA HERO - GIAPPONE
-    ------------------------------------------------- */
-
-    .story-photo {
-        width: 100vw;
-
-        height: 100vh;
-
-        min-height: 650px;
-
-        margin-left: calc(50% - 50vw);
-
-        /*
-           Nessun bordo e nessuno spazio
-           tra la storia e la foto.
-        */
-
-        border: 0;
-    }
-
-
-    /* -------------------------------------------------
-       TESTO GIAPPONE MOBILE
-    ------------------------------------------------- */
-
-    .story-photo-text {
-        width: 92%;
-
-        max-width: none;
-
-        left: 50%;
-
-        text-align: center;
-    }
-
-
-    /* -------------------------------------------------
-       TITOLO GIAPPONE MOBILE
-    ------------------------------------------------- */
-
-    .story-photo-text h2 {
-        font-size: 52px;
-
-        margin-bottom: 25px;
-
-        transform: translateY(-40px);
-    }
-
-
-    /* -------------------------------------------------
-       PARAGRAFI GIAPPONE MOBILE
-    ------------------------------------------------- */
-
-    .story-photo-text p {
-        width: 100%;
-
-        max-width: none;
-
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        margin-bottom: 35px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        text-align: center;
-    }
-
-
-    /* -------------------------------------------------
-       CERIMONIA / ORARIO
+       CERIMONIA / ORARIO MOBILE
     ------------------------------------------------- */
 
     .event-section-block {
         padding-top: 65px;
-
         padding-bottom: 75px;
     }
 
@@ -1676,213 +1862,14 @@ button {
     .section-content {
         margin-left: 0;
     }
-}
 
 
-/* =====================================================
-   ACCESSIBILITÀ
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-
-        animation-duration: 0.01ms !important;
-    }
-}
-
-
-/* =====================================================
-   COUNTDOWN MATRIMONIO
-===================================================== */
-
-.wedding-countdown {
-    width: 100%;
-
-    margin-top: 40px;
-    margin-bottom: 60px;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   DATA
-===================================================== */
-
-.countdown-date {
-    margin: 0 0 10px;
-
-    font-size: 2em;
-
-    font-weight: 600;
-
-    letter-spacing: 4px;
-}
-
-
-/* =====================================================
-   LINEA DECORATIVA COUNTDOWN
-===================================================== */
-
-.countdown-line {
-    width: 55px;
-
-    height: 1px;
-
-    margin: 0 auto 28px;
-
-    background: currentColor;
-
-    opacity: 0.7;
-}
-
-
-/* =====================================================
-   CONTENITORE NUMERI
-===================================================== */
-
-.countdown-numbers {
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: center;
-
-    align-items: center;
-
-    width: 100%;
-}
-
-
-/* =====================================================
-   SINGOLO BLOCCO
-===================================================== */
-
-.countdown-unit {
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    min-width: 120px;
-}
-
-
-/* =====================================================
-   NUMERI
-===================================================== */
-
-.countdown-unit span {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 4.5rem;
-
-    font-weight: 700;
-
-    line-height: 0.9;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   TESTO GIORNI / ORE / MINUTI / SECONDI
-===================================================== */
-
-.countdown-unit small {
-    margin-top: 12px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 0.6rem;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-    opacity: 0.9;
-}
-
-
-/* =====================================================
-   SEPARATORI
-===================================================== */
-
-.countdown-unit:not(:last-child)::after {
-    content: "|";
-
-    position: absolute;
-
-    right: -2px;
-
-    top: 8px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 2.8rem;
-
-    font-weight: 300;
-
-    opacity: 0.5;
-}
-
-
-/* =====================================================
-   COUNTDOWN TABLET
-===================================================== */
-
-@media (max-width: 768px) {
-
-    .wedding-countdown {
-        margin-top: 35px;
-
-        margin-bottom: 55px;
-    }
-
-    .countdown-unit {
-        min-width: 95px;
-    }
-
-    .countdown-unit span {
-        font-size: 3.8rem;
-    }
-
-    .countdown-unit small {
-        font-size: 0.52rem;
-
-        letter-spacing: 2.5px;
-    }
-
-    .countdown-unit:not(:last-child)::after {
-        right: -1px;
-
-        top: 6px;
-
-        font-size: 2.3rem;
-    }
-}
-
-
-/* =====================================================
-   COUNTDOWN SMARTPHONE
-===================================================== */
-
-@media (max-width: 600px) {
+    /* -------------------------------------------------
+       COUNTDOWN MOBILE
+    ------------------------------------------------- */
 
     .wedding-countdown {
         margin-top: 32px;
-
         margin-bottom: 50px;
     }
 
@@ -1922,16 +1909,101 @@ button {
 
     .countdown-unit:not(:last-child)::after {
         right: -1px;
-
         top: 3px;
 
         font-size: 1.9rem;
+    }
+
+
+    /* -------------------------------------------------
+       UN PO' DI NOI MOBILE
+    ------------------------------------------------- */
+
+    #noi {
+        padding-top: 25px;
+        padding-bottom: 0;
+    }
+
+    #noi .story {
+        max-width: 100%;
+
+        padding-left: 25px;
+        padding-right: 25px;
+
+        padding-bottom: 100px;
+    }
+
+    #noi .story p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+
+    /* -------------------------------------------------
+       FOTO GIAPPONE MOBILE
+    ------------------------------------------------- */
+
+    #noi .story-photo {
+        width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+
+        height: 100vh;
+        min-height: 750px;
+
+        margin-top: 0;
+        margin-bottom: 0;
+
+        border: 0;
+    }
+
+    #noi .story-photo img {
+        object-position: center center;
+    }
+
+
+    /* -------------------------------------------------
+       TESTO FOTO GIAPPONE MOBILE
+    ------------------------------------------------- */
+
+    #noi .story-photo-text {
+        width: 88%;
+        max-width: none;
+
+        top: 50%;
+    }
+
+    #noi .story-photo-text h2 {
+        margin-bottom: 25px;
+
+        font-size: clamp(44px, 13vw, 65px);
+    }
+
+    #noi .story-photo-text p {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 22px;
+    }
+
+    #noi .story-photo-text p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* -------------------------------------------------
+       LISTA NOZZE MOBILE
+    ------------------------------------------------- */
+
+    #lista {
+        margin-top: 0;
     }
 }
 
 
 /* =====================================================
-   COUNTDOWN SMARTPHONE PICCOLI
+   COUNTDOWN — SMARTPHONE PICCOLI
 ===================================================== */
 
 @media (max-width: 380px) {
@@ -1950,11 +2022,29 @@ button {
 
     .countdown-unit small {
         font-size: 0.38rem;
-
         letter-spacing: 1.5px;
     }
 
     .countdown-unit:not(:last-child)::after {
         font-size: 1.6rem;
+    }
+}
+
+
+/* =====================================================
+   ACCESSIBILITÀ
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
