@@ -752,15 +752,14 @@ button {
 }
 
 #evento .map-button:hover {
-    background: #A45D78;
+    background: #7894B0;
     color: #ffffff;
 
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 25px rgba(164, 93, 120, 0.22);
+        0 12px 25px rgba(120, 148, 176, 0.22);
 }
-
 
 /* =====================================================
    ICONE MAPPA
@@ -1792,29 +1791,27 @@ button {
     }
 
 
-    /* -------------------------------------------------
-       PULSANTI MAPPA MOBILE
-    ------------------------------------------------- */
 
-    .map-button {
-        background: #A45D78 !important;
-        color: #FFFFFF !important;
-        border-color: #A45D78 !important;
-    }
+/* -------------------------------------------------
+   PULSANTI MAPPA MOBILE
+------------------------------------------------- */
 
-    .map-button:hover,
-    .map-button:active,
-    .map-button:focus,
-    .map-button:focus-visible {
-        background: #A45D78 !important;
-        color: #FFFFFF !important;
-        border-color: #A45D78 !important;
-        transform: none;
-        box-shadow: none;
-    }
-
+.map-button {
+    background: #7894B0 !important;
+    color: #FFFFFF !important;
+    border-color: #7894B0 !important;
 }
 
+.map-button:hover,
+.map-button:active,
+.map-button:focus,
+.map-button:focus-visible {
+    background: #7894B0 !important;
+    color: #FFFFFF !important;
+    border-color: #7894B0 !important;
+    transform: none;
+    box-shadow: none;
+}
 
     /* -------------------------------------------------
        CERIMONIA / ORARIO MOBILE
