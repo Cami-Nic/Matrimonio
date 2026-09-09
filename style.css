@@ -1698,10 +1698,11 @@ button {
 }
 
 .countdown-unit {
+   position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 75px;
+    min-width: 105px;
 }
 
 .countdown-unit span {
@@ -1718,19 +1719,16 @@ button {
     font-weight: 400;
     opacity: 0.75;
 }
-
-
-/* SEPARATORI */
-
-.countdown-unit:not(:last-child)::after {
-    content: "·";
-    position: absolute;
-    margin-left: 150px;
-    margin-top: 2px;
-    font-size: 1.2rem;
-    opacity: 0.6;
-}
-
+/* Separatore tra i blocchi */ 
+.countdown-unit:not(:last-child)::after { 
+   content: "|"; 
+   position: absolute; 
+   right: 0; 
+   top: 5px; 
+   font-family: "Cormorant Garamond", serif; 
+   font-size: 2.2rem; 
+   font-weight: 300; 
+   opacity: 0.5; }
 
 /* =========================
    MOBILE
@@ -1747,9 +1745,16 @@ button {
         letter-spacing: 3px;
     }
 
-    .countdown-unit {
-        min-width: 60px;
+     .countdown-unit {
+        min-width: 78px;
     }
+
+    .countdown-unit:not(:last-child)::after {
+        right: 0;
+        top: 2px;
+        font-size: 1.7rem;
+    }
+}
 
     .countdown-unit span {
         font-size: 1.45rem;
@@ -1761,8 +1766,4 @@ button {
         letter-spacing: 1.2px;
     }
 
-    .countdown-unit:not(:last-child)::after {
-        margin-left: 120px;
-        font-size: 1rem;
-    }
 }
