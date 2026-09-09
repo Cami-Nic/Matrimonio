@@ -959,22 +959,24 @@ button {
 
     box-sizing: border-box;
 
-    background: #FFFFFF;
+    background: #7894B0;
 
-    color: #3E1A31;
+    color: #ffffff;
 }
 
 #noi .section-title h2 {
-    color: #3E1A31;
+    color: #ffffff;
 }
 
 #noi .eyebrow {
-    color: #8F536B;
+    color: #ffffff;
 }
 
 #noi .blue-line {
-    background: #A45D78;
+    background: #ffffff;
 }
+
+
 /* =====================================================
    STORIA
 ===================================================== */
@@ -987,14 +989,9 @@ button {
 
     box-sizing: border-box;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff 0%,
-            #fffafb 25%,
-            #fff1f4 55%,
-            #f8e0e6 100%
-        );
+    background: #7894B0;
+
+    color: #ffffff;
 }
 
 .story {
@@ -1011,6 +1008,8 @@ button {
 
     padding-top: 20px;
     padding-bottom: 130px;
+
+    color: #ffffff;
 }
 
 .story-large {
@@ -1021,6 +1020,8 @@ button {
     line-height: 1.2;
 
     margin-bottom: 40px;
+
+    color: #ffffff;
 }
 
 .story p:not(.story-large) {
@@ -1031,12 +1032,14 @@ button {
     font-weight: 300;
 
     margin-bottom: 25px;
+
+    color: #ffffff;
 }
 
 #noi .story p {
     margin: 0 0 25px;
 
-    color: #3E1A31;
+    color: #ffffff;
 
     font-size: 17px;
     line-height: 1.9;
@@ -1096,23 +1099,7 @@ button {
 
 .story-photo-overlay {
     position: absolute;
-    inset: 0;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(249, 217, 218, 0.55) 8%,
-            rgba(243, 201, 208, 0.25) 18%,
-            rgba(62, 26, 49, 0.15) 35%,
-            rgba(62, 26, 49, 0.45) 60%,
-            rgba(62, 26, 49, 0.82) 100%
-        );
-
-    z-index: 1;
-   
-}.story-photo-overlay {
-    position: absolute;
     inset: 0;
 
     background:
@@ -1123,7 +1110,10 @@ button {
             rgba(62, 26, 49, 0.35) 50%,
             rgba(62, 26, 49, 0.82) 100%
         );
+
+    z-index: 1;
 }
+
 #noi .story-photo-overlay {
     background:
         linear-gradient(
@@ -1185,6 +1175,8 @@ button {
     font-size: clamp(50px, 7vw, 90px);
 
     transform: none;
+
+    color: #ffffff;
 }
 
 .story-photo-text p {
@@ -1223,7 +1215,6 @@ button {
 #noi .story-photo-text p:last-child {
     margin-bottom: 60px;
 }
-
 
 /* =====================================================
    LISTA NOZZE
@@ -1565,26 +1556,31 @@ button {
     #evento {
         padding-bottom: 25px;
     }
+#noi {
+    padding-top: 25px;
+    padding-bottom: 0;
 
-    #noi {
-        padding-top: 25px;
-        padding-bottom: 0;
-    }
+    background: #7894B0;
+    color: #ffffff;
+}
 
-    #noi .story {
-        max-width: 100%;
+#noi .story {
+    max-width: 100%;
 
-        padding-left: 25px;
-        padding-right: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 
-        padding-bottom: 100px;
-    }
+    padding-bottom: 100px;
 
-    #noi .story p {
-        font-size: 16px;
-        line-height: 1.85;
-    }
+    color: #ffffff;
+}
 
+#noi .story p {
+    font-size: 16px;
+    line-height: 1.85;
+
+    color: #ffffff;
+}
     #noi .story-photo {
         width: 100vw;
 
@@ -1911,25 +1907,31 @@ button {
        UN PO' DI NOI MOBILE
     ------------------------------------------------- */
 
-    #noi {
-        padding-top: 25px;
-        padding-bottom: 0;
-    }
+   #noi {
+    padding-top: 25px;
+    padding-bottom: 0;
 
-    #noi .story {
-        max-width: 100%;
+    background: #7894B0;
+    color: #ffffff;
+}
 
-        padding-left: 25px;
-        padding-right: 25px;
+#noi .story {
+    max-width: 100%;
 
-        padding-bottom: 100px;
-    }
+    padding-left: 25px;
+    padding-right: 25px;
 
-    #noi .story p {
-        font-size: 16px;
-        line-height: 1.85;
-    }
+    padding-bottom: 100px;
 
+    color: #ffffff;
+}
+
+#noi .story p {
+    font-size: 16px;
+    line-height: 1.85;
+
+    color: #ffffff;
+}
 
     /* -------------------------------------------------
        FOTO GIAPPONE MOBILE
