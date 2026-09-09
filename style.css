@@ -884,12 +884,9 @@ button {
 ----------------------------------------------------- */
 
 .story {
-    width: 100%;
-
     max-width: 750px;
-
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding-bottom: 120px;
 }
 
 
@@ -929,33 +926,14 @@ button {
 
 .story-photo {
     position: relative;
-
     width: 100vw;
-
     margin-left: calc(50% - 50vw);
-
-    /*
-       La foto occupa completamente
-       la sezione anche in verticale.
-    */
-
-    height: 100vh;
-    min-height: 100vh;
-
+    height: 120vh;
+    min-height: 900px;
     overflow: hidden;
-
     box-sizing: border-box;
-
-    /*
-       IMPORTANTE:
-       nessun border-top.
-       Questo elimina definitivamente
-       la riga/spazio bianco tra
-       "Un po' di noi" e Giappone.
-    */
+    margin-bottom: 0;
 }
-
-
 /* =====================================================
    FOTO GIAPPONE
 ===================================================== */
@@ -970,7 +948,9 @@ button {
 
     object-position: center;
 }
-
+.registry-preview {
+    margin-top: 0;
+}
 
 /* =====================================================
    VELO SCURO SOPRA LA FOTO
