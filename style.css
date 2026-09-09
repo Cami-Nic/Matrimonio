@@ -1800,17 +1800,21 @@ button {
        PULSANTI MAPPA MOBILE
     ------------------------------------------------- */
 
-      .map-button {
-        background-color: #3E1A31
-;
-        color: #FFFFFF;
+    .map-button {
+        background: #A45D78 !important;
+        color: #FFFFFF !important;
+        border-color: #A45D78 !important;
     }
 
+    .map-button:hover,
     .map-button:active,
-    .map-button:focus {
-        background-color: #3E1A31
-;
-        color: #FFFFFF;
+    .map-button:focus,
+    .map-button:focus-visible {
+        background: #A45D78 !important;
+        color: #FFFFFF !important;
+        border-color: #A45D78 !important;
+        transform: none;
+        box-shadow: none;
     }
 
 }
