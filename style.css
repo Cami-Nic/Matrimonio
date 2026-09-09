@@ -2040,13 +2040,14 @@ button {
 }
 
 .event-title-with-icon {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .event-title-with-icon img {
-    width: 28px;
-    height: 28px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
+    flex-shrink: 0;
 }
