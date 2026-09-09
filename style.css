@@ -5,7 +5,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-
 /* =====================================================
    PALETTE MATRIMONIO
 ===================================================== */
@@ -952,7 +951,7 @@ button {
     position: absolute;
 
     top: 8px;
-    right: -60px;
+    right: -42px;
 
     font-family: 'Rubik', sans-serif;
 
