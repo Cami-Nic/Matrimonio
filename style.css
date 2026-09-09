@@ -486,7 +486,12 @@ button {
     transform: translateY(5px);
     box-shadow: none;
 }
-
+#home .scroll-button span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1;
+}
 /* =====================================================
    TITOLI SEZIONI
 ===================================================== */
