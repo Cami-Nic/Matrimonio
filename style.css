@@ -3,7 +3,8 @@
    FONT
 ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
 
 /* =====================================================
    PALETTE MATRIMONIO
@@ -13,7 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 html,
@@ -30,7 +31,7 @@ html {
 }
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
     color: #24364b;
     background: #ffffff;
 }
@@ -62,7 +63,7 @@ a {
 }
 
 button {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 
@@ -244,7 +245,7 @@ button {
 }
 
 .side-menu a {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 25px;
 
@@ -391,8 +392,7 @@ button {
 
     text-align: center;
 
-    transform: translateY(100px);
-
+    transform: translateY(80px);
 }
 
 .small-title,
@@ -406,7 +406,7 @@ button {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: clamp(3rem, 12vw, 7rem);
 
@@ -492,7 +492,7 @@ button {
 }
 
 #home .scroll-button span {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 26px;
     font-weight: 300;
@@ -510,7 +510,7 @@ button {
 }
 
 .section-title h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: clamp(2.8rem, 10vw, 5.5rem);
 
@@ -583,7 +583,7 @@ button {
 .location-content h3 {
     margin: 0;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 52px;
     font-weight: 400;
@@ -594,7 +594,7 @@ button {
 .location-name {
     margin: 22px 0 10px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 31px;
 
@@ -834,7 +834,7 @@ button {
 .countdown-date {
     margin: 0 0 10px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 2em;
     font-weight: 600;
@@ -897,7 +897,7 @@ button {
 .countdown-unit span {
     display: block;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 4.8rem;
     font-weight: 700;
@@ -921,7 +921,7 @@ button {
 
     margin-top: 12px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 0.6rem;
     font-weight: 600;
@@ -952,7 +952,7 @@ button {
     top: 8px;
     right: -15px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 2rem;
     font-weight: 300;
@@ -1467,7 +1467,7 @@ button {
     }
 
     .countdown-unit span {
-        font-family: 'Cormorant Garamond', serif;
+        font-family: 'Rubik', sans-serif;
 
         font-size: 3.2rem;
         font-weight: 700;
@@ -1685,7 +1685,7 @@ button {
 }
 
 .story-large {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: clamp(2rem, 7vw, 3.5rem);
 
@@ -1828,7 +1828,7 @@ button {
 .story-photo-text h2 {
     margin: 0 0 30px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: clamp(52px, 7vw, 90px);
 
@@ -1857,7 +1857,7 @@ button {
 
     margin: 0 auto 25px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 17px;
     font-weight: 300;
@@ -1967,7 +1967,7 @@ button {
 }
 
 .registry-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: clamp(3rem, 10vw, 5.5rem);
 
@@ -2034,7 +2034,7 @@ button {
 }
 
 .footer p:first-child {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rubik', sans-serif;
 
     font-size: 25px;
 }
