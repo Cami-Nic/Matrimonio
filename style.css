@@ -805,6 +805,7 @@ button {
    COUNTDOWN MATRIMONIO
 ===================================================== */
 
+
 .wedding-countdown {
     width: 100%;
 
@@ -813,6 +814,9 @@ button {
 
     text-align: center;
 }
+
+
+/* DATA */
 
 .countdown-date {
     margin: 0 0 10px;
@@ -826,6 +830,9 @@ button {
 #home .countdown-date {
     color: #ffffff;
 }
+
+
+/* LINEA */
 
 .countdown-line {
     width: 55px;
@@ -842,14 +849,22 @@ button {
     background: rgba(243, 201, 208, 0.7);
 }
 
+
+/* NUMERI */
+
 .countdown-numbers {
     display: flex;
-    flex-direction: row;
+
     justify-content: center;
     align-items: center;
+
     width: 100%;
-    gap: 20px;
+
+    gap: 15px;
 }
+
+
+/* SINGOLO BLOCCO */
 
 .countdown-unit {
     position: relative;
@@ -857,9 +872,15 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
+    width: 130px;
     min-width: 130px;
 }
+
+
+/* NUMERO GRANDE */
+
 .countdown-unit span {
     font-family: 'Playfair Display', serif;
 
@@ -874,6 +895,9 @@ button {
 #home .countdown-numbers span {
     color: #ffffff;
 }
+
+
+/* ETICHETTA */
 
 .countdown-unit small {
     margin-top: 12px;
@@ -892,23 +916,28 @@ button {
     color: #F3C9D0;
 }
 
+
+/* SEPARATORI */
+
 .countdown-unit:not(:last-child)::after {
     content: "|";
 
     position: absolute;
 
-    right: -20px;
     top: 8px;
+    right: -15px;
 
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 300;
 
-    opacity: 0.5;
+    line-height: 1;
+
+    color: #ffffff;
+
+    opacity: 0.55;
 }
-
-
 /* =====================================================
    UN PO' DI NOI
 ===================================================== */
