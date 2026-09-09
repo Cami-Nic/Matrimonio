@@ -1679,8 +1679,8 @@ button {
 .countdown-date {
     margin: 0 0 18px;
 
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 2em;
+    font-weight: 600;
     letter-spacing: 4px;
 }
 
