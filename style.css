@@ -1005,9 +1005,6 @@ button {
     .story-photo {
         height: 100vh;
         min-height: 650px;
-
-        /* SPAZIO BIANCO SU MOBILE */
-        border-top: 35px solid white;
     }
 
 
@@ -1563,8 +1560,6 @@ button {
     .story-photo {
         height: 100vh;
         min-height: 650px;
-
-        border-top: 35px solid white;
     }
 
     .story-photo-text {
