@@ -904,9 +904,11 @@ button {
     position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    height: 100vh;
-    overflow: hidden;
 
+    height: 100vh;
+    min-height: 100vh;
+
+    overflow: hidden;
     box-sizing: border-box;
 }
 
