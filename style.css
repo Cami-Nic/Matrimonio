@@ -2038,3 +2038,15 @@ button {
         animation-duration: 0.01ms !important;
     }
 }
+
+.event-title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-title-with-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
