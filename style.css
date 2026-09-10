@@ -869,30 +869,33 @@ button {
     text-align: center;
 }
 
+/* ==================================================
+   DATA MATRIMONIO
+================================================== */
 
-/* =====================================================
-   DATA
-===================================================== */
+.countdown-line {
+    width: 100%;
+    margin: 40px auto 30px;
+    text-align: center;
+}
 
 .countdown-date {
+    display: block;
+    width: 100%;
     margin: 0;
     padding: 16px 0;
+
     font-family: 'Rubik', sans-serif;
     font-size: 2em;
     font-weight: 600;
     letter-spacing: 4px;
     line-height: 1;
+
     color: #ffffff;
     text-align: center;
+
     border-top: 1px solid rgba(243, 201, 208, 0.7);
     border-bottom: 1px solid rgba(243, 201, 208, 0.7);
-}
-
-
-/* LINEA VECCHIA NON UTILIZZATA */
-
-.countdown-line {
-    display: none;
 }
 
 
@@ -1829,14 +1832,6 @@ button {
         margin-bottom: 50px;
 
         padding: 0 5px;
-    }
-
-    .countdown-date {
-        padding: 14px 0;
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-        border-top: 1px solid rgba(243, 201, 208, 0.7);
-        border-bottom: 1px solid rgba(243, 201, 208, 0.7);
     }
 
     .countdown-numbers {
