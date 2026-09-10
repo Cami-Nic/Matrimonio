@@ -1209,12 +1209,13 @@ button {
         font-size: 1.5rem;
     }
 
-  .location-image {
-        width: 100vw;
+.location-image {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-bottom: -30px;
+        left: 0;
+        transform: none;
         z-index: 2;
     }
 
