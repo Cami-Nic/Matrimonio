@@ -167,27 +167,38 @@
         }
 
 
-        /* ==================================================
-           PARAGRAFO PRINCIPALE
-        ================================================== */
+ /* ==================================================
+   PARAGRAFO PRINCIPALE
+================================================== */
 
-        .intro {
+.intro {
 
-            max-width: 720px;
+    max-width: 720px;
 
-            margin:
-                0 auto 45px;
+    margin:
+        0 auto 45px;
 
-            font-size: 1.3rem;
+    font-size: 1.3rem;
 
-            font-weight: 300;
+    font-weight: 300;
 
-            line-height: 1.9;
+    line-height: 1.9;
 
-            color:
-                rgba(255,255,255,0.96);
-        }
+    color:
+        rgba(255,255,255,0.96);
+}
 
+
+/* SPAZIO TRA I DUE PARAGRAFI */
+
+.intro p {
+    margin-bottom: 22px;
+}
+
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
 
         /* ==================================================
            BOX IBAN
@@ -616,11 +627,6 @@
                  TITOLO
             ================================================== -->
 
-            <div class="eyebrow">
-                Il nostro Matrimonio
-            </div>
-
-
             <h1>
                 Lista Nozze
             </h1>
@@ -628,129 +634,108 @@
 
             <div class="line"></div>
 
+<!-- ==================================================
+     PARAGRAFO
+================================================== -->
 
-            <!-- ==================================================
-                 PARAGRAFO
-            ================================================== -->
+<div class="intro">
 
-            <p class="intro">
+    <p>
+        Avendo già condiviso una convivenza e una casa
+        che abbiamo arredato insieme, abbiamo scelto
+        di non fare una lista nozze tradizionale.
+    </p>
 
-                Avendo già condiviso con voi
-                tanti momenti importanti della nostra vita,
-                abbiamo deciso di rendervi partecipi
-                anche di questa nuova avventura.
+    <p>
+        Siamo però pronti a partire per la nostra luna
+        di miele e, se vi fa piacere, un piccolo contributo
+        sarà sicuramente molto apprezzato.
+    </p>
 
-                <br><br>
+</div>
 
-                Se desiderate farci un pensiero,
-                potete contribuire al nostro viaggio di nozze
-                utilizzando le coordinate qui sotto.
+<!-- ==================================================
+     IBAN
+================================================== -->
 
-            </p>
+<section class="iban-box">
 
+    <h2>
+        Un pensiero per noi
+    </h2>
 
-            <!-- ==================================================
-                 IBAN
-            ================================================== -->
+    <div class="bank-details">
 
-            <section class="iban-box">
+        <!-- ==================================================
+             IBAN
+        ================================================== -->
 
+        <div class="detail">
 
-                <h2>
-                    Un pensiero per noi
-                </h2>
+            <span class="detail-label">
+                IBAN
+            </span>
 
+            <span
+                class="detail-value iban-value"
+                id="ibanValue"
+            >
+                IT89Z0623052520000036162052
+            </span>
 
-                <p class="iban-description">
+            <button class="copy-button" id="copyIban">
+                Copia IBAN
+            </button>
 
-                    Grazie di cuore per voler contribuire
-                    alla nostra nuova avventura insieme.
-                    <br>
-                    Ogni vostro pensiero diventerà
-                    un ricordo speciale del nostro viaggio.
-
-                </p>
-
-
-                <div class="bank-details">
-
-
-                    <!-- ==================================================
-                         INSERISCI QUI IL TUO IBAN
-                    ================================================== -->
-
-                    <div class="detail">
-
-                        <span class="detail-label">
-                            IBAN
-                        </span>
-
-                        <span
-                            class="detail-value iban-value"
-                            id="ibanValue"
-                        >
-                            INSERISCI QUI IL TUO IBAN
-                        </span>
-
-                    </div>
+        </div>
 
 
-                    <!-- ==================================================
-                         INSERISCI QUI L'INTESTATARIO
-                    ================================================== -->
+        <!-- ==================================================
+             INTESTATARIO
+        ================================================== -->
 
-                    <div class="detail">
+        <div class="detail">
 
-                        <span class="detail-label">
-                            Intestatario
-                        </span>
+            <span class="detail-label">
+                INTESTATARIO
+            </span>
 
-                        <span class="detail-value">
-                            INSERISCI QUI
-                        </span>
+            <span
+                class="detail-value"
+                id="intestatarioValue"
+            >
+                Camilla Tiraboschi Nicolo Signorelli
+            </span>
 
-                    </div>
+            <button class="copy-button" id="copyIntestatario">
+                Copia intestatario
+            </button>
 
-
-                    <!-- ==================================================
-                         INSERISCI QUI LA CAUSALE
-                    ================================================== -->
-
-                    <div class="detail">
-
-                        <span class="detail-label">
-                            Causale consigliata
-                        </span>
-
-                        <span class="detail-value">
-                            Regalo di nozze
-                        </span>
-
-                    </div>
+        </div>
 
 
-                    <!-- PULSANTE COPIA -->
+        <!-- ==================================================
+             CAUSALE
+        ================================================== -->
 
-                    <button
-                        type="button"
-                        class="copy-button"
-                        id="copyIban"
-                    >
-                        Copia IBAN
-                    </button>
+        <div class="detail">
 
+            <span class="detail-label">
+                Causale consigliata
+            </span>
 
-                    <span
-                        class="copy-message"
-                        id="copyMessage"
-                    ></span>
+            <span class="detail-value">
+                Regalo di nozze
+            </span>
 
+        </div>
 
-                </div>
+        <p id="copyMessage" class="copy-message"></p>
 
-            </section>
+    </div>
 
-
+</section>
+            
             <!-- ==================================================
                  RINGRAZIAMENTO
             ================================================== -->
@@ -777,79 +762,61 @@
     </main>
 
 
-    <!-- ==================================================
-         JAVASCRIPT
-         Serve solamente per "Copia IBAN"
-    ================================================== -->
+  <script>
+    const copyIbanButton = document.getElementById("copyIban");
+    const ibanElement = document.getElementById("ibanValue");
 
-    <script>
+    const copyIntestatarioButton = document.getElementById("copyIntestatario");
+    const intestatarioElement = document.getElementById("intestatarioValue");
 
-        const copyButton =
-            document.getElementById("copyIban");
-
-
-        const ibanElement =
-            document.getElementById("ibanValue");
+    const copyMessage = document.getElementById("copyMessage");
 
 
-        const copyMessage =
-            document.getElementById("copyMessage");
+    // COPIA IBAN
+    copyIbanButton.addEventListener("click", async function () {
+
+        const iban = ibanElement.textContent.trim();
+
+        if (!iban || iban === "INSERISCI QUI IL TUO IBAN") {
+            copyMessage.textContent = "Inserisci prima il tuo IBAN.";
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(iban);
+            copyMessage.textContent = "✓ IBAN copiato";
+        } catch (error) {
+            copyMessage.textContent = "Copia non disponibile automaticamente.";
+        }
+
+        setTimeout(function () {
+            copyMessage.textContent = "";
+        }, 2500);
+    });
 
 
-        copyButton.addEventListener(
-            "click",
-            async function () {
+    // COPIA INTESTATARIO
+    copyIntestatarioButton.addEventListener("click", async function () {
 
+        const intestatario = intestatarioElement.textContent.trim();
 
-                const iban =
-                    ibanElement.textContent.trim();
+        if (!intestatario || intestatario === "INSERISCI QUI L'INTESTATARIO") {
+            copyMessage.textContent = "Inserisci prima l'intestatario.";
+            return;
+        }
 
+        try {
+            await navigator.clipboard.writeText(intestatario);
+            copyMessage.textContent = "✓ Intestatario copiato";
+        } catch (error) {
+            copyMessage.textContent = "Copia non disponibile automaticamente.";
+        }
 
-                if (
-                    !iban ||
-                    iban ===
-                    "INSERISCI QUI IL TUO IBAN"
-                ) {
-
-                    copyMessage.textContent =
-                        "Inserisci prima il tuo IBAN.";
-
-                    return;
-                }
-
-
-                try {
-
-                    await navigator.clipboard.writeText(
-                        iban
-                    );
-
-
-                    copyMessage.textContent =
-                        "✓ IBAN copiato";
-
-
-                } catch (error) {
-
-                    copyMessage.textContent =
-                        "Copia non disponibile automaticamente.";
-
-                }
-
-
-                setTimeout(
-                    function () {
-
-                        copyMessage.textContent = "";
-
-                    },
-                    2500
-                );
-
-            }
-        );
-
-    </script>
+        setTimeout(function () {
+            copyMessage.textContent = "";
+        }, 2500);
+    });
+</script>
 
 
 </body>
