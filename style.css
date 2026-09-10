@@ -2327,3 +2327,84 @@ button {
     text-transform: uppercase;
     color: #24364B !important;
 }
+/* =====================================================
+   DATA CENTRATA TRA DUE LINEE
+===================================================== */
+
+.wedding-countdown .countdown-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    margin: 0 auto 28px;
+
+    background: none;
+}
+
+.wedding-countdown .countdown-line::before,
+.wedding-countdown .countdown-line::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(243, 201, 208, 0.7);
+
+    opacity: 0.7;
+}
+
+.wedding-countdown .countdown-date {
+    flex-shrink: 0;
+
+    margin: 0;
+
+    font-family: 'Rubik', sans-serif;
+
+    font-size: 2em;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+    line-height: 1;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 599px) {
+
+    .wedding-countdown .countdown-line {
+        gap: 12px;
+        margin-bottom: 23px;
+    }
+
+    .wedding-countdown .countdown-date {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+}
+
+
+/* =====================================================
+   SMARTPHONE PICCOLI
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .wedding-countdown .countdown-line {
+        gap: 9px;
+    }
+
+    .wedding-countdown .countdown-date {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+}
