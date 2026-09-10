@@ -1,1 +1,452 @@
+<!DOCTYPE html>
 
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lista Nozze | Il nostro Matrimonio</title>
+
+<style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Arial", sans-serif;
+        color: #ffffff;
+        min-height: 100vh;
+        background:
+            linear-gradient(
+                rgba(20, 31, 42, 0.48),
+                rgba(20, 31, 42, 0.58)
+            ),
+            url("images/lista-nozze.jpg");
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+    /* ==================================================
+       CONTENITORE PRINCIPALE
+    ================================================== */
+
+    .page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 850px;
+        text-align: center;
+    }
+
+
+    /* ==================================================
+       LOGO / TORNA AL MATRIMONIO
+    ================================================== */
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 55px;
+
+        color: #ffffff;
+        text-decoration: none;
+
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        opacity: 0.9;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .back-link:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+
+
+    /* ==================================================
+       TITOLO
+    ================================================== */
+
+    .eyebrow {
+        margin-bottom: 20px;
+
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    h1 {
+        margin-bottom: 30px;
+
+        font-size: clamp(3.5rem, 10vw, 7rem);
+        font-weight: 500;
+        line-height: 0.95;
+        letter-spacing: 2px;
+    }
+
+    .line {
+        width: 70px;
+        height: 1px;
+
+        margin: 0 auto 40px;
+
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+
+    /* ==================================================
+       TESTO INTRODUTTIVO
+    ================================================== */
+
+    .intro {
+        max-width: 680px;
+        margin: 0 auto 50px;
+
+        font-size: 1.15rem;
+        font-weight: 300;
+        line-height: 1.9;
+
+        color: rgba(255, 255, 255, 0.94);
+    }
+
+
+    /* ==================================================
+       BOX LISTA NOZZE
+    ================================================== */
+
+    .registry-box {
+        max-width: 650px;
+        margin: 0 auto;
+
+        padding: 45px 40px;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+        border-radius: 2px;
+    }
+
+    .registry-box h2 {
+        margin-bottom: 18px;
+
+        font-size: 1.8rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+
+    .registry-box p {
+        margin-bottom: 30px;
+
+        font-size: 1rem;
+        line-height: 1.8;
+
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    /* ==================================================
+       PULSANTE
+    ================================================== */
+
+    .registry-button {
+        display: inline-block;
+
+        padding: 15px 35px;
+
+        background: #f3c9d0;
+        color: #24364b;
+
+        text-decoration: none;
+
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        border: 1px solid #f3c9d0;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .registry-button:hover {
+        background: transparent;
+        color: #ffffff;
+
+        transform: translateY(-2px);
+    }
+
+
+    /* ==================================================
+       MESSAGGIO
+    ================================================== */
+
+    .thank-you {
+        margin-top: 45px;
+
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.8;
+
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+        margin-top: 55px;
+
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+
+    /* ==================================================
+       ANIMAZIONE
+    ================================================== */
+
+    .content {
+        animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 599px) {
+
+        body {
+            background-attachment: scroll;
+
+            background-position: center center;
+        }
+
+        .page {
+            min-height: 100svh;
+            padding: 45px 20px;
+        }
+
+        .back-link {
+            margin-bottom: 45px;
+
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .eyebrow {
+            margin-bottom: 18px;
+
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+
+            font-size: clamp(3.2rem, 16vw, 5rem);
+            line-height: 0.95;
+        }
+
+        .line {
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            margin-bottom: 35px;
+
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .registry-box {
+            padding: 35px 25px;
+        }
+
+        .registry-box h2 {
+            font-size: 1.5rem;
+        }
+
+        .registry-box p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .registry-button {
+            width: 100%;
+            padding: 16px 20px;
+        }
+
+        .thank-you {
+            margin-top: 35px;
+
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 40px;
+
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+        }
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+    <div class="content">
+
+        <a href="index.html" class="back-link">
+            ← Torna al nostro matrimonio
+        </a>
+
+        <div class="eyebrow">
+            Il nostro Matrimonio
+        </div>
+
+        <h1>
+            Lista Nozze
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="intro">
+            Il regalo più bello sarà condividere con voi
+            questo giorno speciale.
+            <br>
+            Se desiderate accompagnarci anche nel nostro
+            viaggio di nozze, abbiamo pensato a una lista
+            che ci permetterà di vivere insieme
+            nuove emozioni e ricordi.
+        </p>
+
+
+        <section class="registry-box">
+
+            <h2>
+                Il nostro viaggio
+            </h2>
+
+            <p>
+                La nostra luna di miele ci porterà alla scoperta
+                del Giappone e, successivamente, delle Isole Fiji.
+                <br><br>
+                Ogni vostro contributo ci aiuterà a trasformare
+                questo viaggio in un ricordo indimenticabile.
+            </p>
+
+            <!--
+                SOSTITUISCI # CON IL LINK
+                DELLA TUA LISTA NOZZE
+            -->
+
+            <a
+                href="http://euronics.it/tv-e-audio/tv/tv-4k/philips---smart-tv-ambilight-led-4k-43-43pus8010-black/252007204.html"
+                class="registry-button"
+                id="registryButton">
+                Scopri la lista nozze
+            </a>
+
+        </section>
+
+
+        <p class="thank-you">
+            Grazie per essere parte della nostra storia
+            e per accompagnarci in questa nuova avventura.
+        </p>
+
+
+        <footer>
+            02 Aprile 2027
+        </footer>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    /* ==================================================
+       JAVASCRIPT
+    ================================================== */
+
+    const registryButton =
+        document.getElementById("registryButton");
+
+    registryButton.addEventListener("click", function(event) {
+
+        const link = registryButton.getAttribute("href");
+
+        if (link === "#") {
+            event.preventDefault();
+
+            alert(
+                "Il link alla Lista Nozze verrà inserito a breve."
+            );
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
