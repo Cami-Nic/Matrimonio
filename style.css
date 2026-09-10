@@ -2320,3 +2320,12 @@ button {
         font-size: 7px;
     }
 }
+#evento .event-title-with-icon {
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase;
+    color: #24364B !important;
+}
