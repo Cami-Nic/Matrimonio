@@ -2105,20 +2105,21 @@ button {
    TITOLO EVENTO CON ICONA
 ===================================================== */
 
-#evento .event-title-with-icon {
-    font-family: 'Rubik', sans-serif !important;
-    font-size: 1.7rem !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase;
-    color: #24364B !important;
-}
+ #evento .event-title-with-icon {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: auto;
+        margin: 0 auto;
+    }
 
-#evento .event-title-with-icon img {
-    width: 30px;
-    height: 30px;
-}
+    #evento .event-title-with-icon img {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
 /* =========================================================
    COUNTDOWN MOBILE — GIORNI PERFETTAMENTE CENTRATI
 ========================================================= */
