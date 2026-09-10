@@ -287,7 +287,7 @@ button {
 
     color: #ffffff;
 
-    font-size: clamp(4.5rem, 9vw, 8rem);
+    font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 700;
 
     line-height: 0.95;
@@ -1036,7 +1036,7 @@ button {
     }
 
     .hero-content h1 {
-        font-size: clamp(4rem, 10vw, 6.5rem);
+        font-size: clamp(3.5rem, 7vw, 6rem);
     }
 
     .countdown-unit span {
@@ -1083,7 +1083,7 @@ button {
     }
 
     .hero-image {
-        background-position: 50% center;
+        background-position: 70% center;
     }
 
     .hero-content {
@@ -1096,7 +1096,8 @@ button {
     }
 
     .hero-content h1 {
-        font-size: clamp(3.2rem, 15vw, 5rem);
+
+       font-size: clamp(3.2rem, 15vw, 5rem);
 
         line-height: 0.95;
         letter-spacing: 1px;
