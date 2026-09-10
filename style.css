@@ -855,7 +855,7 @@ button {
 }
 
 .polinesia-photo {
-    margin-bottom: -110px;
+    margin-bottom: 0px;
 }
 /* ==================================================
    LISTA NOZZE
@@ -1316,6 +1316,10 @@ button {
         font-size: 1.2rem;
         line-height: 1.8;
     }
+   
+.polinesia-photo {
+    margin-bottom: 0;
+}
 }
     /* ------------------------------
        LISTA NOZZE
