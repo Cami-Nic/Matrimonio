@@ -846,7 +846,7 @@ button {
 .story-photo-text p {
     margin-bottom: 25px;
     color: rgba(255,255,255,0.9);
-    font-size: 1,3rem;
+    font-size: 2rem;
     font-weight: 300;
     line-height: 1.9;
 }
@@ -1314,7 +1314,7 @@ button {
 }
 
 .story-photo-text p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.8;
 }
 
