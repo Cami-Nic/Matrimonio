@@ -1,416 +1,857 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="it">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lista Nozze | Il nostro Matrimonio</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<style>
+    <title>Lista Nozze | Il nostro Matrimonio</title>
 
-    /* ==================================================
-       RESET
-    ================================================== */
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: "Arial", sans-serif;
-        color: #ffffff;
-        min-height: 100vh;
-        background:
-            linear-gradient(
-                rgba(20, 31, 42, 0.48),
-                rgba(20, 31, 42, 0.58)
-            ),
-            url("images/lista-nozze.jpg");
-
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-
-
-    /* ==================================================
-       CONTENITORE PRINCIPALE
-    ================================================== */
-
-    .page {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 20px;
-    }
-
-    .content {
-        width: 100%;
-        max-width: 850px;
-        text-align: center;
-    }
-
-
-    /* ==================================================
-       LOGO / TORNA AL MATRIMONIO
-    ================================================== */
-
-    .back-link {
-        display: inline-block;
-        margin-bottom: 55px;
-
-        color: #ffffff;
-        text-decoration: none;
-
-        font-size: 1.5rem;
-        font-weight: 400;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-
-        opacity: 0.9;
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease;
-    }
-
-    .back-link:hover {
-        opacity: 1;
-        transform: translateY(-2px);
-    }
-
-
-    /* ==================================================
-       TITOLO
-    ================================================== */
-
-    .eyebrow {
-        margin-bottom: 20px;
-
-        font-size: 1.5rem;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-
-        color: rgba(255, 255, 255, 0.85);
-    }
-
-    h1 {
-        margin-bottom: 30px;
-
-        font-size: clamp(3.5rem, 10vw, 7rem);
-        font-weight: 500;
-        line-height: 0.95;
-        letter-spacing: 2px;
-    }
-
-    .line {
-        width: 70px;
-        height: 1px;
-
-        margin: 0 auto 40px;
-
-        background: rgba(255, 255, 255, 0.8);
-    }
-
-
-    /* ==================================================
-       TESTO INTRODUTTIVO
-    ================================================== */
-
-    .intro {
-        max-width: 680px;
-        margin: 0 auto 50px;
-
-        font-size: 1.15rem;
-        font-weight: 300;
-        line-height: 1.9;
-
-        color: rgba(255, 255, 255, 0.94);
-    }
-
-
-    /* ==================================================
-       BOX LISTA NOZZE
-    ================================================== */
-
-    .registry-box {
-        max-width: 650px;
-        margin: 0 auto;
-
-        padding: 45px 40px;
-
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.28);
-
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-
-        border-radius: 2px;
-    }
-
-    .registry-box h2 {
-        margin-bottom: 18px;
-
-        font-size: 1.8rem;
-        font-weight: 400;
-        letter-spacing: 2px;
-    }
-
-    .registry-box p {
-        margin-bottom: 30px;
-
-        font-size: 1.5rem;
-        line-height: 1.8;
-
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-
-    /* ==================================================
-       PULSANTE
-    ================================================== */
-
-    .registry-button {
-        display: inline-block;
-
-        padding: 15px 35px;
-
-        background: #f3c9d0;
-        color: #24364b;
-
-        text-decoration: none;
-
-        font-size: 0.85rem;
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-
-        border: 1px solid #f3c9d0;
-
-        transition:
-            background 0.3s ease,
-            color 0.3s ease,
-            transform 0.3s ease;
-    }
-
-    .registry-button:hover {
-        background: transparent;
-        color: #ffffff;
-
-        transform: translateY(-2px);
-    }
-
-
-    /* ==================================================
-       MESSAGGIO
-    ================================================== */
-
-    .thank-you {
-        margin-top: 45px;
-
-        font-size: 1rem;
-        font-weight: 300;
-        font-style: italic;
-        line-height: 1.8;
-
-        color: rgba(255, 255, 255, 0.85);
-    }
-
-
-    /* ==================================================
-       FOOTER
-    ================================================== */
-
-    footer {
-        margin-top: 55px;
-
-        font-size: 0.75rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-
-        color: rgba(255, 255, 255, 0.65);
-    }
-
-
-    /* ==================================================
-       ANIMAZIONE
-    ================================================== */
-
-    .content {
-        animation: fadeIn 1.2s ease forwards;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        html {
+            scroll-behavior: smooth;
         }
-    }
 
-
-    /* ==================================================
-       MOBILE
-    ================================================== */
-
-    @media (max-width: 599px) {
 
         body {
-            background-attachment: scroll;
+
+            font-family: Arial, sans-serif;
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(20, 31, 42, 0.50),
+                    rgba(20, 31, 42, 0.62)
+                ),
+                url("images/lista-nozze.jpg");
+
+            background-size: cover;
 
             background-position: center center;
+
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
         }
+
 
         .page {
-            min-height: 100svh;
-            padding: 45px 20px;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 60px 20px;
         }
+
+
+        .content {
+
+            width: 100%;
+
+            max-width: 850px;
+
+            text-align: center;
+
+            animation:
+                fadeIn 1.2s ease forwards;
+        }
+
+
+        /* ==================================================
+           TORNA AL NOSTRO MATRIMONIO
+        ================================================== */
 
         .back-link {
-            margin-bottom: 45px;
 
-            font-size: 0.75rem;
-            letter-spacing: 2px;
+            display: inline-block;
+
+            margin-bottom: 55px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+
+            font-weight: 400;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: 0.9;
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
         }
+
+
+        .back-link:hover {
+
+            opacity: 1;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* ==================================================
+           TITOLO
+        ================================================== */
 
         .eyebrow {
-            margin-bottom: 18px;
 
-            font-size: 0.7rem;
-            letter-spacing: 3px;
+            margin-bottom: 20px;
+
+            font-size: 0.8rem;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255,255,255,0.85);
         }
+
 
         h1 {
-            margin-bottom: 25px;
 
-            font-size: clamp(3.2rem, 16vw, 5rem);
-            line-height: 0.95;
-        }
-
-        .line {
             margin-bottom: 30px;
-        }
 
-        .intro {
-            margin-bottom: 35px;
+            font-size:
+                clamp(3.5rem, 10vw, 7rem);
 
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
+            font-weight: 500;
 
-        .registry-box {
-            padding: 35px 25px;
-        }
+            line-height: 0.95;
 
-        .registry-box h2 {
-            font-size: 1.5rem;
-        }
-
-        .registry-box p {
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .registry-button {
-            width: 100%;
-            padding: 16px 20px;
-        }
-
-        .thank-you {
-            margin-top: 35px;
-
-            font-size: 0.95rem;
-        }
-
-        footer {
-            margin-top: 40px;
-
-            font-size: 0.65rem;
             letter-spacing: 2px;
         }
-    }
 
-</style>
+
+        .line {
+
+            width: 70px;
+
+            height: 1px;
+
+            margin:
+                0 auto 40px;
+
+            background:
+                rgba(255,255,255,0.8);
+        }
+
+
+        /* ==================================================
+           PARAGRAFO PRINCIPALE
+        ================================================== */
+
+        .intro {
+
+            max-width: 720px;
+
+            margin:
+                0 auto 45px;
+
+            font-size: 1.3rem;
+
+            font-weight: 300;
+
+            line-height: 1.9;
+
+            color:
+                rgba(255,255,255,0.96);
+        }
+
+
+        /* ==================================================
+           BOX IBAN
+        ================================================== */
+
+        .iban-box {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            padding: 45px 40px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.28);
+
+            backdrop-filter: blur(6px);
+
+            -webkit-backdrop-filter: blur(6px);
+
+            border-radius: 3px;
+        }
+
+
+        .iban-box h2 {
+
+            margin-bottom: 18px;
+
+            font-size: 1.8rem;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+        }
+
+
+        .iban-description {
+
+            margin-bottom: 30px;
+
+            font-size: 1rem;
+
+            line-height: 1.8;
+
+            color:
+                rgba(255,255,255,0.9);
+        }
+
+
+        /* ==================================================
+           DATI BANCARI
+        ================================================== */
+
+        .bank-details {
+
+            padding: 25px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.16);
+
+            text-align: left;
+        }
+
+
+        .detail {
+
+            margin-bottom: 22px;
+        }
+
+
+        .detail:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .detail-label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255,255,255,0.65);
+        }
+
+
+        .detail-value {
+
+            display: block;
+
+            font-size: 1rem;
+
+            line-height: 1.5;
+
+            color: #ffffff;
+
+            word-break: break-word;
+        }
+
+
+        .iban-value {
+
+            font-size: 1.05rem;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* ==================================================
+           PULSANTE COPIA IBAN
+        ================================================== */
+
+        .copy-button {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 28px;
+
+            padding: 15px 25px;
+
+            border:
+                1px solid #f3c9d0;
+
+            background: #f3c9d0;
+
+            color: #24364b;
+
+            font-size: 0.8rem;
+
+            font-weight: 500;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .copy-button:hover {
+
+            background: transparent;
+
+            color: #ffffff;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .copy-message {
+
+            display: block;
+
+            min-height: 20px;
+
+            margin-top: 14px;
+
+            text-align: center;
+
+            font-size: 0.8rem;
+
+            color:
+                rgba(255,255,255,0.85);
+        }
+
+
+        /* ==================================================
+           RINGRAZIAMENTO
+        ================================================== */
+
+        .thank-you {
+
+            max-width: 650px;
+
+            margin:
+                45px auto 0;
+
+            font-size: 1rem;
+
+            font-weight: 300;
+
+            font-style: italic;
+
+            line-height: 1.8;
+
+            color:
+                rgba(255,255,255,0.85);
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+
+            margin-top: 50px;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255,255,255,0.65);
+        }
+
+
+        /* ==================================================
+           ANIMAZIONE
+        ================================================== */
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 599px) {
+
+            body {
+
+                background-attachment: scroll;
+
+                background-position:
+                    center center;
+            }
+
+
+            .page {
+
+                min-height: 100svh;
+
+                padding:
+                    45px 20px 55px;
+            }
+
+
+            .back-link {
+
+                margin-bottom: 45px;
+
+                font-size: 0.75rem;
+
+                letter-spacing: 2px;
+            }
+
+
+            .eyebrow {
+
+                margin-bottom: 18px;
+
+                font-size: 0.7rem;
+
+                letter-spacing: 3px;
+            }
+
+
+            h1 {
+
+                margin-bottom: 25px;
+
+                font-size:
+                    clamp(3.2rem, 16vw, 5rem);
+
+                line-height: 0.95;
+            }
+
+
+            .line {
+
+                margin-bottom: 30px;
+            }
+
+
+            /* PARAGRAFO PIÙ GRANDE ANCHE SU MOBILE */
+
+            .intro {
+
+                max-width: 100%;
+
+                margin-bottom: 35px;
+
+                font-size: 1.15rem;
+
+                line-height: 1.85;
+            }
+
+
+            .iban-box {
+
+                padding:
+                    35px 22px;
+            }
+
+
+            .iban-box h2 {
+
+                font-size: 1.5rem;
+            }
+
+
+            .iban-description {
+
+                font-size: 0.95rem;
+
+                line-height: 1.8;
+            }
+
+
+            .bank-details {
+
+                padding: 20px;
+            }
+
+
+            .iban-value {
+
+                font-size: 0.88rem;
+
+                letter-spacing:
+                    0.5px;
+            }
+
+
+            .detail-value {
+
+                font-size: 0.95rem;
+            }
+
+
+            .copy-button {
+
+                padding:
+                    16px 20px;
+            }
+
+
+            .thank-you {
+
+                margin-top: 35px;
+
+                font-size: 0.95rem;
+            }
+
+
+            footer {
+
+                margin-top: 40px;
+
+                font-size: 0.65rem;
+
+                letter-spacing: 2px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<main class="page">
 
-    <div class="content">
+    <main class="page">
 
-        <a href="index.html" class="back-link">
-            ← Torna al nostro matrimonio
-        </a>
-
-        <h1>
-            Lista Nozze
-        </h1>
-
-        <div class="line"></div>
-
-        <p class="intro">
-<p>Avendo già condiviso una convivenza e una casa che abbiamo arredato insieme, abbiamo scelto di non fare una lista nozze tradizionale.</p>
-
-<p>Siamo però pronti a partire per la nostra luna di miele e, se vi fa piacere, un piccolo contributo sarà sicuramente molto apprezzato. </p>
-        </p>
+        <div class="content">
 
 
-        <section class="registry-box">
+            <!-- ==================================================
+                 TORNA AL NOSTRO MATRIMONIO
+            ================================================== -->
 
-            <h2>
-                Il nostro viaggio
-            </h2>
+            <a
+                href="index.html"
+                class="back-link"
+            >
+                ← Torna al nostro matrimonio
+            </a>
 
-            <p>
-                La nostra luna di miele ci porterà alla scoperta
-                del Giappone e, successivamente, delle Isole Fiji.
+
+            <!-- ==================================================
+                 TITOLO
+            ================================================== -->
+
+            <div class="eyebrow">
+                Il nostro Matrimonio
+            </div>
+
+
+            <h1>
+                Lista Nozze
+            </h1>
+
+
+            <div class="line"></div>
+
+
+            <!-- ==================================================
+                 PARAGRAFO
+            ================================================== -->
+
+            <p class="intro">
+
+                Avendo già condiviso con voi
+                tanti momenti importanti della nostra vita,
+                abbiamo deciso di rendervi partecipi
+                anche di questa nuova avventura.
+
                 <br><br>
-                Ogni vostro contributo ci aiuterà a trasformare
-                questo viaggio in un ricordo indimenticabile.
+
+                Se desiderate farci un pensiero,
+                potete contribuire al nostro viaggio di nozze
+                utilizzando le coordinate qui sotto.
+
             </p>
-<p>
-    INTESTATARIO: Camilla Tiraboschi Nicolo Signorelli
-    IBAN: IT89Z0623052520000036162052
-</p>
-
-          
-        </section>
 
 
-        <p class="thank-you">
-            Grazie per essere parte della nostra storia
-            e per accompagnarci in questa nuova avventura.
-        </p>
+            <!-- ==================================================
+                 IBAN
+            ================================================== -->
+
+            <section class="iban-box">
 
 
-        <footer>
-            02 Aprile 2027
-        </footer>
-
-    </div>
-
-</main>
+                <h2>
+                    Un pensiero per noi
+                </h2>
 
 
-<script>
+                <p class="iban-description">
 
-</script>
+                    Grazie di cuore per voler contribuire
+                    alla nostra nuova avventura insieme.
+                    <br>
+                    Ogni vostro pensiero diventerà
+                    un ricordo speciale del nostro viaggio.
+
+                </p>
+
+
+                <div class="bank-details">
+
+
+                    <!-- ==================================================
+                         INSERISCI QUI IL TUO IBAN
+                    ================================================== -->
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            IBAN
+                        </span>
+
+                        <span
+                            class="detail-value iban-value"
+                            id="ibanValue"
+                        >
+                            INSERISCI QUI IL TUO IBAN
+                        </span>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         INSERISCI QUI L'INTESTATARIO
+                    ================================================== -->
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            Intestatario
+                        </span>
+
+                        <span class="detail-value">
+                            INSERISCI QUI
+                        </span>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         INSERISCI QUI LA CAUSALE
+                    ================================================== -->
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            Causale consigliata
+                        </span>
+
+                        <span class="detail-value">
+                            Regalo di nozze
+                        </span>
+
+                    </div>
+
+
+                    <!-- PULSANTE COPIA -->
+
+                    <button
+                        type="button"
+                        class="copy-button"
+                        id="copyIban"
+                    >
+                        Copia IBAN
+                    </button>
+
+
+                    <span
+                        class="copy-message"
+                        id="copyMessage"
+                    ></span>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 RINGRAZIAMENTO
+            ================================================== -->
+
+            <p class="thank-you">
+
+                Grazie per essere parte della nostra storia
+                e per accompagnarci in questa nuova avventura.
+
+            </p>
+
+
+            <!-- ==================================================
+                 DATA
+            ================================================== -->
+
+            <footer>
+                02 Aprile 2027
+            </footer>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         Serve solamente per "Copia IBAN"
+    ================================================== -->
+
+    <script>
+
+        const copyButton =
+            document.getElementById("copyIban");
+
+
+        const ibanElement =
+            document.getElementById("ibanValue");
+
+
+        const copyMessage =
+            document.getElementById("copyMessage");
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+
+                const iban =
+                    ibanElement.textContent.trim();
+
+
+                if (
+                    !iban ||
+                    iban ===
+                    "INSERISCI QUI IL TUO IBAN"
+                ) {
+
+                    copyMessage.textContent =
+                        "Inserisci prima il tuo IBAN.";
+
+                    return;
+                }
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        iban
+                    );
+
+
+                    copyMessage.textContent =
+                        "✓ IBAN copiato";
+
+
+                } catch (error) {
+
+                    copyMessage.textContent =
+                        "Copia non disponibile automaticamente.";
+
+                }
+
+
+                setTimeout(
+                    function () {
+
+                        copyMessage.textContent = "";
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+    </script>
+
 
 </body>
+
 </html>
