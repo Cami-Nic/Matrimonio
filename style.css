@@ -1262,10 +1262,19 @@ button {
 
     .story-photo {
         min-height: 850px;
-
         margin-top: 80px;
+        margin-bottom: -60px;
+        overflow: hidden;
+        z-index: 3;
     }
 
+    .registry-preview {
+        position: relative;
+        z-index: 1;
+        min-height: 600px;
+    }
+
+}
     .story-photo-text {
         padding: 100px 25px;
     }
