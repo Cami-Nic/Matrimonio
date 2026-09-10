@@ -509,10 +509,12 @@ button {
 
 .event-location {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     gap: 40px;
     align-items: center;
     margin-bottom: 80px;
+}
+
 }
 
 .location-content {
