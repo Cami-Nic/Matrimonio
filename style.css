@@ -1285,66 +1285,67 @@ button {
     }
 
 
-    /* ------------------------------
-       STORY
-    ------------------------------ */
+  /* ------------------------------
+   STORY
+------------------------------ */
 
-    .story p {
-        font-size: 0.95rem;
-        line-height: 1.9;
-    }
+.story p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
 
-    .story-photo {
-        min-height: 850px;
-        margin-top: 80px;
-        margin-bottom: 0;
-    }
-
-    .story-photo + .story-photo {
-        margin-top: 0;
-    }
-
-    .story-photo-text {
-        padding: 100px 25px;
-    }
-
-    .story-photo-text h2 {
-        font-size: 3.5rem;
-    }
-
-    .story-photo-text p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-    }
-   
-.polinesia-photo {
+.story-photo {
+    min-height: 850px;
+    margin-top: 80px;
     margin-bottom: 0;
+    display: block;
 }
+
+.story-photo + .story-photo {
+    margin-top: 0;
 }
-    /* ------------------------------
-       LISTA NOZZE
-    ------------------------------ */
 
-    .registry-preview {
-        position: relative;
+.story-photo-text {
+    padding: 100px 25px;
+}
 
-        min-height: 600px;
+.story-photo-text h2 {
+    font-size: 3.5rem;
+}
 
-        z-index: 1;
-    }
+.story-photo-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
 
-    .registry-content h2 {
-        font-size: 3.3rem;
-    }
+/* Ultima foto: nessuno spazio sotto */
+.polinesia-photo {
+    margin-bottom: 0 !important;
+}
+  /* ------------------------------
+   LISTA NOZZE
+------------------------------ */
 
-    .registry-content > p:not(.eyebrow) {
-        font-size: 0.9rem;
-        line-height: 1.8;
-    }
+.registry-preview {
+    position: relative;
+    min-height: 600px;
+    margin-top: 0 !important;
+    padding-top: 80px;
+    z-index: 1;
+}
 
-    .button-light {
-        width: 100%;
-    }
+.registry-content h2 {
+    font-size: 3.3rem;
+}
+
+.registry-content > p:not(.eyebrow) {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.button-light {
+    width: 100%;
+}
 
 
     /* ------------------------------
