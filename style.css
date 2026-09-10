@@ -609,54 +609,73 @@ button {
 }
 
 
-/* ==================================================
+/* =====================================================
    PULSANTI MAPPA
-================================================== */
+===================================================== */
 
 .map-buttons {
     display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 35px;
+    margin-bottom: 140px;
+
     flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin-bottom: 90px;
 }
 
 .map-button {
-    min-height: 52px;
-
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 12px;
 
-    padding: 12px 22px;
+    width: 260px;
 
-    border: 1px solid #d8dde2;
+    padding: 17px 25px;
 
-    color: #24364b;
+    border: 1px solid #7894b0;
+    border-radius: 30px;
 
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    background: transparent;
 
-    transition: background 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease;
+    color: #7894b0;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.map-button:hover {
-    background: #24364b;
-    border-color: #24364b;
+#evento .map-button {
+    border-color: #7894b0;
+    background: transparent;
     color: #ffffff;
 }
 
-.map-icon {
-    width: 22px;
-    height: 22px;
+#evento .map-button:hover {
+    background: #7894b0;
+    color: #ffffff;
 
-    object-fit: contain;
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(120, 148, 176, 0.22);
 }
 
 
