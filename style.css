@@ -916,7 +916,8 @@ button {
     padding: 13px 28px;
 
     border: 1px solid #ffffff;
-
+    border-radius: 30px;
+   
     color: #ffffff;
 
     font-size: 0.8rem;
@@ -941,9 +942,9 @@ button {
 .footer {
     padding: 55px 25px;
 
-    background: #172638;
+    background: #ffffff;
 
-    color: #ffffff;
+    color: #172638;
 
     text-align: center;
 }
@@ -957,7 +958,7 @@ button {
 }
 
 .footer-small {
-    color: #f3c9d0;
+    color: #172638;
 
     font-size: 0.75rem;
     font-weight: 300;
