@@ -850,7 +850,9 @@ button {
     font-weight: 300;
     line-height: 1.9;
 }
-
+.story-photo:last-child {
+    margin-bottom: -110px;
+}
 
 /* ==================================================
    LISTA NOZZE
