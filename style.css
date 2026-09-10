@@ -832,36 +832,27 @@ button {
 /* DATA */
 
 .countdown-date {
-    margin: 0 0 10px;
+ margin: 0;
+    padding: 18px 0;
 
     font-family: 'Rubik', sans-serif;
-
     font-size: 2em;
     font-weight: 600;
-
     letter-spacing: 4px;
+    line-height: 1;
 
     color: #ffffff;
-}
+    text-align: center;
 
-#home .countdown-date {
-    color: #ffffff;
+    border-top: 1px solid rgba(243, 201, 208, 0.7);
+    border-bottom: 1px solid rgba(243, 201, 208, 0.7);
 }
-
 
 /* LINEA */
 
 .countdown-line {
-    width: 55px;
-    height: 1px;
-
-    margin: 0 auto 28px;
-
-    background: rgba(243, 201, 208, 0.7);
-
-    opacity: 0.7;
+    display: none;
 }
-
 
 /* CONTENITORE NUMERI */
 
