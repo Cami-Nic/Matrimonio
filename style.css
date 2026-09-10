@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-
 /* ==================================================
    RESET
 ================================================== */
@@ -109,8 +108,9 @@ button {
 
     background: #ffffff;
 
-    transition: transform 0.3s ease,
-                opacity 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 
@@ -200,8 +200,9 @@ button {
     opacity: 0;
     visibility: hidden;
 
-    transition: opacity 0.3s ease,
-                visibility 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .menu-overlay.active {
@@ -251,6 +252,7 @@ button {
 .hero-image {
     position: absolute;
     inset: 0;
+
     background-image: url("images/foto1 (1).jpeg");
     background-size: cover;
     background-position: 80% center;
@@ -282,9 +284,12 @@ button {
 
 .hero-content h1 {
     margin: 0;
+
     color: #ffffff;
-    font-size: clamp(3.5rem, 7vw, 6rem);
+
+    font-size: clamp(4.5rem, 9vw, 8rem);
     font-weight: 700;
+
     line-height: 0.95;
     letter-spacing: 2px;
 
@@ -327,6 +332,7 @@ button {
     font-family: 'Rubik', sans-serif;
     font-size: 2em;
     font-weight: 600;
+
     letter-spacing: 4px;
     line-height: 1;
 
@@ -368,6 +374,7 @@ button {
 
     font-size: 4.8rem;
     font-weight: 700;
+
     line-height: 1;
 }
 
@@ -380,6 +387,7 @@ button {
 
     font-size: 11px;
     font-weight: 600;
+
     letter-spacing: 3px;
 }
 
@@ -399,6 +407,7 @@ button {
 
     font-size: 3rem;
     font-weight: 300;
+
     line-height: 1;
 }
 
@@ -424,6 +433,7 @@ button {
 
     font-size: 0.75rem;
     font-weight: 500;
+
     letter-spacing: 2px;
     text-transform: uppercase;
 
@@ -464,6 +474,7 @@ button {
 
     font-size: 0.75rem;
     font-weight: 600;
+
     letter-spacing: 3px;
 
     color: #b98792;
@@ -474,8 +485,8 @@ button {
 
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 600;
-    line-height: 1;
 
+    line-height: 1;
     letter-spacing: 1px;
 }
 
@@ -506,12 +517,14 @@ button {
 
 .event-location {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 80px;
-}
 
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+
+    gap: 40px;
+
+    align-items: center;
+
+    margin-bottom: 80px;
 }
 
 .location-content {
@@ -520,14 +533,17 @@ button {
 
 .location-image {
     width: 100%;
+
     overflow: hidden;
 }
 
 .location-image img {
     width: 100%;
     height: 420px;
+
     object-fit: cover;
 }
+
 
 /* ==================================================
    TITOLI EVENTO CON ICONE
@@ -579,18 +595,8 @@ button {
 
     font-size: 1rem;
     font-weight: 300;
+
     line-height: 1.8;
-}
-
-.location-image {
-    overflow: hidden;
-}
-
-.location-image img {
-    width: 100%;
-    height: 420px;
-
-    object-fit: cover;
 }
 
 
@@ -614,6 +620,7 @@ button {
 
     border: 0;
 }
+
 
 /* =====================================================
    PULSANTI MAPPA
@@ -659,6 +666,7 @@ button {
 
     letter-spacing: 0.12em;
     text-transform: uppercase;
+
     text-align: center;
 
     transition:
@@ -670,15 +678,19 @@ button {
 
 #evento .map-button {
     border-color: #7894b0;
+
     background: #7894b0;
+
     color: #ffffff;
 }
 
 #evento .map-button:hover {
     border-color: #7894b0;
+
     background: #7894b0;
+
     color: #ffffff;
-   
+
     transform: translateY(-3px);
 
     box-shadow:
@@ -710,7 +722,6 @@ button {
 }
 
 
-
 /* ==================================================
    CERIMONIA / ORARIO
 ================================================== */
@@ -732,6 +743,7 @@ button {
 
     font-size: 1.05rem;
     font-weight: 300;
+
     line-height: 1.9;
 }
 
@@ -742,6 +754,7 @@ button {
 
 .story-section {
     background: #7894b0;
+
     color: #ffffff;
 
     padding-bottom: 0;
@@ -770,6 +783,7 @@ button {
 
     font-size: 1.05rem;
     font-weight: 300;
+
     line-height: 2;
 }
 
@@ -785,8 +799,11 @@ button {
     min-height: 750px;
 
     margin-top: 110px;
+    margin-bottom: -110px;
 
     overflow: hidden;
+
+    z-index: 3;
 }
 
 .story-photo img {
@@ -809,6 +826,7 @@ button {
 
 .story-photo-text {
     position: relative;
+
     z-index: 2;
 
     max-width: 800px;
@@ -826,8 +844,8 @@ button {
 
     font-size: clamp(3rem, 7vw, 6rem);
     font-weight: 600;
-    line-height: 1;
 
+    line-height: 1;
     letter-spacing: 2px;
 }
 
@@ -838,6 +856,7 @@ button {
 
     font-size: 1rem;
     font-weight: 300;
+
     line-height: 1.9;
 }
 
@@ -847,6 +866,8 @@ button {
 ================================================== */
 
 .registry-preview {
+    position: relative;
+
     min-height: 650px;
 
     display: flex;
@@ -854,6 +875,8 @@ button {
     justify-content: center;
 
     overflow: hidden;
+
+    z-index: 1;
 }
 
 .registry-background {
@@ -874,6 +897,7 @@ button {
 
 .registry-content {
     position: relative;
+
     z-index: 2;
 
     max-width: 700px;
@@ -905,6 +929,7 @@ button {
 
     font-size: 1rem;
     font-weight: 300;
+
     line-height: 1.8;
 }
 
@@ -915,6 +940,7 @@ button {
 
 .button-light {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -924,20 +950,23 @@ button {
 
     border: 1px solid #ffffff;
     border-radius: 30px;
-   
+
     color: #ffffff;
 
     font-size: 0.8rem;
     font-weight: 500;
+
     letter-spacing: 1.5px;
     text-transform: uppercase;
 
-    transition: background 0.25s ease,
-                color 0.25s ease;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .button-light:hover {
     background: #ffffff;
+
     color: #24364b;
 }
 
@@ -961,6 +990,7 @@ button {
 
     font-size: 0.75rem;
     font-weight: 500;
+
     letter-spacing: 4px;
 }
 
@@ -969,6 +999,7 @@ button {
 
     font-size: 0.75rem;
     font-weight: 300;
+
     letter-spacing: 2px;
 }
 
@@ -979,6 +1010,7 @@ button {
 
 .reveal {
     opacity: 0;
+
     transform: translateY(25px);
 
     transition:
@@ -988,6 +1020,7 @@ button {
 
 .reveal.visible {
     opacity: 1;
+
     transform: translateY(0);
 }
 
@@ -1050,9 +1083,9 @@ button {
     }
 
     .hero-image {
-  background-position: 50% center;
+        background-position: 50% center;
     }
-   
+
     .hero-content {
         width: 100%;
         max-width: 100%;
@@ -1063,7 +1096,8 @@ button {
     }
 
     .hero-content h1 {
-        font-size: clamp(2.8rem, 12vw, 4.2rem));
+        font-size: clamp(3.2rem, 15vw, 5rem);
+
         line-height: 0.95;
         letter-spacing: 1px;
     }
@@ -1103,11 +1137,6 @@ button {
         margin: 0 auto;
     }
 
-    /*
-       GIORNI
-       occupa tutta la prima riga
-    */
-
     .countdown-unit:first-child {
         grid-column: 1 / -1;
 
@@ -1126,9 +1155,9 @@ button {
     }
 
 
-    /*
+    /* ------------------------------
        ORE / MINUTI / SECONDI
-    */
+    ------------------------------ */
 
     .countdown-unit:not(:first-child) span {
         font-size: 2rem;
@@ -1142,10 +1171,9 @@ button {
     }
 
 
-    /*
-       Separatori solo tra
-       ORE / MINUTI / SECONDI
-    */
+    /* ------------------------------
+       SEPARATORI
+    ------------------------------ */
 
     .countdown-unit:not(:last-child)::after {
         display: none;
@@ -1212,21 +1240,27 @@ button {
         font-size: 1.5rem;
     }
 
-.location-image {
+    .location-image {
         width: 100%;
+
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0;
+
         position: relative;
         left: 0;
+
         transform: none;
+
         z-index: 3;
     }
 
     .location-image img {
         width: 100%;
         height: 400px;
+
         object-fit: cover;
+
         display: block;
     }
 
@@ -1265,21 +1299,15 @@ button {
 
     .story-photo {
         min-height: 850px;
+
         margin-top: 80px;
         margin-bottom: -110px;
+
         overflow: hidden;
+
         z-index: 3;
     }
 
-    .registry-preview {
-        position: relative;
-        z-index: 1;
-        min-height: 600px;
-    }
-
-}
-   
-}
     .story-photo-text {
         padding: 100px 25px;
     }
@@ -1299,7 +1327,11 @@ button {
     ------------------------------ */
 
     .registry-preview {
+        position: relative;
+
         min-height: 600px;
+
+        z-index: 1;
     }
 
     .registry-content h2 {
