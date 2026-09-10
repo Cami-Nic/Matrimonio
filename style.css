@@ -788,75 +788,66 @@ button {
 }
 
 
-/* ==================================================
-   FOTO GIAPPONE
-================================================== */
+/* ==========================================
+   GIAPPONE + POLINESIA
+========================================== */
 
 .story-photo {
     position: relative;
-
     width: 100%;
     min-height: 750px;
-
     margin-top: 110px;
-    margin-bottom: -110px;
-
+    margin-bottom: 0;
     overflow: hidden;
-
     z-index: 3;
 }
 
+/* La seconda foto segue direttamente la prima */
+.story-photo + .story-photo {
+    margin-top: 0;
+}
+
+/* Immagine */
 .story-photo img {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
 }
 
+/* Oscuramento foto */
 .story-photo-overlay {
     position: absolute;
     inset: 0;
-
-    background: rgba(20, 31, 42, 0.58);
+    background: rgba(20,31,42,0.58);
 }
 
+/* Testo sopra la foto */
 .story-photo-text {
     position: relative;
-
     z-index: 2;
-
     max-width: 800px;
-
     margin: 0 auto;
     padding: 120px 30px;
-
     text-align: center;
-
     color: #ffffff;
 }
 
 .story-photo-text h2 {
     margin-bottom: 35px;
-
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(3rem,7vw,6rem);
     font-weight: 600;
-
     line-height: 1;
     letter-spacing: 2px;
 }
 
 .story-photo-text p {
     margin-bottom: 25px;
-
-    color: rgba(255, 255, 255, 0.9);
-
+    color: rgba(255,255,255,0.9);
     font-size: 1rem;
     font-weight: 300;
-
     line-height: 1.9;
 }
 
@@ -1300,13 +1291,12 @@ button {
 
     .story-photo {
         min-height: 850px;
-
         margin-top: 80px;
-        margin-bottom: -110px;
+        margin-bottom: 0;
+    }
 
-        overflow: hidden;
-
-        z-index: 3;
+    .story-photo + .story-photo {
+        margin-top: 0;
     }
 
     .story-photo-text {
@@ -1321,8 +1311,7 @@ button {
         font-size: 0.9rem;
         line-height: 1.8;
     }
-
-
+}
     /* ------------------------------
        LISTA NOZZE
     ------------------------------ */
