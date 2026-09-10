@@ -251,10 +251,9 @@ button {
 .hero-image {
     position: absolute;
     inset: 0;
-
     background-image: url("images/foto1 (1).jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: 60% center;
 
     z-index: 0;
 }
@@ -283,9 +282,7 @@ button {
 
 .hero-content h1 {
     margin: 0;
-
     color: #ffffff;
-
     font-size: clamp(4.5rem, 9vw, 8rem);
     font-weight: 700;
     line-height: 0.95;
@@ -1052,6 +1049,11 @@ button {
         min-height: 100svh;
     }
 
+@media (max-width: 599px) {
+    .hero-image {
+  background-position: 65% center;
+    }
+   
     .hero-content {
         width: 100%;
         max-width: 100%;
