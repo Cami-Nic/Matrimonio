@@ -5,8 +5,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
+
 /* =====================================================
-   PALETTE MATRIMONIO
+   RESET / BASE
 ===================================================== */
 
 * {
@@ -313,7 +314,7 @@ button {
 
 
 /* =====================================================
-   CONTENITORE INTERNO
+   CONTENITORE
 ===================================================== */
 
 .container {
@@ -332,7 +333,7 @@ button {
 ===================================================== */
 
 #home {
-    background: #24364B;
+    background: #24364b;
     color: #ffffff;
 }
 
@@ -463,7 +464,7 @@ button {
 }
 
 #home .decorative-line {
-    background: #F3C9D0;
+    background: #f3c9d0;
 }
 
 
@@ -524,19 +525,59 @@ button {
 ===================================================== */
 
 #evento {
-    background: #FFFFFF;
-    color: #24364B;
+    background: #ffffff;
+    color: #24364b;
 
     padding-top: 120px;
     padding-bottom: 40px;
 }
 
 #evento .section-title {
-    color: #24364B;
+    color: #24364b;
 }
 
 #evento .eyebrow {
-    color: #24364B;
+    color: #24364b;
+}
+
+
+/* =====================================================
+   TITOLO EVENTO CON ICONA
+===================================================== */
+
+#evento .event-title-with-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 3px !important;
+
+    text-transform: uppercase;
+
+    color: #24364b !important;
+}
+
+#evento .event-title-with-icon img {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
 }
 
 
@@ -705,17 +746,18 @@ button {
 
     padding: 17px 25px;
 
-    border: 1px solid #A45D78;
+    border: 1px solid #a45d78;
     border-radius: 30px;
 
     background: transparent;
 
-    color: #3E1A31;
+    color: #3e1a31;
 
     font-size: 12px;
     font-weight: 700;
 
     letter-spacing: 0.12em;
+
     text-transform: uppercase;
     text-align: center;
 
@@ -727,13 +769,13 @@ button {
 }
 
 #evento .map-button {
-    border-color: #A45D78;
+    border-color: #a45d78;
     background: transparent;
-    color: #3E1A31;
+    color: #3e1a31;
 }
 
 #evento .map-button:hover {
-    background: #7894B0;
+    background: #7894b0;
     color: #ffffff;
 
     transform: translateY(-3px);
@@ -789,7 +831,6 @@ button {
 
     align-items: baseline;
 
-
     gap: 35px;
 
     margin-bottom: 40px;
@@ -829,32 +870,41 @@ button {
 }
 
 
-/* DATA */
+/* =====================================================
+   DATA
+===================================================== */
 
 .countdown-date {
- margin: 0;
+    margin: 0;
     padding: 18px 0;
 
     font-family: 'Rubik', sans-serif;
+
     font-size: 2em;
     font-weight: 600;
+
     letter-spacing: 4px;
     line-height: 1;
 
     color: #ffffff;
+
     text-align: center;
 
     border-top: 1px solid rgba(243, 201, 208, 0.7);
     border-bottom: 1px solid rgba(243, 201, 208, 0.7);
 }
 
-/* LINEA */
+
+/* LINEA VECCHIA NON UTILIZZATA */
 
 .countdown-line {
     display: none;
 }
 
-/* CONTENITORE NUMERI */
+
+/* =====================================================
+   NUMERI COUNTDOWN
+===================================================== */
 
 .countdown-numbers {
     display: flex;
@@ -867,9 +917,6 @@ button {
     gap: 50px;
 }
 
-
-/* SINGOLO BLOCCO */
-
 .countdown-unit {
     position: relative;
 
@@ -881,11 +928,9 @@ button {
     width: 130px;
     min-width: 130px;
 }
-.countdown-unit:first-child { 
-   transform: translateX(-10px); }
 
 
-/* NUMERI GRANDI */
+/* NUMERI */
 
 .countdown-unit span {
     display: block;
@@ -896,7 +941,6 @@ button {
     font-weight: 700;
 
     line-height: 0.85;
-
     letter-spacing: 0;
 
     color: #ffffff;
@@ -925,17 +969,17 @@ button {
 
     text-transform: uppercase;
 
-    opacity: 0.9;
+    color: #f3c9d0;
 
-    color: #F3C9D0;
+    opacity: 0.9;
 }
 
 #home .countdown-numbers small {
-    color: #F3C9D0;
+    color: #f3c9d0;
 }
 
 
-/* SEPARATORI */
+/* SEPARATORI DESKTOP */
 
 .countdown-unit:not(:last-child)::after {
     content: ":";
@@ -959,670 +1003,6 @@ button {
 
 
 /* =====================================================
-   COUNTDOWN — TABLET
-===================================================== */
-
-@media (max-width: 768px) {
-
-    .wedding-countdown {
-        margin-top: 35px;
-        margin-bottom: 55px;
-    }
-
-    .countdown-date {
-        font-size: 2rem;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 12px;
-    }
-
-    .countdown-line {
-        width: 50px;
-
-        margin-bottom: 27px;
-    }
-
-    .countdown-numbers {
-        gap: 10px;
-    }
-
-    .countdown-unit {
-        width: 100px;
-        min-width: 100px;
-    }
-
-    .countdown-unit span {
-        font-size: 4rem;
-    }
-
-    .countdown-unit small {
-        margin-top: 11px;
-
-        font-size: 0.52rem;
-
-        letter-spacing: 2.5px;
-    }
-
- 
-    .countdown-unit:not(:last-child)::after {
-        content: ":";
-        top: 5px;
-        right: -12px;
-        font-family: 'Rubik', sans-serif;
-        font-size: 1.9rem;
-        font-weight: 300;
-        line-height: 1;
-        color: #ffffff;
-        opacity: 0.55;
-    }
-}
-
-    #evento {
-        padding-bottom: 25px;
-    }
-
-    #noi {
-        padding-top: 25px;
-        padding-bottom: 0;
-
-        background: #7894B0;
-        color: #ffffff;
-    }
-
-    #noi .story {
-        max-width: 100%;
-
-        padding-left: 25px;
-        padding-right: 25px;
-
-        padding-bottom: 100px;
-
-        color: #ffffff;
-    }
-
-    #noi .story p {
-        font-size: 16px;
-        line-height: 1.85;
-
-        color: #ffffff;
-    }
-
-    #noi .story-photo {
-        width: 100vw;
-
-        margin-left: calc(50% - 50vw);
-
-        height: 100vh;
-        min-height: 750px;
-
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #noi .story-photo img {
-        object-position: center center;
-    }
-
-    #noi .story-photo-overlay {
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(62, 26, 49, 0.18),
-                rgba(62, 26, 49, 0.42)
-            );
-    }
-
-    #noi .story-photo-text {
-        width: 88%;
-        max-width: none;
-
-        top: 50%;
-    }
-
-    #noi .story-photo-text h2 {
-        margin-bottom: 25px;
-
-        font-size: clamp(44px, 13vw, 65px);
-    }
-
-    #noi .story-photo-text p {
-        font-size: 15px;
-        line-height: 1.7;
-
-        margin-bottom: 22px;
-    }
-
-    #noi .story-photo-text p:last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (min-width: 600px) {
-
-    .header {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
-    .logo {
-        width: 90px;
-    }
-
-    .section {
-        padding: 140px 50px;
-    }
-}
-
-
-/* =====================================================
-   TABLET — EVENTO
-===================================================== */
-
-@media (min-width: 600px) and (max-width: 899px) {
-
-    .event-location {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .location-content {
-        min-height: 320px;
-    }
-
-    .location-content h3 {
-        font-size: 38px;
-    }
-
-    .location-name {
-        font-size: 25px;
-    }
-
-    .location-image img {
-        height: 320px;
-        object-fit: cover;
-    }
-
-    .location-map iframe {
-        height: 400px;
-    }
-
-    .section-heading h3 {
-        font-size: 36px;
-    }
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 900px) {
-
-    .section {
-        padding-top: 160px;
-        padding-bottom: 160px;
-    }
-
-    .header {
-        height: 100px;
-
-        padding-left: 55px;
-        padding-right: 55px;
-    }
-
-    .logo {
-        width: 105px;
-    }
-
-    .menu-toggle {
-        width: 45px;
-        height: 45px;
-    }
-
-    .section-title {
-        margin-bottom: 90px;
-    }
-
-    .hero-text {
-        font-size: 18px;
-    }
-
-    .event-location {
-        gap: 70px;
-    }
-
-    .location-content {
-        min-height: 450px;
-    }
-
-    .location-image img {
-        height: 450px;
-        object-fit: cover;
-    }
-
-    .location-map iframe {
-        height: 520px;
-    }
-
-    .story-photo-text {
-        width: 94%;
-        max-width: 1200px;
-    }
-
-    .story-photo-text p {
-        max-width: 1100px;
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 599px) {
-
-    html,
-    body {
-        width: 100%;
-        min-width: 100%;
-
-        margin: 0;
-        padding: 0;
-
-        overflow-x: hidden;
-    }
-
-    main {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    section {
-        width: 100%;
-        max-width: none;
-
-        margin: 0;
-
-        box-sizing: border-box;
-    }
-
-    .section {
-        width: 100%;
-        max-width: none;
-
-        min-height: 100vh;
-
-        margin: 0;
-
-        padding: 120px 20px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* HEADER MOBILE */
-
-    .header {
-        height: 75px;
-
-        padding: 12px 18px;
-
-        z-index: 1300;
-    }
-
-    .logo {
-        width: 75px;
-    }
-
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-
-        padding: 8px;
-
-        z-index: 1400;
-    }
-
-
-    /* HOME MOBILE */
-
-    .hero-image {
-        background-position: 70% center;
-    }
-
-    .hero-content {
-        transform: translateY(140px);
-    }
-
-
-    /* LOCATION MOBILE */
-
-    .event-location {
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-
-        margin-bottom: 45px;
-    }
-
-    .location-content {
-        min-height: auto;
-
-        justify-content: flex-start;
-    }
-
-    .location-content h3 {
-        font-size: 34px;
-    }
-
-    .location-name {
-        font-size: 23px;
-
-        margin: 16px 0 8px;
-    }
-
-    .location-address {
-        font-size: 16px;
-        line-height: 1.7;
-
-        color: #000000;
-        opacity: 1;
-    }
-
-    .location-image {
-        width: 100%;
-
-        border-radius: 14px;
-    }
-
-    .location-image img {
-        display: block;
-
-        width: 100%;
-        height: 280px;
-
-        object-fit: cover;
-
-        border-radius: 14px;
-    }
-
-
-    /* MAPPA MOBILE */
-
-    .location-map {
-        width: 100%;
-
-        margin-top: 0;
-
-        border-radius: 15px;
-    }
-
-    .location-map iframe {
-        display: block;
-
-        width: 100%;
-        height: 380px;
-
-        border: 0;
-    }
-
-
-    /* PULSANTI MAPPA MOBILE */
-
-    .map-button {
-        background: #7894B0 !important;
-        color: #FFFFFF !important;
-        border-color: #7894B0 !important;
-    }
-
-    .map-button:hover,
-    .map-button:active,
-    .map-button:focus,
-    .map-button:focus-visible {
-        background: #7894B0 !important;
-        color: #FFFFFF !important;
-        border-color: #7894B0 !important;
-
-        transform: none;
-
-        box-shadow: none;
-    }
-
-
-    /* CERIMONIA / ORARIO MOBILE */
-
-    .event-section-block {
-        padding-top: 65px;
-        padding-bottom: 75px;
-    }
-
-    .event-section-block + .event-section-block {
-        padding-top: 75px;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        margin-bottom: 30px;
-    }
-
-    .section-heading .section-number {
-        margin-bottom: 0;
-    }
-
-    .section-heading h3 {
-        font-size: 34px;
-    }
-
-    .section-content {
-        margin-left: 0;
-    }
-
-
-    /* COUNTDOWN MOBILE */
-
-    .wedding-countdown {
-        margin-top: 32px;
-        margin-bottom: 50px;
-
-        padding: 0 5px;
-    }
-
-    .countdown-date {
-        font-size: 1.2rem;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 16px;
-    }
-
-    .countdown-line {
-        width: 45px;
-
-        margin-bottom: 23px;
-    }
-
-    .countdown-numbers {
-        width: 100%;
-
-        gap: 6px;
-    }
-
-    .countdown-unit {
-        width: 82px;
-        min-width: 82px;
-    }
-
-    .countdown-unit span {
-        font-family: 'Rubik', sans-serif;
-
-        font-size: 3.2rem;
-        font-weight: 700;
-
-        line-height: 0.85;
-
-        letter-spacing: 0;
-    }
-
-    .countdown-unit small {
-        margin-top: 10px;
-
-        font-size: 0.43rem;
-
-        letter-spacing: 2px;
-    }
-
-.countdown-unit:not(:last-child)::after {
-    content: ":";
-    position: absolute;
-    top: 8px;
-    right: -20px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1;
-    color: #ffffff;
-    opacity: 0.55;
-}
-
-
-    /* UN PO' DI NOI MOBILE */
-
-    #noi {
-        padding-top: 25px;
-        padding-bottom: 0;
-
-        background: #7894B0;
-        color: #ffffff;
-    }
-
-    #noi .story {
-        max-width: 100%;
-
-        padding-left: 25px;
-        padding-right: 25px;
-
-        padding-bottom: 100px;
-
-        color: #ffffff;
-    }
-
-    #noi .story p {
-        font-size: 16px;
-        line-height: 1.85;
-
-        color: #ffffff;
-    }
-
-
-    /* FOTO GIAPPONE MOBILE */
-
-    #noi .story-photo {
-        width: 100vw;
-
-        margin-left: calc(50% - 50vw);
-
-        height: 100vh;
-        min-height: 750px;
-
-        margin-top: 0;
-        margin-bottom: 0;
-
-        border: 0;
-    }
-
-    #noi .story-photo img {
-        object-position: center center;
-    }
-
-
-    /* TESTO FOTO GIAPPONE MOBILE */
-
-    #noi .story-photo-text {
-        width: 88%;
-        max-width: none;
-
-        top: 50%;
-    }
-
-    #noi .story-photo-text h2 {
-        margin-bottom: 25px;
-
-        font-size: clamp(44px, 13vw, 65px);
-    }
-
-    #noi .story-photo-text p {
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        margin-bottom: 22px;
-    }
-
-    #noi .story-photo-text p:last-child {
-        margin-bottom: 0;
-    }
-
-
-    /* LISTA NOZZE MOBILE */
-
-    #lista {
-        margin-top: 0;
-    }
-}
-
-
-/* =====================================================
-   SMARTPHONE PICCOLI
-===================================================== */
-
-@media (max-width: 380px) {
-
-    .wedding-countdown {
-        margin-bottom: 45px;
-    }
-
-    .countdown-numbers {
-        gap: 4px;
-    }
-
-    .countdown-unit {
-        width: 74px;
-        min-width: 74px;
-    }
-
-    .countdown-unit span {
-        font-size: 2.7rem;
-    }
-
-    .countdown-unit small {
-        font-size: 0.38rem;
-        letter-spacing: 1.5px;
-    }
-
-    .countdown-unit:not(:last-child)::after {
-        top: 2px;
-        right: -6px;
-
-        font-size: 1.45rem;
-    }
-}
-
-
-/* =====================================================
    UN PO' DI NOI
 ===================================================== */
 
@@ -1637,7 +1017,7 @@ button {
 
     box-sizing: border-box;
 
-    background: #7894B0;
+    background: #7894b0;
 
     color: #ffffff;
 }
@@ -1667,7 +1047,7 @@ button {
 
     box-sizing: border-box;
 
-    background: #7894B0;
+    background: #7894b0;
 
     color: #ffffff;
 }
@@ -1748,6 +1128,7 @@ button {
     width: 100vw;
 
     margin-left: calc(50% - 50vw);
+
     margin-top: 0;
     margin-bottom: 0;
 
@@ -1803,7 +1184,7 @@ button {
 
 
 /* =====================================================
-   TESTO SOPRA FOTO GIAPPONE
+   TESTO SOPRA FOTO
 ===================================================== */
 
 .story-photo-text {
@@ -1886,10 +1267,7 @@ button {
     color: #ffffff;
 }
 
-.story-photo-text p:last-child {
-    margin-bottom: 60px;
-}
-
+.story-photo-text p:last-child,
 #noi .story-photo-text p:last-child {
     margin-bottom: 60px;
 }
@@ -2047,10 +1425,700 @@ button {
 
 .footer-small {
     margin-top: 10px;
+
     font-size: 12px;
+
     letter-spacing: 0.15em;
+
     text-transform: none;
+
     opacity: 0.6;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 600px) {
+
+    .header {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .section {
+        padding: 140px 50px;
+    }
+}
+
+
+/* =====================================================
+   TABLET — EVENTO
+===================================================== */
+
+@media (min-width: 600px) and (max-width: 899px) {
+
+    .event-location {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .location-content {
+        min-height: 320px;
+    }
+
+    .location-content h3 {
+        font-size: 38px;
+    }
+
+    .location-name {
+        font-size: 25px;
+    }
+
+    .location-image img {
+        height: 320px;
+        object-fit: cover;
+    }
+
+    .location-map iframe {
+        height: 400px;
+    }
+
+    .section-heading h3 {
+        font-size: 36px;
+    }
+}
+
+
+/* =====================================================
+   TABLET — COUNTDOWN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .wedding-countdown {
+        margin-top: 35px;
+        margin-bottom: 55px;
+    }
+
+    .countdown-numbers {
+        gap: 10px;
+    }
+
+    .countdown-unit {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .countdown-unit span {
+        font-size: 4rem;
+    }
+
+    .countdown-unit small {
+        margin-top: 11px;
+
+        font-size: 0.52rem;
+
+        letter-spacing: 2.5px;
+    }
+
+    .countdown-unit:not(:last-child)::after {
+        top: 5px;
+        right: -12px;
+
+        font-size: 1.9rem;
+    }
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 900px) {
+
+    .section {
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+
+    .header {
+        height: 100px;
+
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+
+    .logo {
+        width: 105px;
+    }
+
+    .menu-toggle {
+        width: 45px;
+        height: 45px;
+    }
+
+    .section-title {
+        margin-bottom: 90px;
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+
+    .event-location {
+        gap: 70px;
+    }
+
+    .location-content {
+        min-height: 450px;
+    }
+
+    .location-image img {
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .location-map iframe {
+        height: 520px;
+    }
+
+    .story-photo-text {
+        width: 94%;
+        max-width: 1200px;
+    }
+
+    .story-photo-text p {
+        max-width: 1100px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 599px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
+        box-sizing: border-box;
+    }
+
+    .section {
+        width: 100%;
+        max-width: none;
+
+        min-height: 100vh;
+
+        margin: 0;
+
+        padding: 120px 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =================================================
+       HEADER MOBILE
+    ================================================= */
+
+    .header {
+        height: 75px;
+
+        padding: 12px 18px;
+
+        z-index: 1300;
+    }
+
+    .logo {
+        width: 75px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+
+        padding: 8px;
+
+        z-index: 1400;
+    }
+
+
+    /* =================================================
+       HOME MOBILE
+    ================================================= */
+
+    .hero-image {
+        background-position: 70% center;
+    }
+
+    .hero-content {
+        transform: translateY(140px);
+    }
+
+
+    /* =================================================
+       EVENTO MOBILE
+    ================================================= */
+
+    #evento {
+        padding-bottom: 25px;
+    }
+
+    .event-location {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 45px;
+    }
+
+    .location-content {
+        min-height: auto;
+
+        justify-content: flex-start;
+    }
+
+    .location-content h3 {
+        font-size: 34px;
+    }
+
+    .location-name {
+        font-size: 23px;
+
+        margin: 16px 0 8px;
+    }
+
+    .location-address {
+        font-size: 16px;
+        line-height: 1.7;
+
+        color: #000000;
+        opacity: 1;
+    }
+
+    .location-image {
+        width: 100%;
+
+        border-radius: 14px;
+    }
+
+    .location-image img {
+        display: block;
+
+        width: 100%;
+        height: 280px;
+
+        object-fit: cover;
+
+        border-radius: 14px;
+    }
+
+
+    /* =================================================
+       MAPPA MOBILE
+    ================================================= */
+
+    .location-map {
+        width: 100%;
+
+        margin-top: 0;
+
+        border-radius: 15px;
+    }
+
+    .location-map iframe {
+        display: block;
+
+        width: 100%;
+        height: 380px;
+
+        border: 0;
+    }
+
+
+    /* =================================================
+       PULSANTI MAPPA MOBILE
+    ================================================= */
+
+    .map-button {
+        background: #7894b0 !important;
+        color: #ffffff !important;
+        border-color: #7894b0 !important;
+    }
+
+    .map-button:hover,
+    .map-button:active,
+    .map-button:focus,
+    .map-button:focus-visible {
+        background: #7894b0 !important;
+        color: #ffffff !important;
+        border-color: #7894b0 !important;
+
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    /* =================================================
+       CERIMONIA / ORARIO MOBILE
+    ================================================= */
+
+    .event-section-block {
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+    .event-section-block + .event-section-block {
+        padding-top: 75px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-bottom: 30px;
+    }
+
+    .section-heading .section-number {
+        margin-bottom: 0;
+    }
+
+    .section-heading h3 {
+        font-size: 34px;
+    }
+
+    .section-content {
+        margin-left: 0;
+    }
+
+
+    /* =================================================
+       COUNTDOWN MOBILE
+    ================================================= */
+
+    .wedding-countdown {
+        margin-top: 32px;
+        margin-bottom: 50px;
+
+        padding: 0 5px;
+    }
+
+    .countdown-date {
+        margin: 0;
+
+        padding: 14px 0;
+
+        font-size: 1.2rem;
+
+        letter-spacing: 3px;
+        line-height: 1.2;
+
+        border-top: 1px solid rgba(243, 201, 208, 0.7);
+        border-bottom: 1px solid rgba(243, 201, 208, 0.7);
+    }
+
+    .countdown-numbers {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+
+        width: 100%;
+        max-width: 340px;
+
+        margin: 0 auto;
+
+        gap: 0;
+    }
+
+
+    /* GIORNI */
+
+    .countdown-unit:first-child {
+        grid-column: 1 / 4;
+        grid-row: 1;
+
+        width: 100%;
+        min-width: 0;
+
+        margin: 0 0 28px;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .countdown-unit:first-child span {
+        display: block;
+
+        width: 100%;
+
+        font-size: 4.8rem;
+        font-weight: 500;
+
+        line-height: 0.85;
+
+        letter-spacing: -0.06em;
+
+        text-align: center;
+    }
+
+    .countdown-unit:first-child small {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 15px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.18em;
+
+        text-align: center;
+    }
+
+
+    /* ORE / MINUTI / SECONDI */
+
+    .countdown-unit:nth-child(2),
+    .countdown-unit:nth-child(3),
+    .countdown-unit:nth-child(4) {
+        width: 100%;
+        min-width: 0;
+
+        padding: 0 8px;
+    }
+
+    .countdown-unit:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .countdown-unit:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .countdown-unit:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .countdown-unit:nth-child(2) span,
+    .countdown-unit:nth-child(3) span,
+    .countdown-unit:nth-child(4) span {
+        font-size: 2rem;
+        font-weight: 500;
+
+        line-height: 1;
+
+        letter-spacing: -0.04em;
+
+        text-align: center;
+    }
+
+    .countdown-unit:nth-child(2) small,
+    .countdown-unit:nth-child(3) small,
+    .countdown-unit:nth-child(4) small {
+        margin-top: 11px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.10em;
+
+        text-align: center;
+    }
+
+
+    /* SEPARATORI */
+
+    .countdown-unit:first-child::after {
+        display: none;
+    }
+
+    .countdown-unit:nth-child(2)::after,
+    .countdown-unit:nth-child(3)::after {
+        content: ":";
+
+        position: absolute;
+
+        top: 0;
+        right: -2px;
+
+        font-family: 'Rubik', sans-serif;
+
+        font-size: 1.35rem;
+        font-weight: 300;
+
+        color: #f3c9d0;
+
+        opacity: 0.6;
+    }
+
+    .countdown-unit:nth-child(4)::after {
+        display: none;
+    }
+
+
+    /* =================================================
+       UN PO' DI NOI MOBILE
+    ================================================= */
+
+    #noi {
+        padding-top: 25px;
+        padding-bottom: 0;
+
+        background: #7894b0;
+        color: #ffffff;
+    }
+
+    #noi .story {
+        max-width: 100%;
+
+        padding-left: 25px;
+        padding-right: 25px;
+
+        padding-bottom: 100px;
+
+        color: #ffffff;
+    }
+
+    #noi .story p {
+        font-size: 16px;
+        line-height: 1.85;
+
+        color: #ffffff;
+    }
+
+
+    /* FOTO GIAPPONE */
+
+    #noi .story-photo {
+        width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+
+        height: 100vh;
+        min-height: 750px;
+
+        margin-top: 0;
+        margin-bottom: 0;
+
+        border: 0;
+    }
+
+    #noi .story-photo img {
+        object-position: center center;
+    }
+
+
+    /* TESTO FOTO */
+
+    #noi .story-photo-text {
+        width: 88%;
+        max-width: none;
+
+        top: 50%;
+    }
+
+    #noi .story-photo-text h2 {
+        margin-bottom: 25px;
+
+        font-size: clamp(44px, 13vw, 65px);
+    }
+
+    #noi .story-photo-text p {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 22px;
+    }
+
+    #noi .story-photo-text p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* LISTA NOZZE */
+
+    #lista {
+        margin-top: 0;
+    }
+}
+
+
+/* =====================================================
+   SMARTPHONE PICCOLI
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .wedding-countdown {
+        margin-bottom: 45px;
+    }
+
+    .countdown-numbers {
+        max-width: 310px;
+    }
+
+    .countdown-unit:first-child span {
+        font-size: 4.3rem;
+    }
+
+    .countdown-unit:first-child small {
+        font-size: 8px;
+    }
+
+    .countdown-unit:nth-child(2) span,
+    .countdown-unit:nth-child(3) span,
+    .countdown-unit:nth-child(4) span {
+        font-size: 1.8rem;
+    }
+
+    .countdown-unit:nth-child(2) small,
+    .countdown-unit:nth-child(3) small,
+    .countdown-unit:nth-child(4) small {
+        font-size: 7px;
+    }
 }
 
 
@@ -2091,390 +2159,4 @@ button {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
-}
-
-/* =====================================================
-   TITOLO EVENTO CON ICONA
-===================================================== */
-
-#evento .event-title-with-icon {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 10px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    font-family: 'Rubik', sans-serif !important;
-    font-size: 1.7rem !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase;
-    color: #24364B !important;
-}
-
-#evento .event-title-with-icon img {
-    display: block;
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-}
-/* =========================================================
-   COUNTDOWN MOBILE — GIORNI PERFETTAMENTE CENTRATI
-========================================================= */
-
-@media (max-width: 599px) {
-
-    .countdown-numbers {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-
-        width: 100%;
-        max-width: 340px;
-
-        margin: 0 auto;
-    }
-
-    /* GIORNI */
-    .countdown-unit:first-child {
-        grid-column: 1 / 4;
-        grid-row: 1;
-
-        width: 100%;
-        padding: 0;
-
-        margin: 0 0 28px 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-    }
-
-    .countdown-unit:first-child span {
-        display: block;
-
-        width: 100%;
-
-        font-size: 4.8rem;
-        font-weight: 500;
-
-        line-height: 0.85;
-        letter-spacing: -0.06em;
-
-        text-align: center;
-    }
-
-    .countdown-unit:first-child small {
-        display: block;
-
-        width: 100%;
-
-        margin-top: 13px;
-
-        font-size: 7px;
-        letter-spacing: 0.22em;
-
-        text-align: center;
-    }
-
-    /* ORE */
-    .countdown-unit:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-
-        width: 100%;
-        padding: 0 8px;
-    }
-
-    /* MINUTI */
-    .countdown-unit:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-
-        width: 100%;
-        padding: 0 8px;
-    }
-
-    /* SECONDI */
-    .countdown-unit:nth-child(4) {
-        grid-column: 3;
-        grid-row: 2;
-
-        width: 100%;
-        padding: 0 8px;
-    }
-
-    .countdown-unit:nth-child(2) span,
-    .countdown-unit:nth-child(3) span,
-    .countdown-unit:nth-child(4) span {
-        font-size: 2rem;
-        font-weight: 500;
-
-        line-height: 1;
-        letter-spacing: -0.04em;
-
-        text-align: center;
-    }
-
-    .countdown-unit:nth-child(2) small,
-    .countdown-unit:nth-child(3) small,
-    .countdown-unit:nth-child(4) small {
-        margin-top: 9px;
-
-        font-size: 5.5px;
-        letter-spacing: 0.13em;
-
-        text-align: center;
-    }
-
-    /* SEPARATORI */
-    .countdown-unit:first-child::after {
-        display: none;
-    }
-
-    .countdown-unit:nth-child(2)::after,
-    .countdown-unit:nth-child(3)::after {
-        content: ":";
-
-        position: absolute;
-
-        top: 0;
-        right: -2px;
-
-        font-family: 'Rubik', sans-serif;
-        font-size: 1.35rem;
-        font-weight: 300;
-
-        color: #F3C9D0;
-        opacity: 0.6;
-    }
-
-    .countdown-unit:nth-child(4)::after {
-        display: none;
-    }
-}
-
-
-/* TELEFONI PICCOLI */
-
-@media (max-width: 380px) {
-
-    .countdown-numbers {
-        max-width: 310px;
-    }
-
-    .countdown-unit:first-child span {
-        font-size: 4.3rem;
-    }
-
-    .countdown-unit:nth-child(2) span,
-    .countdown-unit:nth-child(3) span,
-    .countdown-unit:nth-child(4) span {
-        font-size: 1.8rem;
-    }
-}
-@media (max-width: 599px) {
-
- .countdown-unit:first-child small {
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        margin-top: 15px;
-    }
-
-    .countdown-unit:nth-child(2) small,
-    .countdown-unit:nth-child(3) small,
-    .countdown-unit:nth-child(4) small {
-        font-size: 10px;
-        letter-spacing: 0.10em;
-        margin-top: 11px;
-    }
-}
-
-@media (max-width: 380px) {
-
-    .countdown-unit:first-child small {
-        font-size: 8px;
-    }
-
-    .countdown-unit:nth-child(2) small,
-    .countdown-unit:nth-child(3) small,
-    .countdown-unit:nth-child(4) small {
-        font-size: 7px;
-    }
-}
-#evento .event-title-with-icon {
-    font-family: 'Rubik', sans-serif !important;
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 3px !important;
-    text-transform: uppercase;
-    color: #24364B !important;
-}
-/* =====================================================
-   DATA CENTRATA TRA DUE LINEE
-===================================================== */
-
-.wedding-countdown .countdown-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    width: 100%;
-    margin: 0 auto 28px;
-
-    background: none;
-}
-
-.wedding-countdown .countdown-line::before,
-.wedding-countdown .countdown-line::after {
-    content: "";
-
-    flex: 1;
-
-    height: 1px;
-
-    background: rgba(243, 201, 208, 0.7);
-
-    opacity: 0.7;
-}
-
-.wedding-countdown .countdown-date {
-    flex-shrink: 0;
-
-    margin: 0;
-
-    font-family: 'Rubik', sans-serif;
-
-    font-size: 2em;
-    font-weight: 600;
-
-    letter-spacing: 4px;
-    line-height: 1;
-
-    color: #ffffff;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 599px) {
-
-    .wedding-countdown .countdown-line {
-        gap: 12px;
-        margin-bottom: 23px;
-    }
-
-    .wedding-countdown .countdown-date {
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-    }
-}
-
-
-/* =====================================================
-   SMARTPHONE PICCOLI
-===================================================== */
-
-@media (max-width: 380px) {
-
-    .wedding-countdown .countdown-line {
-        gap: 9px;
-    }
-
-    .wedding-countdown .countdown-date {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-}
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.wedding-countdown {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-
-/* =====================================================
-   DATA
-===================================================== */
-
-.countdown-date {
-    margin: 0;
-    padding: 18px 0;
-
-    font-family: 'Rubik', sans-serif;
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: 4px;
-    line-height: 1;
-
-    color: #ffffff;
-    text-align: center;
-
-    border-top: 1px solid rgba(243, 201, 208, 0.7);
-    border-bottom: 1px solid rgba(243, 201, 208, 0.7);
-}
-
-
-/* =====================================================
-   LINEA VECCHIA
-===================================================== */
-
-.countdown-line {
-    display: none;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 599px) {
-
-    .countdown-date {
-        margin: 0;
-
-        padding: 14px 0;
-
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-        line-height: 1.2;
-
-        border-top: 1px solid rgba(243, 201, 208, 0.7);
-        border-bottom: 1px solid rgba(243, 201, 208, 0.7);
-    }
-
-}
-
-
-/* =====================================================
-   SMARTPHONE PICCOLI
-===================================================== */
-
-@media (max-width: 380px) {
-
-    .countdown-date {
-        padding: 12px 0;
-
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-
 }
