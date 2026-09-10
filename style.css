@@ -789,6 +789,7 @@ button {
 
     align-items: baseline;
 
+
     gap: 35px;
 
     margin-bottom: 40px;
@@ -2108,7 +2109,7 @@ button {
 #evento .event-title-with-icon {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     justify-content: flex-start;
     gap: 10px;
     width: 100%;
