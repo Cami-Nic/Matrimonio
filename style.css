@@ -1313,7 +1313,12 @@ button {
         margin-top: 0 !important;
         padding-top: 80px;
         z-index: 1;
+        }
+       
+   .hero-image {
+        background-position: 80% center;
     }
+   
 
 
     /* ==========================================
