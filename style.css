@@ -850,6 +850,10 @@ button {
     font-weight: 300;
     line-height: 1.9;
 }
+.story-photo + .story-photo {
+    margin-top: 0;
+}
+
 .polinesia-photo {
     margin-bottom: -110px;
 }
