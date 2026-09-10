@@ -1201,8 +1201,20 @@ button {
         font-size: 1.5rem;
     }
 
+  .location-image {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: -30px;
+        z-index: 2;
+    }
+
     .location-image img {
+        width: 100%;
         height: 300px;
+        object-fit: cover;
+        display: block;
     }
 
     .location-map iframe {
