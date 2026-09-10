@@ -1216,7 +1216,7 @@ button {
         position: relative;
         left: 0;
         transform: none;
-        z-index: 2;
+        z-index: 3;
     }
 
     .location-image img {
