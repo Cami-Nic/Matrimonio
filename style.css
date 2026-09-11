@@ -1402,19 +1402,3 @@ button {
         transform: none;
     }
 }
-
-/* ==================================================
-   HEADER VISIBILE SOLO IN HERO E LISTA NOZZE
-================================================== */
-
-.header {
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
-}
-
-.header.header-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
