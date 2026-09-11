@@ -200,6 +200,14 @@ const lightSections =
 
 
 /* =====================================================
+   SEZIONE INFORMAZIONI SULL'EVENTO
+===================================================== */
+
+const eventoSection =
+    document.getElementById("evento");
+
+
+/* =====================================================
    CAMBIO COLORE HEADER
 ===================================================== */
 
@@ -333,6 +341,55 @@ lightSections.forEach(function(section) {
     sectionObserver.observe(section);
 
 });
+
+
+/* =====================================================
+   HAMBURGER BIANCO NELLA SEZIONE EVENTO
+===================================================== */
+
+if (eventoSection) {
+
+    const eventoMenuObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        header.classList.add(
+                            "header-white-menu"
+                        );
+
+                        menuLines.forEach(function(line) {
+
+                            line.style.background =
+                                "#ffffff";
+
+                        });
+
+                    } else {
+
+                        header.classList.remove(
+                            "header-white-menu"
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.2
+            }
+
+        );
+
+    eventoMenuObserver.observe(eventoSection);
+
+}
 
 
 /* =====================================================
@@ -508,16 +565,23 @@ window.addEventListener(
 
 updateHeaderVisibility();
 
+
 /* =========================
    COUNTDOWN MATRIMONIO
 ========================== */
 
-const weddingDate = new Date("April 2, 2027 12:30:00").getTime();
+const weddingDate =
+    new Date("April 2, 2027 12:30:00").getTime();
+
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+    const now =
+        new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
 
     if (distance <= 0) {
 
@@ -529,28 +593,56 @@ function updateCountdown() {
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
-    );
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    const hours =
+        Math.floor(
+            (distance %
+                (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+                (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+                (1000 * 60)) /
+            1000
+        );
+
+
+    document.getElementById("days").textContent =
+        days;
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
 }
+
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+
+setInterval(
+    updateCountdown,
+    1000
+);
