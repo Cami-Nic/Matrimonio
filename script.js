@@ -1513,16 +1513,7 @@ function startWeddingFireworks() {
    perché gennaio = 0.
 */
 
-const weddingDate =
-    new Date(
-        2027,
-        3,
-        2,
-        0,
-        0,
-        1
-    ).getTime();
-
+const weddingDate = Date.now() + 10000;
 
 /* =====================================================
    AGGIORNAMENTO COUNTDOWN
