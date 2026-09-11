@@ -900,7 +900,7 @@ button {
     inset: 0;
 
     background-image: url("images/foto1 (1).jpeg");
-    background-size: contain;
+    background-size: cover ;
     background-position: center;
     background-repeat: no-repeat;
 
