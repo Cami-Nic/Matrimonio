@@ -879,96 +879,226 @@
     </main>
 
 
-    <!-- ==================================================
-         JAVASCRIPT
-         COPIA IBAN
-    ================================================== -->
+    /* ==================================================
+   COPIA IBAN
+================================================== */
 
-    <script>
+const copyButton =
+    document.getElementById("copyIban");
 
-        const copyButton =
-            document.getElementById("copyIban");
+const ibanElement =
+    document.getElementById("ibanValue");
 
-        const ibanElement =
-            document.getElementById("ibanValue");
-
-        const copyMessage =
-            document.getElementById("copyMessage");
+const copyMessage =
+    document.getElementById("copyMessage");
 
 
-        copyButton.addEventListener(
-            "click",
-            async function () {
+copyButton.addEventListener(
+    "click",
+    async function () {
 
-                const iban =
-                    ibanElement.textContent.trim();
+        const iban =
+            ibanElement.textContent.trim();
 
+        try {
 
-                try {
+            await navigator.clipboard.writeText(
+                iban
+            );
 
-                    await navigator.clipboard.writeText(
-                        iban
-                    );
+            copyMessage.textContent =
+                "✓ IBAN copiato";
 
+        } catch (error) {
 
-                    copyMessage.textContent =
-                        "✓ IBAN copiato";
+            const textArea =
+                document.createElement("textarea");
 
+            textArea.value = iban;
 
-                } catch (error) {
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
 
-                    /* Fallback per browser meno recenti */
+            document.body.appendChild(textArea);
 
-                    const textArea =
-                        document.createElement("textarea");
+            textArea.select();
 
-                    textArea.value = iban;
+            try {
 
-                    textArea.style.position = "fixed";
-                    textArea.style.opacity = "0";
+                document.execCommand("copy");
 
-                    document.body.appendChild(
-                        textArea
-                    );
+                copyMessage.textContent =
+                    "✓ IBAN copiato";
 
-                    textArea.select();
+            } catch (fallbackError) {
 
-                    try {
-
-                        document.execCommand(
-                            "copy"
-                        );
-
-                        copyMessage.textContent =
-                            "✓ IBAN copiato";
-
-                    } catch (fallbackError) {
-
-                        copyMessage.textContent =
-                            "Copia non disponibile automaticamente.";
-
-                    }
-
-                    document.body.removeChild(
-                        textArea
-                    );
-                }
-
-
-                setTimeout(
-                    function () {
-
-                        copyMessage.textContent = "";
-
-                    },
-                    2500
-                );
+                copyMessage.textContent =
+                    "Copia non disponibile automaticamente.";
 
             }
+
+            document.body.removeChild(textArea);
+        }
+
+        setTimeout(
+            function () {
+
+                copyMessage.textContent = "";
+
+            },
+            2500
         );
 
-    </script>
+    }
+);
 
+
+/* ==================================================
+   COPIA IBAN
+================================================== */
+
+const copyIbanButton =
+    document.getElementById("copyIban");
+
+const ibanElement =
+    document.getElementById("ibanValue");
+
+const copyIbanMessage =
+    document.getElementById("copyMessage");
+
+
+copyIbanButton.addEventListener(
+    "click",
+    async function () {
+
+        const iban =
+            ibanElement.textContent.trim();
+
+        try {
+
+            await navigator.clipboard.writeText(
+                iban
+            );
+
+            copyIbanMessage.textContent =
+                "✓ IBAN copiato";
+
+        } catch (error) {
+
+            const textArea =
+                document.createElement("textarea");
+
+            textArea.value = iban;
+
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+
+            document.body.appendChild(textArea);
+
+            textArea.select();
+
+            try {
+
+                document.execCommand("copy");
+
+                copyIbanMessage.textContent =
+                    "✓ IBAN copiato";
+
+            } catch (fallbackError) {
+
+                copyIbanMessage.textContent =
+                    "Copia non disponibile automaticamente.";
+
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        setTimeout(
+            function () {
+
+                copyIbanMessage.textContent = "";
+
+            },
+            2500
+        );
+
+    }
+);
+
+
+/* ==================================================
+   COPIA INTESTATARIO
+================================================== */
+
+const copyIntestatarioButton =
+    document.getElementById("copyIntestatario");
+
+const intestatarioElement =
+    document.getElementById("intestatarioValue");
+
+const copyIntestatarioMessage =
+    document.getElementById("copyIntestatarioMessage");
+
+
+copyIntestatarioButton.addEventListener(
+    "click",
+    async function () {
+
+        const intestatario =
+            intestatarioElement.textContent.trim();
+
+        try {
+
+            await navigator.clipboard.writeText(
+                intestatario
+            );
+
+            copyIntestatarioMessage.textContent =
+                "✓ Intestatario copiato";
+
+        } catch (error) {
+
+            const textArea =
+                document.createElement("textarea");
+
+            textArea.value = intestatario;
+
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+
+            document.body.appendChild(textArea);
+
+            textArea.select();
+
+            try {
+
+                document.execCommand("copy");
+
+                copyIntestatarioMessage.textContent =
+                    "✓ Intestatario copiato";
+
+            } catch (fallbackError) {
+
+                copyIntestatarioMessage.textContent =
+                    "Copia non disponibile automaticamente.";
+
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        setTimeout(
+            function () {
+
+                copyIntestatarioMessage.textContent = "";
+
+            },
+            2500
+        );
+
+    }
+);
 
 </body>
 
