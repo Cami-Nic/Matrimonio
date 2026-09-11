@@ -1429,3 +1429,23 @@ button {
 .header.header-white-menu .menu-toggle span {
     background-color: #ffffff;
 }
+
+section#lista {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 31, 42, 0.35),
+            rgba(20, 31, 42, 0.55)
+        ),
+        url("images/lista-nozze.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
