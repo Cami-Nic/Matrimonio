@@ -665,11 +665,6 @@
                  TITOLO
             ================================================== -->
 
-            <div class="eyebrow">
-                Il nostro Matrimonio
-            </div>
-
-
             <h1>
                 Lista Nozze
             </h1>
@@ -691,13 +686,6 @@
                     tradizionale.
                 </p>
 
-                <p>
-                    Siamo però pronti a partire per la nostra
-                    luna di miele e, se vi fa piacere,
-                    un piccolo contributo sarà sicuramente
-                    molto apprezzato.
-                </p>
-
             </div>
 
 
@@ -711,37 +699,15 @@
                     Il nostro viaggio
                 </h2>
 
-                <p>
-                    Avendo già condiviso con voi
-                    tanti momenti importanti della nostra vita,
-                    abbiamo deciso di rendervi partecipi
-                    anche di questa nuova avventura.
-                </p>
-
                 <br>
 
                 <p>
                     La nostra luna di miele ci porterà
-                    alla scoperta del Giappone e,
-                    successivamente, delle Isole Fiji.
+                    alla scoperta del Giappone e, successivamente, delle Maldive.
                 </p>
 
                 <br>
 
-                <p>
-                    Ogni vostro contributo ci aiuterà
-                    a trasformare questo viaggio
-                    in un ricordo indimenticabile.
-                </p>
-
-                <br>
-
-                <p>
-                    Se desiderate farci un pensiero,
-                    potete contribuire al nostro viaggio
-                    di nozze utilizzando le coordinate
-                    qui sotto.
-                </p>
 
             </section>
 
@@ -750,27 +716,9 @@
                  DATI BANCARI
             ================================================== -->
 
-            <section class="iban-box">
-
-                <h2>
-                    Un pensiero per noi
-                </h2>
-
-
-                <p class="iban-description">
-
-                    Grazie di cuore per voler contribuire
-                    alla nostra nuova avventura insieme.
-
-                    <br>
-
-                    Ogni vostro pensiero diventerà
-                    un ricordo speciale del nostro viaggio.
-
-                </p>
-
-
-                <div class="bank-details">
+<section class="iban-box">
+                
+<div class="bank-details">
 
 <!-- IBAN -->
 
@@ -873,7 +821,6 @@
                 02 Aprile 2027
             </footer>
 
-
         </div>
 
     </main>
@@ -944,154 +891,6 @@ copyButton.addEventListener(
             function () {
 
                 copyMessage.textContent = "";
-
-            },
-            2500
-        );
-
-    }
-);
-
-
-/* ==================================================
-   COPIA IBAN
-================================================== */
-
-const copyIbanButton =
-    document.getElementById("copyIban");
-
-const ibanElement =
-    document.getElementById("ibanValue");
-
-const copyIbanMessage =
-    document.getElementById("copyMessage");
-
-
-copyIbanButton.addEventListener(
-    "click",
-    async function () {
-
-        const iban =
-            ibanElement.textContent.trim();
-
-        try {
-
-            await navigator.clipboard.writeText(
-                iban
-            );
-
-            copyIbanMessage.textContent =
-                "✓ IBAN copiato";
-
-        } catch (error) {
-
-            const textArea =
-                document.createElement("textarea");
-
-            textArea.value = iban;
-
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-
-            document.body.appendChild(textArea);
-
-            textArea.select();
-
-            try {
-
-                document.execCommand("copy");
-
-                copyIbanMessage.textContent =
-                    "✓ IBAN copiato";
-
-            } catch (fallbackError) {
-
-                copyIbanMessage.textContent =
-                    "Copia non disponibile automaticamente.";
-
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        setTimeout(
-            function () {
-
-                copyIbanMessage.textContent = "";
-
-            },
-            2500
-        );
-
-    }
-);
-
-
-/* ==================================================
-   COPIA INTESTATARIO
-================================================== */
-
-const copyIntestatarioButton =
-    document.getElementById("copyIntestatario");
-
-const intestatarioElement =
-    document.getElementById("intestatarioValue");
-
-const copyIntestatarioMessage =
-    document.getElementById("copyIntestatarioMessage");
-
-
-copyIntestatarioButton.addEventListener(
-    "click",
-    async function () {
-
-        const intestatario =
-            intestatarioElement.textContent.trim();
-
-        try {
-
-            await navigator.clipboard.writeText(
-                intestatario
-            );
-
-            copyIntestatarioMessage.textContent =
-                "✓ Intestatario copiato";
-
-        } catch (error) {
-
-            const textArea =
-                document.createElement("textarea");
-
-            textArea.value = intestatario;
-
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-
-            document.body.appendChild(textArea);
-
-            textArea.select();
-
-            try {
-
-                document.execCommand("copy");
-
-                copyIntestatarioMessage.textContent =
-                    "✓ Intestatario copiato";
-
-            } catch (fallbackError) {
-
-                copyIntestatarioMessage.textContent =
-                    "Copia non disponibile automaticamente.";
-
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        setTimeout(
-            function () {
-
-                copyIntestatarioMessage.textContent = "";
 
             },
             2500
