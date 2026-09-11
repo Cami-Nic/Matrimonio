@@ -6,7 +6,7 @@ const menuToggle = document.getElementById("menuToggle");
 const menuClose = document.getElementById("menuClose");
 const sideMenu = document.getElementById("sideMenu");
 const menuOverlay = document.getElementById("menuOverlay");
-
+const header = document.querySelector(".header");
 
 /* =====================================================
    APERTURA MENU
@@ -431,33 +431,12 @@ window.addEventListener(
    VISIBILITÀ HEADER
    MOSTRA SOLO SU:
    
-   1. HOME
+   1. HERO
    2. LISTA NOZZE
 ===================================================== */
 
-const header =
-    document.querySelector(".header");
-
-
-/*
-   HOME
-*/
-
 const homeSection =
     document.querySelector(".hero");
-
-
-/*
-   LISTA NOZZE
-
-   Nel tuo HTML la sezione è:
-
-   <section
-       id="lista"
-       class="section registry-preview section-dark">
-
-   Per questo utilizziamo .registry-preview.
-*/
 
 const listaSection =
     document.querySelector(".registry-preview");
@@ -485,27 +464,27 @@ function updateHeaderVisibility() {
         listaSection.getBoundingClientRect();
 
 
-    /* -----------------------------------------
-       HOME
-    ----------------------------------------- */
+    /* =================================================
+       HERO
+    ================================================= */
 
     const isOnHome =
         homeRect.top <= 100 &&
         homeRect.bottom > 100;
 
 
-    /* -----------------------------------------
+    /* =================================================
        LISTA NOZZE
-    ----------------------------------------- */
+    ================================================= */
 
     const isOnLista =
         listaRect.top <= 100 &&
         listaRect.bottom > 100;
 
 
-    /* -----------------------------------------
+    /* =================================================
        MOSTRA HEADER
-    ----------------------------------------- */
+    ================================================= */
 
     if (
         isOnHome ||
@@ -519,9 +498,9 @@ function updateHeaderVisibility() {
     }
 
 
-    /* -----------------------------------------
+    /* =================================================
        NASCONDI HEADER
-    ----------------------------------------- */
+    ================================================= */
 
     else {
 
@@ -529,11 +508,11 @@ function updateHeaderVisibility() {
             "header-visible"
         );
 
-        /*
-           Se il menu fosse rimasto aperto
-           durante lo spostamento tra sezioni,
-           lo chiudiamo.
-        */
+
+        /* ---------------------------------------------
+           Se il menu è aperto mentre si entra
+           in una sezione centrale, lo chiudiamo.
+        --------------------------------------------- */
 
         if (
             sideMenu &&
@@ -550,12 +529,15 @@ function updateHeaderVisibility() {
 
 
 /* =====================================================
-   CONTROLLO HEADER DURANTE LO SCROLL
+   CONTROLLO DURANTE LO SCROLL
 ===================================================== */
 
 window.addEventListener(
     "scroll",
-    updateHeaderVisibility
+    updateHeaderVisibility,
+    {
+        passive: true
+    }
 );
 
 
