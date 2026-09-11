@@ -12,6 +12,7 @@
 
     <title>Lista Nozze | Il nostro Matrimonio</title>
 
+
     <style>
 
         /* ==================================================
@@ -34,41 +35,42 @@
         }
 
         body {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
 
-    font-family: "Arial", sans-serif;
-    color: #ffffff;
+            font-family: "Arial", sans-serif;
+            color: #ffffff;
 
-    background-image:
-        linear-gradient(
-            rgba(20, 31, 42, 0.48),
-            rgba(20, 31, 42, 0.60)
-        ),
-        url("images/lista-nozze.jpg");
+            background-image:
+                linear-gradient(
+                    rgba(20, 31, 42, 0.48),
+                    rgba(20, 31, 42, 0.60)
+                ),
+                url("images/lista-nozze.jpg");
 
-    background-size: cover;
-    background-position: 30% center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 
 
         /* ==================================================
            PAGINA
         ================================================== */
 
-       .page {
-    width: 100%;
-    min-height: 100vh;
+        .page {
+            width: 100%;
+            min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    padding: 70px 20px;
-}
+            padding: 70px 20px;
+        }
+
 
         /* ==================================================
            CONTENUTO
@@ -94,7 +96,7 @@
             margin-bottom: 55px;
 
             color: #ffffff;
-            
+
             text-decoration: none;
 
             font-size: 1.3rem;
@@ -115,24 +117,6 @@
             opacity: 1;
 
             transform: translateY(-2px);
-        }
-
-
-        /* ==================================================
-           EYEBROW
-        ================================================== */
-
-        .eyebrow {
-            margin-bottom: 20px;
-
-            color: rgba(255, 255, 255, 0.85);
-
-            font-size: 1.3rem;
-            font-weight: 400;
-
-            letter-spacing: 5px;
-
-            text-transform: uppercase;
         }
 
 
@@ -219,9 +203,8 @@
             -webkit-backdrop-filter: blur(6px);
         }
 
-
         .registry-box h2 {
-            margin-bottom: 18px;
+            margin-bottom: 25px;
 
             color: #ffffff;
 
@@ -231,14 +214,19 @@
             letter-spacing: 2px;
         }
 
-
         .registry-box p {
+            margin-bottom: 20px;
+
             color: rgba(255, 255, 255, 0.9);
 
             font-size: 1rem;
             font-weight: 300;
 
             line-height: 1.8;
+        }
+
+        .registry-box p:last-child {
+            margin-bottom: 0;
         }
 
 
@@ -355,7 +343,7 @@
 
 
         /* ==================================================
-           PULSANTE COPIA IBAN — ROSA
+           PULSANTI COPIA
         ================================================== */
 
         .copy-button {
@@ -374,6 +362,8 @@
             background: #9FC5E8;
 
             color: #24364b;
+
+            font-family: inherit;
 
             font-size: 0.8rem;
             font-weight: 600;
@@ -501,8 +491,11 @@
             body {
                 background-attachment: scroll;
 
-                background-position:
-                    80% center;
+                /*
+                   Su mobile mostriamo maggiormente
+                   la parte destra della fotografia.
+                */
+                background-position: 80% center;
             }
 
 
@@ -520,15 +513,6 @@
                 font-size: 0.75rem;
 
                 letter-spacing: 2px;
-            }
-
-
-            .eyebrow {
-                margin-bottom: 18px;
-
-                font-size: 0.7rem;
-
-                letter-spacing: 3px;
             }
 
 
@@ -699,18 +683,25 @@
                     Il nostro viaggio
                 </h2>
 
-                <br>
-
                 <p>
-Siamo però pronti a partire per la nostra luna di miele, un viaggio che ci porterà alla scoperta del Giappone e, successivamente, delle meravigliose Maldive.
-
-Se desiderate farci un regalo, preferiamo un contributo in denaro da destinare al nostro viaggio di nozze. <br>
-
-Sarà per noi il modo più bello per vivere questa esperienza e trasformare il vostro regalo in ricordi che porteremo con noi per sempre.
+                    Siamo però pronti a partire per la nostra
+                    luna di miele, un viaggio che ci porterà
+                    alla scoperta del Giappone e, successivamente,
+                    delle meravigliose Maldive.
                 </p>
 
-                <br>
+                <p>
+                    Se desiderate farci un regalo, preferiamo
+                    un contributo in denaro da destinare al
+                    nostro viaggio di nozze.
+                </p>
 
+                <p>
+                    Sarà per noi il modo più bello per vivere
+                    questa esperienza e trasformare il vostro
+                    regalo in ricordi che porteremo con noi
+                    per sempre.
+                </p>
 
             </section>
 
@@ -719,70 +710,76 @@ Sarà per noi il modo più bello per vivere questa esperienza e trasformare il v
                  DATI BANCARI
             ================================================== -->
 
-<section class="iban-box">
-                
-<div class="bank-details">
+            <section class="iban-box">
 
-<!-- IBAN -->
-
-<div class="detail">
-
-    <span class="detail-label">
-        IBAN
-    </span>
-
-    <span
-        class="detail-value iban-value"
-        id="ibanValue"
-    >
-        IT89Z0623052520000036162052
-    </span>
-
-    <button
-        type="button"
-        class="copy-button"
-        id="copyIban"
-    >
-        Copia IBAN
-    </button>
-
-    <span
-        class="copy-message"
-        id="copyMessage"
-    ></span>
-
-</div>
+                <div class="bank-details">
 
 
-<!-- INTESTATARIO -->
+                    <!-- IBAN -->
 
-<div class="detail">
+                    <div class="detail">
 
-    <span class="detail-label">
-        Intestatario
-    </span>
+                        <span class="detail-label">
+                            IBAN
+                        </span>
 
-    <span
-        class="detail-value"
-        id="intestatarioValue"
-    >
-        Camilla Tiraboschi Nicolo Signorelli
-    </span>
+                        <span
+                            class="detail-value iban-value"
+                            id="ibanValue"
+                        >
+                            IT89Z0623052520000036162052
+                        </span>
 
-    <button
-        type="button"
-        class="copy-button"
-        id="copyIntestatario"
-    >
-        Copia intestatario
-    </button>
 
-    <span
-        class="copy-message"
-        id="copyIntestatarioMessage"
-    ></span>
+                        <button
+                            type="button"
+                            class="copy-button"
+                            id="copyIban"
+                        >
+                            Copia IBAN
+                        </button>
 
-</div>
+
+                        <span
+                            class="copy-message"
+                            id="copyMessage"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- INTESTATARIO -->
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            Intestatario
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="intestatarioValue"
+                        >
+                            Camilla Tiraboschi Nicolo Signorelli
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="copy-button"
+                            id="copyIntestatario"
+                        >
+                            Copia intestatario
+                        </button>
+
+
+                        <span
+                            class="copy-message"
+                            id="copyIntestatarioMessage"
+                        ></span>
+
+                    </div>
+
 
                     <!-- CAUSALE -->
 
@@ -824,9 +821,191 @@ Sarà per noi il modo più bello per vivere questa esperienza e trasformare il v
                 02 Aprile 2027
             </footer>
 
+
         </div>
 
     </main>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        /* ==================================================
+           COPIA IBAN
+        ================================================== */
+
+        const copyIbanButton =
+            document.getElementById("copyIban");
+
+        const ibanElement =
+            document.getElementById("ibanValue");
+
+        const copyIbanMessage =
+            document.getElementById("copyMessage");
+
+
+        copyIbanButton.addEventListener(
+            "click",
+            async function () {
+
+                const iban =
+                    ibanElement.textContent.trim();
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        iban
+                    );
+
+                    copyIbanMessage.textContent =
+                        "✓ IBAN copiato";
+
+
+                } catch (error) {
+
+                    const textArea =
+                        document.createElement("textarea");
+
+                    textArea.value = iban;
+
+                    textArea.style.position = "fixed";
+                    textArea.style.opacity = "0";
+
+                    document.body.appendChild(
+                        textArea
+                    );
+
+                    textArea.select();
+
+
+                    try {
+
+                        document.execCommand("copy");
+
+                        copyIbanMessage.textContent =
+                            "✓ IBAN copiato";
+
+
+                    } catch (fallbackError) {
+
+                        copyIbanMessage.textContent =
+                            "Copia non disponibile automaticamente.";
+
+                    }
+
+
+                    document.body.removeChild(
+                        textArea
+                    );
+
+                }
+
+
+                setTimeout(
+                    function () {
+
+                        copyIbanMessage.textContent = "";
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+
+        /* ==================================================
+           COPIA INTESTATARIO
+        ================================================== */
+
+        const copyIntestatarioButton =
+            document.getElementById("copyIntestatario");
+
+        const intestatarioElement =
+            document.getElementById("intestatarioValue");
+
+        const copyIntestatarioMessage =
+            document.getElementById(
+                "copyIntestatarioMessage"
+            );
+
+
+        copyIntestatarioButton.addEventListener(
+            "click",
+            async function () {
+
+                const intestatario =
+                    intestatarioElement.textContent.trim();
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        intestatario
+                    );
+
+                    copyIntestatarioMessage.textContent =
+                        "✓ Intestatario copiato";
+
+
+                } catch (error) {
+
+                    const textArea =
+                        document.createElement("textarea");
+
+                    textArea.value = intestatario;
+
+                    textArea.style.position = "fixed";
+                    textArea.style.opacity = "0";
+
+                    document.body.appendChild(
+                        textArea
+                    );
+
+                    textArea.select();
+
+
+                    try {
+
+                        document.execCommand("copy");
+
+                        copyIntestatarioMessage.textContent =
+                            "✓ Intestatario copiato";
+
+
+                    } catch (fallbackError) {
+
+                        copyIntestatarioMessage.textContent =
+                            "Copia non disponibile automaticamente.";
+
+                    }
+
+
+                    document.body.removeChild(
+                        textArea
+                    );
+
+                }
+
+
+                setTimeout(
+                    function () {
+
+                        copyIntestatarioMessage.textContent = "";
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+    </script>
+
 
 </body>
 
