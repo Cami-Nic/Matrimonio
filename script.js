@@ -548,20 +548,51 @@ updateHeaderVisibility();
 
 
 /* =====================================================
+   =====================================================
    FUOCHI D'ARTIFICIO
-   STILE ELEGANTE DA MATRIMONIO
+   SPETTACOLO INFINITO
+   =====================================================
 ===================================================== */
 
 const hero =
     document.querySelector(".hero");
 
-let fireworksStarted = false;
-let fireworksCanvas = null;
-let fireworksContext = null;
-let fireworksAnimation = null;
-let fireworksStartTime = 0;
 
-const fireworksDuration = 10000;
+let fireworksStarted = false;
+
+let fireworksCanvas = null;
+
+let fireworksContext = null;
+
+let fireworksAnimation = null;
+
+
+/* =====================================================
+   COLORI ELEGANTI DA MATRIMONIO
+===================================================== */
+
+const weddingColors = [
+
+    "rgba(255,255,255,",
+
+    "rgba(255,248,230,",
+
+    "rgba(250,220,200,",
+
+    "rgba(243,201,208,",
+
+    "rgba(255,231,190,"
+
+];
+
+
+/* =====================================================
+   PARTICELLE E RAZZI
+===================================================== */
+
+let fireworksParticles = [];
+
+let fireworksRockets = [];
 
 
 /* =====================================================
@@ -570,53 +601,78 @@ const fireworksDuration = 10000;
 
 function createFireworksCanvas() {
 
-    if (!hero || fireworksCanvas) {
+    if (
+        !hero ||
+        fireworksCanvas
+    ) {
+
         return;
+
     }
+
 
     fireworksCanvas =
         document.createElement("canvas");
 
+
     fireworksCanvas.className =
         "wedding-fireworks";
+
 
     fireworksCanvas.style.position =
         "absolute";
 
+
     fireworksCanvas.style.inset =
         "0";
+
 
     fireworksCanvas.style.width =
         "100%";
 
+
     fireworksCanvas.style.height =
         "100%";
+
+
+    /*
+       Il canvas sta sopra la foto
+       e sotto il testo della Hero.
+    */
 
     fireworksCanvas.style.zIndex =
         "3";
 
+
     fireworksCanvas.style.pointerEvents =
         "none";
+
 
     fireworksCanvas.style.opacity =
         "0";
 
+
     fireworksCanvas.style.transition =
         "opacity 1s ease";
+
 
     hero.appendChild(
         fireworksCanvas
     );
 
+
     fireworksContext =
         fireworksCanvas.getContext("2d");
 
+
     resizeFireworksCanvas();
+
 
     window.addEventListener(
         "resize",
         resizeFireworksCanvas
     );
+
 }
 
 
@@ -628,13 +684,18 @@ function resizeFireworksCanvas() {
 
     if (
         !fireworksCanvas ||
-        !fireworksContext
+        !fireworksContext ||
+        !hero
     ) {
+
         return;
+
     }
+
 
     const rect =
         hero.getBoundingClientRect();
+
 
     const dpr =
         Math.min(
@@ -642,11 +703,14 @@ function resizeFireworksCanvas() {
             2
         );
 
+
     fireworksCanvas.width =
         rect.width * dpr;
 
+
     fireworksCanvas.height =
         rect.height * dpr;
+
 
     fireworksContext.setTransform(
         dpr,
@@ -656,28 +720,8 @@ function resizeFireworksCanvas() {
         0,
         0
     );
+
 }
-
-
-/* =====================================================
-   PARTICELLE
-===================================================== */
-
-let fireworksParticles = [];
-let fireworksRockets = [];
-
-
-/* =====================================================
-   COLORI ELEGANTI
-===================================================== */
-
-const weddingColors = [
-    "rgba(255,255,255,",
-    "rgba(255,248,230,",
-    "rgba(250,220,200,",
-    "rgba(243,201,208,",
-    "rgba(255,231,190,"
-];
 
 
 /* =====================================================
@@ -686,50 +730,115 @@ const weddingColors = [
 
 function createRocket() {
 
-    if (!fireworksCanvas) {
+    if (
+        !fireworksCanvas ||
+        !hero
+    ) {
+
         return;
+
     }
 
+
+    const rect =
+        hero.getBoundingClientRect();
+
+
     const width =
-        hero.getBoundingClientRect().width;
+        rect.width;
+
 
     const height =
-        hero.getBoundingClientRect().height;
+        rect.height;
+
+
+    /* -----------------------------------------------
+       PUNTO DELL'ESPLOSIONE
+    ----------------------------------------------- */
 
     const targetX =
-        width * (
-            0.2 +
-            Math.random() * 0.6
+        width *
+        (
+            0.15 +
+            Math.random() * 0.70
         );
+
 
     const targetY =
-        height * (
-            0.15 +
-            Math.random() * 0.38
+        height *
+        (
+            0.12 +
+            Math.random() * 0.42
         );
 
+
+    /* -----------------------------------------------
+       PUNTO DI PARTENZA
+    ----------------------------------------------- */
+
     const startX =
-        width * (
-            0.15 +
-            Math.random() * 0.7
+        width *
+        (
+            0.10 +
+            Math.random() * 0.80
         );
+
 
     const startY =
         height + 20;
 
+
+    /* -----------------------------------------------
+       VELOCITÀ
+    ----------------------------------------------- */
+
+    const speed =
+        55 +
+        Math.random() * 15;
+
+
+    const dx =
+        targetX -
+        startX;
+
+
+    const dy =
+        targetY -
+        startY;
+
+
+    const distance =
+        Math.sqrt(
+            dx * dx +
+            dy * dy
+        );
+
+
+    const vx =
+        dx /
+        distance *
+        speed;
+
+
+    const vy =
+        dy /
+        distance *
+        speed;
+
+
     fireworksRockets.push({
 
         x: startX,
+
         y: startY,
 
         targetX: targetX,
+
         targetY: targetY,
 
-        vx:
-            (targetX - startX) / 65,
+        vx: vx,
 
-        vy:
-            (targetY - startY) / 65,
+        vy: vy,
 
         trail: [],
 
@@ -742,6 +851,7 @@ function createRocket() {
             ]
 
     });
+
 }
 
 
@@ -755,11 +865,20 @@ function createExplosion(
     color
 ) {
 
+    /* -----------------------------------------------
+       NUMERO PARTICELLE
+    ----------------------------------------------- */
+
     const particleCount =
         75 +
         Math.floor(
-            Math.random() * 35
+            Math.random() * 45
         );
+
+
+    /* -----------------------------------------------
+       PARTICELLE PRINCIPALI
+    ----------------------------------------------- */
 
     for (
         let i = 0;
@@ -772,13 +891,16 @@ function createExplosion(
             Math.PI *
             2;
 
+
         const speed =
             1.2 +
-            Math.random() * 3.5;
+            Math.random() * 3.8;
+
 
         fireworksParticles.push({
 
             x: x,
+
             y: y,
 
             vx:
@@ -800,47 +922,59 @@ function createExplosion(
                 1,
 
             decay:
-                0.009 +
+                0.008 +
                 Math.random() * 0.012,
 
             size:
                 1 +
-                Math.random() * 1.4,
+                Math.random() * 1.5,
 
             color:
                 color
 
         });
+
     }
 
 
-    /* Piccolo nucleo luminoso */
+    /* -----------------------------------------------
+       NUCLEO LUMINOSO
+    ----------------------------------------------- */
 
     for (
         let i = 0;
-        i < 12;
+        i < 14;
         i++
     ) {
 
         fireworksParticles.push({
 
             x: x,
+
             y: y,
 
             vx:
-                (Math.random() - 0.5) *
+                (
+                    Math.random() -
+                    0.5
+                ) *
                 1.5,
 
             vy:
-                (Math.random() - 0.5) *
+                (
+                    Math.random() -
+                    0.5
+                ) *
                 1.5,
 
-            gravity: 0,
+            gravity:
+                0,
 
             friction:
                 0.96,
 
-            life: 1,
+            life:
+                1,
 
             decay:
                 0.025,
@@ -855,6 +989,7 @@ function createExplosion(
         });
 
     }
+
 }
 
 
@@ -865,8 +1000,11 @@ function createExplosion(
 function updateRockets() {
 
     for (
-        let i = fireworksRockets.length - 1;
+        let i =
+            fireworksRockets.length - 1;
+
         i >= 0;
+
         i--
     ) {
 
@@ -874,9 +1012,14 @@ function updateRockets() {
             fireworksRockets[i];
 
 
+        /* -------------------------------------------
+           SCIA
+        ------------------------------------------- */
+
         rocket.trail.push({
 
             x: rocket.x,
+
             y: rocket.y
 
         });
@@ -884,7 +1027,7 @@ function updateRockets() {
 
         if (
             rocket.trail.length >
-            8
+            10
         ) {
 
             rocket.trail.shift();
@@ -892,13 +1035,26 @@ function updateRockets() {
         }
 
 
-        rocket.x += rocket.vx;
-        rocket.y += rocket.vy;
+        /* -------------------------------------------
+           MOVIMENTO
+        ------------------------------------------- */
 
+        rocket.x +=
+            rocket.vx;
+
+
+        rocket.y +=
+            rocket.vy;
+
+
+        /* -------------------------------------------
+           DISTANZA DAL BERSAGLIO
+        ------------------------------------------- */
 
         const distanceX =
             rocket.targetX -
             rocket.x;
+
 
         const distanceY =
             rocket.targetY -
@@ -907,18 +1063,27 @@ function updateRockets() {
 
         const distance =
             Math.sqrt(
-                distanceX * distanceX +
-                distanceY * distanceY
+                distanceX *
+                distanceX +
+                distanceY *
+                distanceY
             );
 
 
-        if (distance < 12) {
+        /* -------------------------------------------
+           ESPLOSIONE
+        ------------------------------------------- */
+
+        if (
+            distance < 25
+        ) {
 
             createExplosion(
                 rocket.x,
                 rocket.y,
                 rocket.color
             );
+
 
             fireworksRockets.splice(
                 i,
@@ -942,10 +1107,13 @@ function drawRockets() {
         return;
     }
 
+
     fireworksRockets.forEach(
         function(rocket) {
 
-            /* Scia */
+            /* ---------------------------------------
+               SCIA
+            --------------------------------------- */
 
             for (
                 let i = 0;
@@ -956,11 +1124,14 @@ function drawRockets() {
                 const point =
                     rocket.trail[i];
 
+
                 const alpha =
                     i /
                     rocket.trail.length;
 
+
                 fireworksContext.beginPath();
+
 
                 fireworksContext.arc(
                     point.x,
@@ -970,6 +1141,7 @@ function drawRockets() {
                     Math.PI * 2
                 );
 
+
                 fireworksContext.fillStyle =
                     rocket.color +
                     (
@@ -977,14 +1149,18 @@ function drawRockets() {
                     ) +
                     ")";
 
+
                 fireworksContext.fill();
 
             }
 
 
-            /* Punto luminoso */
+            /* ---------------------------------------
+               PUNTO LUMINOSO
+            --------------------------------------- */
 
             fireworksContext.beginPath();
+
 
             fireworksContext.arc(
                 rocket.x,
@@ -994,16 +1170,21 @@ function drawRockets() {
                 Math.PI * 2
             );
 
+
             fireworksContext.fillStyle =
                 "rgba(255,255,255,0.95)";
+
 
             fireworksContext.shadowBlur =
                 8;
 
+
             fireworksContext.shadowColor =
                 "#fff8e6";
 
+
             fireworksContext.fill();
+
 
             fireworksContext.shadowBlur =
                 0;
@@ -1021,8 +1202,11 @@ function drawRockets() {
 function updateParticles() {
 
     for (
-        let i = fireworksParticles.length - 1;
+        let i =
+            fireworksParticles.length - 1;
+
         i >= 0;
+
         i--
     ) {
 
@@ -1030,27 +1214,49 @@ function updateParticles() {
             fireworksParticles[i];
 
 
+        /* -------------------------------------------
+           ATTRITO
+        ------------------------------------------- */
+
         particle.vx *=
             particle.friction;
+
 
         particle.vy *=
             particle.friction;
 
 
+        /* -------------------------------------------
+           GRAVITÀ
+        ------------------------------------------- */
+
         particle.vy +=
             particle.gravity;
 
 
+        /* -------------------------------------------
+           POSIZIONE
+        ------------------------------------------- */
+
         particle.x +=
             particle.vx;
+
 
         particle.y +=
             particle.vy;
 
 
+        /* -------------------------------------------
+           VITA
+        ------------------------------------------- */
+
         particle.life -=
             particle.decay;
 
+
+        /* -------------------------------------------
+           RIMOZIONE
+        ------------------------------------------- */
 
         if (
             particle.life <= 0
@@ -1084,6 +1290,7 @@ function drawParticles() {
 
             fireworksContext.beginPath();
 
+
             fireworksContext.arc(
                 particle.x,
                 particle.y,
@@ -1102,11 +1309,13 @@ function drawParticles() {
             fireworksContext.shadowBlur =
                 7;
 
+
             fireworksContext.shadowColor =
                 "rgba(255,245,220,0.8)";
 
 
             fireworksContext.fill();
+
 
             fireworksContext.shadowBlur =
                 0;
@@ -1118,34 +1327,39 @@ function drawParticles() {
 
 
 /* =====================================================
-   ANIMAZIONE FUOCHI
+   ANIMAZIONE INFINITA
 ===================================================== */
 
 function animateFireworks(
     timestamp
 ) {
 
-    if (!fireworksCanvas) {
+    if (
+        !fireworksCanvas ||
+        !fireworksContext ||
+        !hero
+    ) {
+
         return;
+
     }
 
 
-    const elapsed =
-        timestamp -
-        fireworksStartTime;
+    const rect =
+        hero.getBoundingClientRect();
 
 
     const width =
-        hero.getBoundingClientRect().width;
+        rect.width;
+
 
     const height =
-        hero.getBoundingClientRect().height;
+        rect.height;
 
 
-    /* -------------------------------------------------
-       Sfondo trasparente.
-       Lasciamo vedere completamente la foto della Hero.
-    ------------------------------------------------- */
+    /* -----------------------------------------------
+       PULIZIA FRAME
+    ----------------------------------------------- */
 
     fireworksContext.clearRect(
         0,
@@ -1155,135 +1369,61 @@ function animateFireworks(
     );
 
 
-    /* -------------------------------------------------
-       Lancio automatico dei fuochi
-    ------------------------------------------------- */
+    /* -----------------------------------------------
+       FREQUENZA LANCIO
+    ----------------------------------------------- */
+
+    const launchChance =
+        window.innerWidth < 600
+            ? 0.035
+            : 0.055;
+
 
     if (
-        elapsed < fireworksDuration
+        Math.random() <
+        launchChance
     ) {
 
-        const launchChance =
-            window.innerWidth < 600
-                ? 0.035
-                : 0.055;
-
-
-        if (
-            Math.random() <
-            launchChance
-        ) {
-
-            createRocket();
-
-        }
-
-
-        /* Raffica iniziale */
-
-        if (
-            elapsed < 900 &&
-            Math.random() < 0.12
-        ) {
-
-            createRocket();
-
-        }
-
-
-        /* Raffica centrale */
-
-        if (
-            elapsed > 3500 &&
-            elapsed < 5000 &&
-            Math.random() < 0.08
-        ) {
-
-            createRocket();
-
-        }
-
-
-        /* Grande finale */
-
-        if (
-            elapsed > 7000 &&
-            elapsed < 8500 &&
-            Math.random() < 0.11
-        ) {
-
-            createRocket();
-
-        }
+        createRocket();
 
     }
 
 
+    /* -----------------------------------------------
+       PICCOLE RAFFICA CASUALI
+    ----------------------------------------------- */
+
+    if (
+        Math.random() <
+        0.018
+    ) {
+
+        createRocket();
+
+    }
+
+
+    /* -----------------------------------------------
+       AGGIORNAMENTO
+    ----------------------------------------------- */
+
     updateRockets();
+
     updateParticles();
 
+
+    /* -----------------------------------------------
+       DISEGNO
+    ----------------------------------------------- */
+
     drawRockets();
+
     drawParticles();
 
 
-    /* -------------------------------------------------
-       Dissolvenza finale
-    ------------------------------------------------- */
-
-    if (
-        elapsed >
-        fireworksDuration - 1200
-    ) {
-
-        const fade =
-            Math.max(
-                0,
-                1 -
-                (
-                    elapsed -
-                    (
-                        fireworksDuration -
-                        1200
-                    )
-                ) /
-                1200
-            );
-
-        fireworksCanvas.style.opacity =
-            fade;
-
-    }
-
-
-    /* -------------------------------------------------
-       Fine spettacolo
-    ------------------------------------------------- */
-
-    if (
-        elapsed >=
-        fireworksDuration
-    ) {
-
-        fireworksContext.clearRect(
-            0,
-            0,
-            width,
-            height
-        );
-
-        fireworksRockets = [];
-        fireworksParticles = [];
-
-        fireworksCanvas.style.opacity =
-            "0";
-
-        fireworksAnimation =
-            null;
-
-        return;
-
-    }
-
+    /* -----------------------------------------------
+       CONTINUA ALL'INFINITO
+    ----------------------------------------------- */
 
     fireworksAnimation =
         requestAnimationFrame(
@@ -1294,7 +1434,7 @@ function animateFireworks(
 
 
 /* =====================================================
-   AVVIO SPETTACOLO
+   AVVIO FUOCHI
 ===================================================== */
 
 function startWeddingFireworks() {
@@ -1303,7 +1443,9 @@ function startWeddingFireworks() {
         fireworksStarted ||
         !hero
     ) {
+
         return;
+
     }
 
 
@@ -1314,71 +1456,47 @@ function startWeddingFireworks() {
     createFireworksCanvas();
 
 
-    fireworksStartTime =
-        performance.now();
-
-
     fireworksCanvas.style.opacity =
         "1";
 
 
-    /* -------------------------------------------------
-       Prima raffica elegante
-    ------------------------------------------------- */
+    /* -----------------------------------------------
+       GRANDE APERTURA
+    ----------------------------------------------- */
 
-    setTimeout(
-        function() {
+    for (
+        let i = 0;
+        i < 5;
+        i++
+    ) {
 
-            if (fireworksStarted) {
-                createRocket();
-                createRocket();
-            }
+        setTimeout(
+            function() {
 
-        },
-        200
-    );
+                if (
+                    fireworksStarted
+                ) {
 
+                    createRocket();
 
-    /* -------------------------------------------------
-       Seconda raffica
-    ------------------------------------------------- */
+                }
 
-    setTimeout(
-        function() {
+            },
+            i * 300
+        );
 
-            if (fireworksStarted) {
-                createRocket();
-            }
-
-        },
-        700
-    );
+    }
 
 
-    /* -------------------------------------------------
-       Grande raffica finale
-    ------------------------------------------------- */
-
-    setTimeout(
-        function() {
-
-            if (fireworksStarted) {
-
-                createRocket();
-                createRocket();
-                createRocket();
-
-            }
-
-        },
-        7200
-    );
-
+    /* -----------------------------------------------
+       AVVIO ANIMAZIONE
+    ----------------------------------------------- */
 
     fireworksAnimation =
         requestAnimationFrame(
             animateFireworks
         );
+
 }
 
 
@@ -1386,16 +1504,35 @@ function startWeddingFireworks() {
    COUNTDOWN MATRIMONIO
 ===================================================== */
 
+/*
+   2 APRILE 2027
+   ORE 00:00:01
+
+   IMPORTANTE:
+   In JavaScript aprile = 3
+   perché gennaio = 0.
+*/
+
 const weddingDate =
     new Date(
-        Date.now() + 10000
+        2027,
+        3,
+        2,
+        0,
+        0,
+        1
     ).getTime();
 
+
+/* =====================================================
+   AGGIORNAMENTO COUNTDOWN
+===================================================== */
 
 function updateCountdown() {
 
     const now =
         new Date().getTime();
+
 
     const distance =
         weddingDate -
@@ -1410,43 +1547,53 @@ function updateCountdown() {
         distance <= 0
     ) {
 
-        document.getElementById(
-            "days"
-        ).textContent =
-            "0";
+        const daysElement =
+            document.getElementById("days");
+
+        const hoursElement =
+            document.getElementById("hours");
+
+        const minutesElement =
+            document.getElementById("minutes");
+
+        const secondsElement =
+            document.getElementById("seconds");
 
 
-        document.getElementById(
-            "hours"
-        ).textContent =
-            "0";
+        if (daysElement) {
+            daysElement.textContent = "0";
+        }
 
 
-        document.getElementById(
-            "minutes"
-        ).textContent =
-            "0";
+        if (hoursElement) {
+            hoursElement.textContent = "00";
+        }
 
 
-        document.getElementById(
-            "seconds"
-        ).textContent =
-            "0";
+        if (minutesElement) {
+            minutesElement.textContent = "00";
+        }
+
+
+        if (secondsElement) {
+            secondsElement.textContent = "00";
+        }
 
 
         /* ---------------------------------------------
-           AVVIA I FUOCHI
+           AVVIA FUOCHI INFINITI
         --------------------------------------------- */
 
         startWeddingFireworks();
 
 
         return;
+
     }
 
 
     /* =================================================
-       CALCOLO TEMPO
+       CALCOLO GIORNI
     ================================================= */
 
     const days =
@@ -1460,6 +1607,10 @@ function updateCountdown() {
             )
         );
 
+
+    /* =================================================
+       CALCOLO ORE
+    ================================================= */
 
     const hours =
         Math.floor(
@@ -1480,6 +1631,10 @@ function updateCountdown() {
         );
 
 
+    /* =================================================
+       CALCOLO MINUTI
+    ================================================= */
+
     const minutes =
         Math.floor(
             (
@@ -1496,6 +1651,10 @@ function updateCountdown() {
             )
         );
 
+
+    /* =================================================
+       CALCOLO SECONDI
+    ================================================= */
 
     const seconds =
         Math.floor(
@@ -1514,43 +1673,55 @@ function updateCountdown() {
        AGGIORNAMENTO HTML
     ================================================= */
 
-    document.getElementById(
-        "days"
-    ).textContent =
-        days;
+    const daysElement =
+        document.getElementById("days");
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
-        String(
-            hours
-        ).padStart(
-            2,
-            "0"
-        );
+    const hoursElement =
+        document.getElementById("hours");
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
-        String(
-            minutes
-        ).padStart(
-            2,
-            "0"
-        );
+    const minutesElement =
+        document.getElementById("minutes");
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
-        String(
-            seconds
-        ).padStart(
-            2,
-            "0"
-        );
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    if (daysElement) {
+
+        daysElement.textContent =
+            days;
+
+    }
+
+
+    if (hoursElement) {
+
+        hoursElement.textContent =
+            String(hours)
+                .padStart(2, "0");
+
+    }
+
+
+    if (minutesElement) {
+
+        minutesElement.textContent =
+            String(minutes)
+                .padStart(2, "0");
+
+    }
+
+
+    if (secondsElement) {
+
+        secondsElement.textContent =
+            String(seconds)
+                .padStart(2, "0");
+
+    }
 
 }
 
