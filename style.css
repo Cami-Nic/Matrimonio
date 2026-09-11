@@ -1378,7 +1378,6 @@ button {
     }
 }
 
-
 /* ==================================================
    ACCESSIBILITÀ
 ================================================== */
@@ -1401,4 +1400,10 @@ button {
         opacity: 1;
         transform: none;
     }
+}
+
+
+/* Hamburger bianco nella sezione Informazioni sull'Evento */
+.header.header-white-menu .menu-toggle span {
+    background-color: #ffffff;
 }
