@@ -1388,7 +1388,7 @@ function startWeddingFireworks() {
 
 const weddingDate =
     new Date(
-        "date.now() + 10000"
+        "Date.now() + 10000"
     ).getTime();
 
 
