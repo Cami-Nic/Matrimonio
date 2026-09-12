@@ -1460,3 +1460,14 @@ section#lista {
 .registry-buttons .button-light {
     display: inline-flex;
 }
+
+.registry-content .button-light {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registry-content .registry-button {
+    margin-top: 25px;
+}
