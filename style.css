@@ -1449,13 +1449,14 @@ section#lista {
     background-position: center;
     background-repeat: no-repeat;
 }
-.registry-content .button-light {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+
+.registry-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
-.registry-content .registry-button {
-    margin-top: 25px;
+.registry-buttons .button-light {
+    display: inline-flex;
 }
